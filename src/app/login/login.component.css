@@ -1,0 +1,103 @@
+.login-content-container
+{
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 30px;
+}
+header
+{
+  background: #3B5998;
+  height: 83px;
+  border-bottom: 1px solid #283E68;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+}
+
+.login-page-left
+{
+  flex:1;
+}
+.login-page-right
+{
+  flex:1;
+}
+.login-header
+{
+  display: flex;
+  padding:15px;
+  max-width: 1000px!important;
+	margin:0 auto;
+  justify-content: space-between;
+}
+.heder-right > p
+{
+  text-align: right;
+}
+.heder-right p a
+{
+  text-decoration: none;
+  color:#839BCF;
+}
+.input-wrapper
+{
+  display: flex;
+}
+.input-wrapper button
+{
+  border-style: none;
+  padding:4px 6px;
+  color: #fff;
+  background: #466AB5;
+  margin-top: 19px;
+  font-size: 12px;
+  font-weight: 600;
+  border:1px solid #31497D;
+  border-radius: 2px;
+}
+.header-left p
+{
+  font-size: 40px;
+  color: #fff;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.forgot
+{
+  text-decoration: none;
+  color:#8BA2D1;
+  font-size: 12px;
+  position: absolute;
+  bottom: -20px;
+}
+.email-box
+{
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.pass-box
+{
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.email-box input ,.pass-box input
+{
+  border-style: none;
+  padding:3px;
+  width: 150px;
+  outline: none;
+  box-shadow:inset 0px 1px 20px rgba(27, 31, 35, 0.075);
+}
+.email-box label ,.pass-box label
+{
+  font-size: 12px;
+  color: #f0f0f0;
+  margin-bottom: 8px;
+}
+.content-container
+{
+  max-width: 1000px!important;
+  margin:0 auto;
+}

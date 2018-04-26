@@ -1,0 +1,107 @@
+.signup-title
+{
+  font-size: 33px;
+  font-weight: 600;
+  color: #333;
+}
+.reg-container
+{
+  margin-left: 88px;
+}
+.signup-des
+{
+  font-size: 19px;
+  margin-top: 10px;
+  color: #333;
+}
+.form-container
+{
+  margin-top: 15px;
+}
+.input-row
+{
+  display: flex;
+  margin-bottom: 13px;
+}
+.space-right
+{
+  margin-right: 13px;
+}
+.input-row input::placeholder
+{
+  color: rgba(0, 0, 0, 0.4);
+}
+.input-row input
+{
+  font-size: 18px;
+  padding:8px 10px;
+  width: 100%;
+  border-radius: 4px;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
+
+.birthday
+{
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom:5px;
+}
+.birthday-options p
+{
+  font-size: 11px;
+  margin:auto 0;
+  margin-left: 10px;
+  color: #3A5998;
+  line-height: 15px;
+}
+.birthday-options select
+{
+  padding:5px 11px;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
+.input-radio
+{
+  width: 180px;
+}
+.input-row .input-radio label
+{
+  margin-right:0px;
+}
+.reg-parag
+{
+  font-size: 12px;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 16px;
+}
+.blue-text
+{
+  color: #3A5998;
+}
+.form-container button
+{
+  padding:7px 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 200px;
+  color: #fff;
+  background:#69A354;
+  border:1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px #a4e388;
+  background: linear-gradient(#67ae55, #578843);
+}
+.form-container
+{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D1D6DC;
+}
+.create-page-text
+{
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #7D8A9B;
+}

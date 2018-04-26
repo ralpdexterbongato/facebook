@@ -1,0 +1,134 @@
+.side-cats ul li p
+{
+  max-width: 122px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.side-cats ul li:hover
+{
+  background: #f6f7f8;
+  border:1px solid rgba(0, 0, 0, 0.1);
+}
+.side-cats ul li
+{
+  border:1px solid transparent;
+  font-size: 13px;
+  padding: 5px 4px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  border-collapse: collapse;
+}
+.side-cats ul li i
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  font-size: 17px;
+}
+.blue-background
+{
+  background: #5991FE;
+}
+.white-background
+{
+  background: #fff;
+}
+.white-text
+{
+  color: #fff;
+}
+.darkblue-text
+{
+  color: #3578E4;
+}
+.blue-text
+{
+  color: #5D92FF;
+}
+.red-text
+{
+  color: #DB4022;
+}
+.grey-text
+{
+  color: #444B5A;
+}
+.orange-text
+{
+  color: #FB8968;
+}
+.pink-text
+{
+  color: #F3556B;
+}
+.green-text
+{
+  color:#4FBBA6;
+}
+.light-text
+{
+  color: rgba(0, 0, 0, 0.4);
+}
+.side-cats ul li p
+{
+  display: flex;
+  padding-top: 2px;
+}
+.side-cats ul li.active
+{
+  background: #f6f7f8;
+  border:1px solid rgba(0, 0, 0, 0.1);
+}
+.side-cats ul li.active p
+{
+  font-weight: 600;
+}
+.side-cats ul h3
+{
+  padding: 2px 4px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+  margin-top: 15px;
+}
+.side-cats ul li h6
+{
+  vertical-align: middle;
+  padding-top: 7px;
+  font-size: 11px;
+  color: #a1a1a1;
+}
+.prof-nav i
+{
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.prof-nav p
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px;
+  max-width: 122px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.prof-nav
+{
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 2px;
+}
+.prof-nav i img
+{
+  border-radius: 50%;
+  height: 19px;
+  width: 19px;
+}
+.icon-and-name
+{
+  display: flex;
+}

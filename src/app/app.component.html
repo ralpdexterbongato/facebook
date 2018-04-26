@@ -1,0 +1,61 @@
+<header>
+  <div class="loggedInHeader" *ngIf="signin">
+    <div class="header-content-container">
+      <div class="header-content-right">
+        <img src="assets/img/logo.PNG" alt="">
+        <div class="search-person-container">
+          <input type="text" name="" value="" placeholder="Search">
+          <button type="button" name="button" ><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div class="header-content-left">
+        <div class="nav-wrapper">
+          <div class="profile-wrapper">
+            <img src="/assets/img/2.jpg" alt="">
+            <div class="prof-nav">
+              Ralp Dexter
+            </div>
+          </div>
+          <div class="home-nav">
+            Home
+          </div>
+        </div>
+        <div class="icons-wrapper">
+          <i class="material-icons">people</i>
+          <i class="fab fa-facebook-messenger"></i>
+          <i class="material-icons">public</i>
+        </div>
+        <div class="drop-container">
+          <i class="material-icons question-icon">?</i>
+          <div class="drop-menu" (click)="toggleMenu()" [ngClass]="{'active':menuIsActive}">
+            <i class="material-icons">arrow_drop_down</i>
+            <div class="drop-menu-box" [ngClass]="{'active':menuIsActive}">
+              <ul>
+                <li>Create page</li>
+                <li>Manage page</li>
+                <div class="divider">
+                </div>
+                <li>Create group</li>
+                <li>Manage group</li>
+                <div class="divider">
+                </div>
+                <li>Create adds</li>
+                <li>Advertising on facebook</li>
+                <div class="divider">
+                </div>
+                <li>Activity logs</li>
+                <li>News feed preferences</li>
+                <li>Settings</li>
+                <li (click)="logout()">Logout</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <router-outlet></router-outlet>
+<footer>
+
+</footer>

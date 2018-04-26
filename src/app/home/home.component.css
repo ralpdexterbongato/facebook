@@ -1,0 +1,21 @@
+.home-container
+{
+  width: 1040px;
+  margin-left: 70px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding:14px 0px;
+  display: flex;
+}
+.left-categ-container
+{
+  min-width: 188px;
+}
+.other-content
+{
+  min-width: 310px;
+}
+.newsfeed-container
+{
+  flex:1;
+}
