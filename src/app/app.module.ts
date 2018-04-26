@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { LatestLogsComponent } from './latest-logs/latest-logs.component';
 import { TokenService } from './services/token.service';
 import { SideCategoriesComponent } from './side-categories/side-categories.component';
+import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,7 +28,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     LatestLogsComponent,
-    SideCategoriesComponent
+    SideCategoriesComponent,
+    NewsfeedComponent
   ],
   imports: [
     BrowserModule,
