@@ -10,6 +10,7 @@ import { LatestLogsComponent } from './latest-logs/latest-logs.component';
 import { TokenService } from './services/token.service';
 import { SideCategoriesComponent } from './side-categories/side-categories.component';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
+import { OtherComponent } from './other/other.component';
 const routes: Routes = [
   {
     path: '',
@@ -29,7 +30,8 @@ const routes: Routes = [
     RegisterComponent,
     LatestLogsComponent,
     SideCategoriesComponent,
-    NewsfeedComponent
+    NewsfeedComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,

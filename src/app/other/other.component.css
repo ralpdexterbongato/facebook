@@ -1,0 +1,166 @@
+.other-post-container
+{
+  width: 100%;
+  margin-left: 10px;
+}
+.stories-box
+{
+  padding:10px 10px;
+  height: 264px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.stories-top
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 5px;
+}
+.stories-top i
+{
+  color: rgba(0, 0, 0, 0.5);
+}
+.story-row
+{
+  display: flex;
+  margin-bottom: 10px;
+}
+.story-row img
+{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border:2px solid #4080FF;
+  padding:2px;
+}
+.story-row-data
+{
+  padding-top: 15px;
+  padding-left: 10px;
+}
+.story-row-data p
+{
+  font-size: 13px;
+  font-weight: 600;
+  color: #365899;
+}
+.story-row-data h6
+{
+  font-size: 13px;
+  margin-top: 7px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.showmore-story
+{
+  display: flex;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.showmore-story p
+{
+  font-size: 13px;
+  margin-left: 6px;
+  color: #365899;
+}
+.showmore-story i
+{
+  margin-left: 4px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+.birthday-box
+{
+  margin-top: 15px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding:10px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.birthday-box i
+{
+  display: inline-block;
+  vertical-align: middle;
+  color: #F35269;
+}
+.birthday-box p
+{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.color-fb
+{
+  color: #365899;
+}
+.bold
+{
+  font-weight: bold;
+}
+.suggested-groups
+{
+  margin-top: 15px;
+  padding:10px;
+  background: #fff;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+.suggested-top
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.suggested-top p
+{
+  color: rgba(0, 0, 0, 0.7);
+}
+.group-prof
+{
+  height: 120px;
+  margin-top: 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
+.group-data
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding:10px;
+  border:1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.group-data h6
+{
+  color: rgba(0, 0, 0, 0.5);
+}
+.group-data p
+{
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #3B5CA0;
+}
+.gd-right button
+{
+  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.6);
+  padding:3px 7px;
+  background: #f6f7f9;
+  border-style: none;
+  border:1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.gd-right button i
+{
+  font-size: 11px;
+  margin-right: 5px;
+}
