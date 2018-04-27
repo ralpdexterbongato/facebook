@@ -106,7 +106,7 @@ header.active
 {
   padding:2px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 .profile-wrapper:hover
 {
@@ -125,7 +125,7 @@ header.active
 }
 .home-nav
 {
-  border-radius: 5px;
+  border-radius: 2px;
   padding:8px 10px;
   cursor: pointer;
 }
