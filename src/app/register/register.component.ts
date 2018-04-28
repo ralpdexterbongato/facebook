@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { TokenService } from '../services/token.service';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route:Router,
+    private token:TokenService,
+    private app :AppComponent
+  ) { }
   days = [];
   years = [];
+  contact = '';
+  validemail = false;
+  submitting = false;
   ngOnInit() {
     this.initDays();
     this.initYear();
@@ -32,5 +41,23 @@ export class RegisterComponent implements OnInit {
     {
       this.years.push(i);
     }
+  }
+  checkIfEmail()
+  {
+    var regex = /^\w+@\w+.(com|org|jp)$/;
+    if(regex.test(this.contact))
+    {
+      this.validemail = true;
+    }else
+    {
+      this.validemail =false;
+    }
+  }
+  SubmitRegister()
+  {
+    this.submitting =true;
+    this.token.setToken();
+    this.app.refreshNavState();
+    this.route.navigate(['check-your-email']);
   }
 }

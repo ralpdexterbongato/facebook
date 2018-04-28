@@ -8,16 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NewsfeedComponent implements OnInit {
 
   constructor() { }
-  textareaIsActive= false;
   ngOnInit() {
   }
 
-  setActive()
-  {
-    this.textareaIsActive = true;
-  }
-  setInActive()
-  {
-    this.textareaIsActive = false;
-  }
+
 }

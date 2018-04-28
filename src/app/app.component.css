@@ -1,3 +1,4 @@
+
 header.active
 {
   padding-top: 45px;
@@ -12,7 +13,7 @@ header.active
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index:19;
 }
 .header-content-container
 {
@@ -128,6 +129,7 @@ header.active
   border-radius: 2px;
   padding:8px 10px;
   cursor: pointer;
+  outline: none;
 }
 .icons-wrapper
 {
@@ -136,9 +138,14 @@ header.active
   margin-top: 2px;
   display: flex;
 }
+.icons-wrapper i:hover
+{
+  color: #0F1728;
+}
 .icons-wrapper i
 {
   color:#1A2947;
+  cursor: pointer;
   font-size: 23px;
   padding:0px 5px;
 }
@@ -375,4 +382,17 @@ header.active
 .on-list-left p
 {
   padding-top: 2px;
+}
+
+.outlet-container
+{
+  width: 1010px;
+  margin-left: 70px;
+}
+@media (max-width:1300px) {
+  .outlet-container
+  {
+    margin-left: auto;
+    margin: 0 auto;
+  }
 }

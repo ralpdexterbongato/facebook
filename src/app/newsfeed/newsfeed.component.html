@@ -1,94 +1,9 @@
-<div class="blackbackground" (click)="setInActive()" [ngClass]="{'show':textareaIsActive==true}">
-</div>
 <div class="news-feed">
-  <div class="post-relative-container" [ngClass]="{'active':textareaIsActive==true}">
-    <div class="posting-form-container" [ngClass]="{'active':textareaIsActive==true}"><!--  add active here -->
-      <div class="posting-top">
-        <h4>
-          <i class="material-icons">edit</i>
-          <p>Make Post</p>
-        </h4>
-        <div class="vertical-div">
-        </div>
-        <h4>
-          <i class="material-icons">image</i>
-          <p class="fb-blue-text">Photo/Video Album</p>
-        </h4>
-        <div class="vertical-div">
-        </div>
-        <h4>
-          <i class="material-icons">camera_roll</i>
-          <p class="fb-blue-text">Live Video</p>
-        </h4>
-      </div>
-      <div class="posting-mid" (click)="setActive()">
-        <img src="/assets/img/1.jpg" alt="">
-        <textarea name="name" placeholder="What's on your mind, Ralp Dexter?"></textarea>
-      </div>
-      <div class="post-backgrounds">
-        <li class="background-grey"></li>
-        <li class="background-light"></li>
-        <li class="background-purple"></li>
-        <li class="background-rose"></li>
-        <li class="background-black"></li>
-        <li class="background-blue-rose"></li>
-        <li class="background-purple-blue"></li>
-        <li class="background-rose-light"></li>
-        <li class="background-sunset"></li>
-        <li class="background-dark-purple"></li>
-        <li class="background-dark-grey"></li>
-        <li class="background-purple-star"></li>
-        <li class="background-sakura"></li>
-        <li class="background-night-blue"></li>
-        <li class="background-purplecom"></li>
-        <li class="background-lips"></li>
-      </div>
-      <div class="horiz-divider">
-      </div>
-      <div class="posting-bot">
-        <div class="posting-btn-wrap">
-          <button type="button" name="button">
-            <i class="fa fa-image green-text"></i><p>Photo/Video</p>
-          </button>
-          <button type="button" name="button">
-            <i class="fa fa-smile yellow-text"></i><p>Feeling/Activity</p>
-          </button>
-            <button type="button" name="button" [ngClass]="{'hide':textareaIsActive==true}" ><!--  add hide here -->
-            <i class="material-icons" style="font-size:20px">more_horiz</i>
-          </button>
-        </div>
-        <div class="posting-btn-wrap hide" [ngClass]="{'flex':textareaIsActive==true}"><!--change hide to show here -->
-          <button type="button" name="button">
-            <i class="fa fa-map-marker pink-text"></i><p>Check In</p>
-          </button>
-          <button type="button" name="button">
-            <i class="fa fa-users blue-text"></i><p>Tag Friends</p>
-          </button>
-        </div>
-        <div class="posting-btn-wrap hide" [ngClass]="{'flex':textareaIsActive==true}"><!--change hide to show here -->
-          <button type="button" name="button">
-            <i class="fa fa-image purple-text"></i><p>GIF</p>
-          </button>
-          <button type="button" name="button">
-            <i class="fa fa-calendar pink-text"></i><p>Tag Event</p>
-          </button>
-        </div>
-      </div>
-      <div class="posting-submit" [ngClass]="{'flex':textareaIsActive}">
-        <div class="privacy-opt">
-          <i class="material-icons">people</i>
-          <select class="" name="">
-            <option value=""> Friends</option>
-          </select>
-        </div>
-        <button type="button" name="button">Post</button>
-      </div>
-    </div>
-  </div>
+  <app-poster></app-poster>
   <div class="post-frame">
     <div class="post-top">
       <div class="post-top-left">
-        <img src="/assets/img/1.jpg" alt="" class="acc-prof">
+        <img src="./assets/img/1.jpg" alt="" class="acc-prof">
         <div class="acc-name-wrap">
           <h5 class="acc-name">Ralp Dexter Bongato</h5>
           <p>49 mins <i class="material-icons">public</i></p>
@@ -101,7 +16,7 @@
       <p>Lorem ipsum dolor sit amet,non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <div class="file-container">
-      <img src="/assets/img/p1.jpg" alt="">
+      <img src="./assets/img/p1.jpg" alt="">
     </div>
     <div class="interact-button-container">
       <div class="int-btn-wrap">
@@ -123,7 +38,7 @@
     <div class="comments-container">
       <div class="comment-row">
         <div class="main-comment-box">
-          <img src="/assets/img/1.jpg" alt="">
+          <img src="./assets/img/1.jpg" alt="">
           <div class="comment-circle">
             <p><span class="comment-name">Ralp Dexter Bongato</span> hello world hello hi hello usog na ako eh hahahaha isang beses lang ako nakain sa isang araw diet dowt oag may time.100kg na ata ako hahahah hey!!.</p>
           </div>
@@ -134,7 +49,7 @@
       </div>
       <div class="comment-row">
         <div class="main-comment-box">
-          <img src="/assets/img/1.jpg" alt="">
+          <img src="./assets/img/1.jpg" alt="">
           <div class="comment-circle">
             <p><span class="comment-name">Ralp Dexter Bongato</span> hello world hello hi hello usog na ako eh hahahaha isang beses lang ako nakain sa isang araw diet dowt oag may time.100kg na ata ako hahahah hey!!.</p>
           </div>
@@ -144,7 +59,7 @@
         </div>
       </div>
       <div class="comment-form-container">
-        <img src="/assets/img/1.jpg" alt="">
+        <img src="./assets/img/1.jpg" alt="">
         <div class="text-container-comment">
           <textarea placeholder="Write a comment... "></textarea>
         </div>

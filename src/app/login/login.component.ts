@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   SubmitCredentials()
   {
     this.token.setToken();
-    this.app.triggerLoginBtn();
+    this.app.refreshNavState();
     this.route.navigate(['home']);
   }
 

@@ -1,0 +1,133 @@
+.timeline-container
+{
+  display: flex;
+  width: 100%;
+}
+.timeline-left
+{
+  width: 328px;
+  margin-right: 11px;
+}
+.timeline-right
+{
+  /*background: yellow;*/
+  flex:1;
+}
+.review-box
+{
+  background: #fff;
+  padding-top: 15px;
+  box-shadow:border-box;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.review-box-top
+{
+  display: flex;
+  border-bottom: 2px solid #E9EBEE;
+  padding:0px 10px 10px 10px;
+}
+.box-top-mid
+{
+  flex:1;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+  margin:1px 5px 0px 5px;
+  line-height: 19px;
+}
+.box-top-left i
+{
+  background: #4080FF;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 2px;
+  padding:3px;
+}
+.box-top-bottom i
+{
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+.review-box-bottom
+{
+  padding: 10px;
+  display: flex;
+}
+.review-box-bottom i
+{
+  color:rgba(0, 0, 0, 0.2);
+}
+.review-box-bottom p
+{
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+/*intro*/
+.intro-box
+{
+  padding:10px;
+  background: #fff;
+  margin-top: 11px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.intro-box-top i
+{
+  background: #4267B2;
+  padding:5px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.intro-box-top h1
+{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.intro-par
+{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.horizontal-div
+{
+  width: 90%;
+  border-bottom: 1px solid #E9EBEE;
+  margin:0 auto;
+}
+.person-data-row i
+{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  vertical-align: middle;
+}
+.person-data-row
+{
+  margin-top: 5px;
+  display: flex;
+}
+.person-data-row p
+{
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 13px;
+  margin-left: 7px;
+  line-height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 2px;
+}
+.blue-text
+{
+  color: #6273AA;
+}

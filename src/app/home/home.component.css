@@ -1,18 +1,9 @@
 .home-container
 {
-  width: 1010px;
-  margin-left: 70px;
   box-sizing: border-box;
   min-height: 100vh;
   padding:14px 0px;
   display: flex;
-}
-@media (max-width:1300px) {
-  .home-container
-  {
-    margin-left: auto;
-    margin: 0 auto;
-  }
 }
 .left-categ-container
 {

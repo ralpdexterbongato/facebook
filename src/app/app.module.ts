@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes , RouterModule } from '@angular/router';
+import { Routes , RouterModule , CanActivate } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,14 +12,31 @@ import { TokenService } from './services/token.service';
 import { SideCategoriesComponent } from './side-categories/side-categories.component';
 import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import { OtherComponent } from './other/other.component';
+import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TimelineComponent } from './profile/timeline/timeline.component';
+import { PosterComponent } from './home/poster/poster.component';
+
 const routes: Routes = [
   {
     path: '',
     component:LoginComponent,
+    canActivate:[GuestGuard],
   },
   {
     path: 'home',
-    component:HomeComponent
+    component:HomeComponent,
+    canActivate:[AuthGuard],
+  },
+  {
+    path: 'check-your-email',
+    component:ConfirmationComponent,
+  },
+  {
+    path:'profile/:id',
+    component:ProfileComponent,
   }
 ];
 
@@ -31,13 +49,22 @@ const routes: Routes = [
     LatestLogsComponent,
     SideCategoriesComponent,
     NewsfeedComponent,
-    OtherComponent
+    OtherComponent,
+    ConfirmationComponent,
+    ProfileComponent,
+    TimelineComponent,
+    PosterComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(routes,{onSameUrlNavigation:'reload'}),
   ],
-  providers: [TokenService],
+  providers: [
+    TokenService,
+    AuthGuard,
+    GuestGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

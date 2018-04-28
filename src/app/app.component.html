@@ -10,13 +10,13 @@
       </div>
       <div class="header-content-left">
         <div class="nav-wrapper">
-          <div class="profile-wrapper">
-            <img src="/assets/img/2.jpg" alt="">
+          <div class="profile-wrapper" routerLink="profile/2">
+            <img src="./assets/img/2.jpg" alt="">
             <div class="prof-nav">
               Ralp Dexter
             </div>
           </div>
-          <div class="home-nav">
+          <div class="home-nav" routerLink="home">
             Home
           </div>
         </div>
@@ -36,7 +36,7 @@
                 <div class="divider">
                 </div>
                 <li>Create group</li>
-                <li>Manage group</li>
+                <li>New groups</li>
                 <div class="divider">
                 </div>
                 <li>Create adds</li>
@@ -55,14 +55,16 @@
     </div>
   </div>
 </header>
-  <router-outlet></router-outlet>
+  <div [ngClass]="{'outlet-container':signin}">
+    <router-outlet></router-outlet>
+  </div>
   <div class="online-list" *ngIf="signin">
       <h3>YOUR PAGES</h3>
       <ul>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
-            <p>Random Pers</p>
+            <img src="./assets/img/1.jpg" alt="">
+            <p>NG Geeks</p>
           </div>
           <div class="">
             <div class="pages-notif">
@@ -72,8 +74,8 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
-            <p>Random Pers</p>
+            <img src="./assets/img/1.jpg" alt="">
+            <p>Bongato Family</p>
           </div>
           <div class="">
             <div class="pages-notif">
@@ -86,7 +88,7 @@
       <ul>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Ralp Dexter Bongato</p>
           </div>
           <div class="dot">
@@ -94,7 +96,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Abdou Mjr</p>
           </div>
           <div class="dot">
@@ -102,7 +104,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Cham Mancha</p>
           </div>
           <div class="dot">
@@ -110,7 +112,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Danica Melicor</p>
           </div>
           <div class="dot">
@@ -118,7 +120,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Ivan</p>
           </div>
           <div class="dot">
@@ -126,7 +128,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Bibi Bibi</p>
           </div>
           <div class="dot">
@@ -134,7 +136,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Random Pers</p>
           </div>
           <div class="dot">
@@ -145,7 +147,7 @@
       <ul>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Ralp Dexter Bongato</p>
           </div>
           <div class="dot">
@@ -153,7 +155,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Danica Melicor</p>
           </div>
           <div class="dot">
@@ -161,7 +163,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Ivan</p>
           </div>
           <div class="dot">
@@ -169,7 +171,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Bibi Bibi</p>
           </div>
           <div class="dot">
@@ -177,7 +179,7 @@
         </li>
         <li>
           <div class="left-online-list">
-            <img src="/assets/img/1.jpg" alt="">
+            <img src="./assets/img/1.jpg" alt="">
             <p>Random Pers</p>
           </div>
           <div class="dot">

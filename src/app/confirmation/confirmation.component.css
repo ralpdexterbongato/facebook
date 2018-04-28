@@ -1,0 +1,82 @@
+.confirm-sign-container
+{
+  min-height: 100vh;
+  width: 100%;
+}
+.sign-box
+{
+  width: 550px;
+  background: #fff;
+  border-radius: 4px;
+  border:1px solid rgba(0, 0, 0, 0.2);
+  margin: 50px auto auto auto;
+  padding:20px;
+}
+.sign-box h1
+{
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.text-confirm-container > p
+{
+  font-size: 13px;
+}
+.text-confirm-container
+{
+  padding: 20px 0px;
+  line-height:17px;
+  color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.bold
+{
+  font-weight: bold;
+}
+.your-email
+{
+  display: flex;
+  justify-content: center;
+  margin:0 auto;
+  margin:30px 0px 10px 0px;
+  font-size: 14px;
+}
+.your-email h5
+{
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.box-bottom
+{
+  display: flex;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+.box-bottom-left p
+{
+  font-size: 12px;
+  margin-top: 5px;
+  color: #3B5998;
+}
+.box-bottom-right button
+{
+  border:1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  padding:5px 8px;
+  font-weight: 600;
+  background: #f6f7f9;
+}
+.fb-blue-background
+{
+  background: #4267B2!important;
+}
+.darker-color
+{
+  color: rgba(0, 0, 0, 0.6);
+}
+.white-color
+{
+  color: #fff;
+}

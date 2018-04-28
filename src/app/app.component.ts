@@ -13,21 +13,21 @@ export class AppComponent {
   menuIsActive = false;
 
   ngOnInit() {
-    this.triggerLoginBtn();
+    this.refreshNavState();
   }
 
   toggleMenu()
   {
     this.menuIsActive = !this.menuIsActive;
   }
-  triggerLoginBtn()
+  refreshNavState()
   {
     this.signin =  this.token.isLoggedIn();
   }
   logout()
   {
     this.token.removeToken();
-    this.triggerLoginBtn();
+    this.refreshNavState();
     this.menuIsActive = false;
     this.route.navigate(['']);
   }
