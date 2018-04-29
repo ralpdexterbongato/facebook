@@ -18,6 +18,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
 import { PosterComponent } from './home/poster/poster.component';
+import { PostedComponent } from './posted/posted.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {
@@ -53,7 +55,9 @@ const routes: Routes = [
     ConfirmationComponent,
     ProfileComponent,
     TimelineComponent,
-    PosterComponent
+    PosterComponent,
+    PostedComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

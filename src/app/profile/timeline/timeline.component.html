@@ -17,32 +17,133 @@
         <p>43 items for you to review</p>
       </div>
     </div>
-    <div class="intro-box">
-      <div class="intro-box-top">
-        <i class="fa fa-globe"></i> <h1>Intro</h1>
-      </div>
-      <div class="intro-par">
-        <p>Lorem ipsum dolor sit amet, consecteto consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="horizontal-div">
-      </div>
-      <div class="profile-personal-data">
-        <div class="person-data-row">
-          <i class="material-icons">school</i><p>Studied Bachelor of Science in Information Technology at <span class="blue-text">Mater Dei College</span></p>
+    <div class="big-left-box">
+      <div class="intro-box">
+        <div class="intro-box-top">
+          <i class="fa fa-globe"></i> <h1>Intro</h1>
         </div>
-        <div class="person-data-row">
-          <i class="material-icons">home</i><p>Lives in <span class="blue-text">Clarin, Bohol, Philippines</span></p>
+        <div class="intro-par">
+          <p>Lorem ipsum dolor sit amet, consecteto consequat. Duis aute irure dolor in reprehenderit in voluptat</p>
         </div>
-        <div class="person-data-row">
-          <i class="material-icons">location_on</i><p>From <span class="blue-text">Clarin, Bohol, Philippines</span></p>
+        <div class="horizontal-div">
         </div>
-        <div class="person-data-row">
-          <i class="material-icons">web</i><p>Followed by <span class="blue-text">1,000 people</span></p>
+        <div class="profile-personal-data">
+          <div class="person-data-row">
+            <i class="fa fa-graduation-cap"></i><p>Studied Bachelor of Science in Information Technology at <span class="blue-text">Mater Dei College</span></p>
+          </div>
+          <div class="person-data-row">
+            <i class="fa fa-home"></i><p>Lives in <span class="blue-text">Clarin, Bohol, Philippines</span></p>
+          </div>
+          <div class="person-data-row">
+            <i class="fas fa-map-marker"></i><p>From <span class="blue-text">Clarin, Bohol, Philippines</span></p>
+          </div>
+          <div class="person-data-row">
+            <i class="fa fa-tablet-alt"></i><p>Followed by <span class="blue-text">1,000 people</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-photo-container">
+        <div class="feature-img-wrap">
+          <img src="./assets/img/f1.jpg" alt="">
+        </div>
+        <div class="feature-img-wrap">
+          <img src="./assets/img/f2.jpg" alt="">
+        </div>
+      </div>
+      <div class="websites-container">
+        <p><i class="fa fa-globe"></i>ralpdexterbongato.github.io</p>
+      </div>
+    </div>
+    <div class="photos-box">
+      <div class="photos-box-top">
+        <div class="img-logo">
+          <i class="fa fa-image"></i>
+          <p>Photos</p>
+        </div>
+        <h4 class="blue-text">Add Photo</h4>
+      </div>
+      <div class="image-boxes-container">
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
+        </div>
+        <div class="img-box">
+          <img src="" alt="">
         </div>
       </div>
     </div>
+    <div class="friends-box">
+      <div class="friends-box-top">
+        <div class="friends-top-left">
+          <i class="material-icons">people</i>
+          <h4>Friends</h4>
+          <p>3,120</p>
+        </div>
+        <p class="friends-top-right blue-text">Find Friends</p>
+      </div>
+      <div class="friends-content-box">
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+        <div class="friends-img-box">
+          <img src="" alt="">
+        </div>
+      </div>
+      <div class="show-common-box">
+        <div class="common-box">
+          <h3><i class="fa fa-tablet-alt"></i></h3>
+          <p>See what you have in <br>common with your friends.</p>
+        </div>
+        <div class="common-box-btn">
+          <button type="button" name="button">View</button>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
   </div>
   <div class="timeline-right">
-    
+    <app-poster [showbtn]="true"></app-poster>
+    <app-posted></app-posted>
   </div>
 </div>

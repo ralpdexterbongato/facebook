@@ -108,6 +108,7 @@ header.active
   padding:2px;
   cursor: pointer;
   border-radius: 2px;
+  outline: none;
 }
 .profile-wrapper:hover
 {

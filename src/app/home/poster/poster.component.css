@@ -258,17 +258,17 @@
   top: 2px;
   left: 5px;
   color: #4B4F56;
-  font-size: 22px;
+  font-size: 18px;
   margin-top: 2px;
 }
 .privacy-opt select
 {
   font-weight: 600;
   color: #4B4F56;
-  border-radius: 4px;
-  padding:5px 6px 5px 0px;
+  border-radius: 2px;
+  padding:3px 4px 3px 0px;
   border:1px solid rgba(0, 0, 0, 0.2);
-  font-size: 13px;
+  font-size: 12px;
   padding-left: 25px;
 }
 
@@ -300,7 +300,7 @@
   margin-right: 6px;
   border-radius: 26px;
   display: flex;
-  padding:0px 15px;
+  padding:0px 10px;
   font-weight: 600;
   outline: none;
   font-size: 12px;

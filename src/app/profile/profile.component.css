@@ -10,14 +10,16 @@
 }
 .profile-container
 {
-  max-width:880px;
+  max-width:850px;
   min-height: 100vh;
 }
 .profile-cover
 {
-  background:rgba(0, 0, 0, 0.2);
   flex:1;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: contain;
+  background-size:auto;
 }
 .cover-options
 {
