@@ -1,52 +1,82 @@
 <div class="reg-container">
   <h2 class="signup-title">Create a New Account</h2>
   <p class="signup-des">It's free and always will be.</p>
-  <div class="form-container">
+  <div  class="form-container" FormsModule="regForm">
     <div class="input-row">
-      <input type="text" name="" class="space-right" placeholder="First name" value="">
-      <input type="text" name="" placeholder="Last name"value="">
+      <input type="text" [(ngModel)]="form.fname"  class="space-right" placeholder="First name" value="">
+      <input type="text" [(ngModel)]="form.lname"  placeholder="Last name" value="">
     </div>
     <div class="input-row">
-      <input type="text" (keyup)="checkIfEmail()" [(ngModel)]="contact" name="" placeholder="Mobile number or email" value="">
+      <input type="text" (keyup)="checkIfEmail()" [(ngModel)]="form.email"  placeholder="Mobile number or email" value="">
     </div>
     <div class="input-row" *ngIf="validemail">
-      <input type="text" placeholder="Re-enter email" value="">
+      <input type="text" [(ngModel)]="form.email_confirmation" placeholder="Re-enter email" value="">
     </div>
     <div class="input-row">
-      <input type="text" name="" placeholder="New Password" value="">
+      <input type="password" [(ngModel)]="form.password" placeholder="New Password" value="">
     </div>
     <p class="birthday">Birthday</p>
     <div class="input-row birthday-options">
-      <select class="" name="">
-        <option value="1">Jan</option>
-        <option value="2">Feb</option>
-        <option value="3">Mar</option>
-        <option value="4">Apr</option>
-        <option value="5">May</option>
-        <option value="6">Jun</option>
-        <option value="7">Jul</option>
-        <option value="8">Aug</option>
-        <option value="9">Sep</option>
+      <select [(ngModel)]="form.month">
+        <option value="01">Jan</option>
+        <option value="02">Feb</option>
+        <option value="03">Mar</option>
+        <option value="04">Apr</option>
+        <option value="05">May</option>
+        <option value="06">Jun</option>
+        <option value="07">Jul</option>
+        <option value="08">Aug</option>
+        <option value="09">Sep</option>
         <option value="10">Oct</option>
         <option value="11">Nov</option>
         <option value="12">Dec</option>
       </select>
-      <select class="" name="">
-        <option value="" *ngFor="let day of days">{{day}}</option>
+      <select [(ngModel)]="form.day">
+        <option value="01" >01</option>
+        <option value="02" >02</option>
+        <option value="03" >02</option>
+        <option value="04" >02</option>
+        <option value="05" >02</option>
+        <option value="06" >02</option>
+        <option value="07" >02</option>
+        <option value="08" >02</option>
+        <option value="09" >02</option>
+        <option value="10" >02</option>
+        <option value="11" >02</option>
+        <option value="12" >02</option>
+        <option value="21" >02</option>
+        <option value="14" >02</option>
+        <option value="15" >02</option>
+        <option value="16" >02</option>
+        <option value="17" >02</option>
+        <option value="18" >02</option>
+        <option value="19" >02</option>
+        <option value="20" >02</option>
+        <option value="21" >02</option>
+        <option value="22" >02</option>
+        <option value="23" >02</option>
+        <option value="24" >02</option>
+        <option value="25" >02</option>
+        <option value="26" >02</option>
+        <option value="27" >02</option>
+        <option value="28" >02</option>
+        <option value="29" >02</option>
+        <option value="30" >02</option>
+        <option value="31" >02</option>
       </select>
-      <select class="" name="">
-        <option value="" *ngFor="let year of years.reverse()">{{year}}</option>
+      <select [(ngModel)]="form.year">
+        <option value="{{year}}" *ngFor="let year of years.reverse()">{{year}}</option>
       </select>
       <p>Why do i need to provide my <br>birthday?</p>
     </div>
     <div class="input-row input-radio">
-      <input type="radio" name="Female" value="">
+      <input type="radio" value="0" [(ngModel)]="form.gender">
       <label>Female</label>
-      <input type="radio" name="Female" value="">
+      <input type="radio" value="1" [(ngModel)]="form.gender">
       <label>Male</label>
     </div>
     <p class="reg-parag">By clicking Sign Up, you agree to our <span class="blue-text">Terms, Data Policy</span> and<br> <span class="blue-text">Cookies Policy</span>. You may receive SMS Notifications from us and<br> can opt out any time.</p>
-    <button type="button" [(disabled)]="submitting" (click)="SubmitRegister()" name="button">Sign Up</button>
+    <button type="button" (click)="SubmitRegister()" [ngClass]="{'disabled':submitting}" [(disabled)]="submitting"  name="button">Sign Up</button>
   </div>
   <div class="create-page-text">
     <p><span class="blue-text">Create a Page</span> for a celebrity, band or business.</p>

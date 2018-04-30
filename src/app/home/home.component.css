@@ -7,8 +7,26 @@
 }
 .left-categ-container
 {
-  min-width: 188px;
+  width: 188px;
   margin-right: 10px;
+}
+.left-categ-wrap.active
+{
+  position: fixed;
+  bottom: 50px;
+}
+.left-categ-wrap
+{
+  width: 188px;
+}
+.other-wrap
+{
+  width: 310px;
+}
+.other-wrap.active
+{
+  position: fixed;
+  bottom: 80px;
 }
 .other-content
 {

@@ -8,6 +8,15 @@
   width: 328px;
   margin-right: 11px;
 }
+.timeline-left-content-container.active
+{
+  position: fixed;
+  bottom: 50px;
+}
+.timeline-left-content-container
+{
+  width: 328px;
+}
 .timeline-right
 {
   /*background: yellow;*/

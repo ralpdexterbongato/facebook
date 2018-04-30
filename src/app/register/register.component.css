@@ -79,6 +79,13 @@
 {
   color: #3A5998;
 }
+.form-container button.disabled
+{
+  background: #f2f3f5;
+  box-shadow: none;
+  color: #aeaeae;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
 .form-container button
 {
   padding:7px 10px;

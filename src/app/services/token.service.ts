@@ -5,9 +5,9 @@ export class TokenService {
 
   constructor() { }
 
-  setToken()
+  setToken(token)
   {
-    localStorage.setItem('token','sample');
+    localStorage.setItem('token',token);
   }
   removeToken()
   {
@@ -20,12 +20,26 @@ export class TokenService {
   isLoggedIn()
   {
     var token = this.getToken();
-    if(token == 'sample')
+    if(token)
     {
-      return true;
+       var decodedPayload = this.getPayLoad(token);
+      if(decodedPayload)
+      {
+        return (decodedPayload.iss == 'http://127.0.0.1:8000/api/register'||'http://127.0.0.1:8000/api/login' ? true : false);
+      }
     }else
     {
       return false;
     }
+  }
+  getPayLoad(token)
+  {
+    var undecoded = token.split('.')[1];
+    return this.decodePayload(undecoded);
+  }
+  decodePayload(undecoded)
+  {
+    var decoded = JSON.parse(atob(undecoded));
+    return decoded;
   }
 }
