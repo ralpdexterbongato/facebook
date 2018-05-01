@@ -20,6 +20,7 @@ header.active
   width: 1010px;
   margin-left: 70px;
   box-sizing: border-box;
+  justify-content: space-between;
 }
 @media (max-width:1300px) {
   .header-content-container
@@ -34,7 +35,6 @@ header.active
 }
 .header-content-left
 {
-  margin-left: 160px;
   display: flex;
   box-sizing: border-box;
 }

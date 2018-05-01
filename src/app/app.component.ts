@@ -8,14 +8,16 @@ import { TokenService } from './services/token.service';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private route:Router,private token:TokenService){}
+  constructor(
+    private route:Router,
+    private token:TokenService,
+  ){}
   signin = false;
   menuIsActive = false;
 
   ngOnInit() {
     this.refreshNavState();
   }
-
   toggleMenu()
   {
     this.menuIsActive = !this.menuIsActive;
