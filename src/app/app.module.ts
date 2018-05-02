@@ -16,6 +16,7 @@ import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 import { OtherComponent } from './other/other.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GuestGuard } from './guards/guest.guard';
+import { VerifiedGuard } from './guards/verified.guard';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
@@ -32,7 +33,7 @@ const routes: Routes = [
   {
     path: 'home',
     component:HomeComponent,
-    canActivate:[AuthGuard],
+    canActivate:[AuthGuard,VerifiedGuard],
   },
   {
     path: 'check-your-email',
@@ -71,11 +72,12 @@ const routes: Routes = [
     TokenService,
     AuthGuard,
     GuestGuard,
+    VerifiedGuard,
     {
      provide: HTTP_INTERCEPTORS,
      useClass: MyHttpInterceptor,
      multi: true,
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

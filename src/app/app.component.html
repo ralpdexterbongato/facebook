@@ -1,9 +1,9 @@
 <header [ngClass]="{active:signin}">
   <div class="loggedInHeader" *ngIf="signin">
-    <div class="header-content-container">
+    <div class="header-content-container" [ngClass]="{'active':isVerified==false}">
       <div class="header-content-left">
         <i class="fab fa-facebook logo"></i>
-        <div class="search-person-container">
+        <div class="search-person-container" *ngIf="isVerified">
           <input type="text" name="" value="" placeholder="Search">
           <button type="button" name="button" ><i class="fas fa-search"></i></button>
         </div>
@@ -13,14 +13,14 @@
           <div class="profile-wrapper" routerLink="profile/2">
             <img src="./assets/img/2.jpg" alt="">
             <div class="prof-nav">
-              Ralp Dexter
+              {{userFname}}
             </div>
           </div>
           <div class="home-nav" routerLink="home">
             Home
           </div>
         </div>
-        <div class="icons-wrapper">
+        <div class="icons-wrapper" *ngIf="isVerified">
           <i class="material-icons">people</i>
           <i class="fab fa-facebook-messenger"></i>
           <i class="material-icons">public</i>
@@ -55,10 +55,10 @@
     </div>
   </div>
 </header>
-  <div [ngClass]="{'outlet-container':signin}">
+  <div [ngClass]="signin==true && isVerified==false ? 'outlet-container active':signin==true?'outlet-container':''">
     <router-outlet></router-outlet>
   </div>
-  <div class="online-list" *ngIf="signin">
+  <div class="online-list" *ngIf="signin && isVerified">
       <h3>YOUR PAGES</h3>
       <ul>
         <li>
@@ -193,7 +193,7 @@
       </div>
     </div>
   </div>
-  <div class="online-list-trigger" *ngIf="signin">
+  <div class="online-list-trigger" *ngIf="signin && isVerified">
     <div class="on-list-left">
       <div class="trigdot">
       </div>

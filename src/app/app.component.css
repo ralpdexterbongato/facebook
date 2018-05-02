@@ -22,6 +22,11 @@ header.active
   box-sizing: border-box;
   justify-content: space-between;
 }
+.header-content-container.active
+{
+  margin-left: auto;
+  margin:0 auto;
+}
 @media (max-width:1300px) {
   .header-content-container
   {
@@ -384,11 +389,15 @@ header.active
 {
   padding-top: 2px;
 }
-
 .outlet-container
 {
   width: 1010px;
   margin-left: 70px;
+}
+.outlet-container.active
+{
+  margin-left: auto;
+  margin: 0 auto;
 }
 @media (max-width:1300px) {
   .outlet-container
