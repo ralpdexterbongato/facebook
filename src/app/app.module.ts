@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyHttpInterceptor } from './httpInterceptor';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +21,6 @@ import { VerifiedGuard } from './guards/verified.guard';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
-import { PosterComponent } from './home/poster/poster.component';
 import { PostedComponent } from './posted/posted.component';
 import { FooterComponent } from './footer/footer.component';
 import { VerifysuccessComponent } from './verifysuccess/verifysuccess.component';
@@ -66,7 +66,6 @@ const routes: Routes = [
     ConfirmationComponent,
     ProfileComponent,
     TimelineComponent,
-    PosterComponent,
     PostedComponent,
     FooterComponent,
     VerifysuccessComponent,

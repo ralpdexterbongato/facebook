@@ -18,6 +18,7 @@ export class AppComponent {
   menuIsActive = false;
   isVerified = false;
   userFname = '';
+  userId = '';
   ngOnInit() {
     this.refreshNavState();
   }
@@ -31,6 +32,7 @@ export class AppComponent {
    this.isVerified = this.token.checkIfVerified();
    this.userFname = this.token.getUserFName();
    this.signin =  this.token.isLoggedIn();
+   this.userId = this.token.getUserId();
   }
   logout()
   {

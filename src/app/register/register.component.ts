@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TokenService } from '../services/token.service';
 import { AppComponent } from '../app.component';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
