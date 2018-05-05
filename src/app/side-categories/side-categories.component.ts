@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TokenService } from '../services/token.service';
 @Component({
   selector: 'app-side-categories',
   templateUrl: './side-categories.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideCategoriesComponent implements OnInit {
 
-  constructor() { }
+  fullname='';
+  constructor(private token:TokenService) { }
 
   ngOnInit() {
+    this.fullname = this.token.getUserFName()+' '+this.token.getUserLName();
   }
-
 }

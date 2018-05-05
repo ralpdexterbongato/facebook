@@ -23,6 +23,7 @@ import { TimelineComponent } from './profile/timeline/timeline.component';
 import { PosterComponent } from './home/poster/poster.component';
 import { PostedComponent } from './posted/posted.component';
 import { FooterComponent } from './footer/footer.component';
+import { VerifysuccessComponent } from './verifysuccess/verifysuccess.component';
 
 const routes: Routes = [
   {
@@ -38,11 +39,18 @@ const routes: Routes = [
   {
     path: 'check-your-email',
     component:ConfirmationComponent,
+    // canActivate:[],
   },
   {
     path:'profile/:id',
     component:ProfileComponent,
-  }
+  },
+  {
+    path:'verified',
+    component:VerifysuccessComponent,
+  },
+
+
 ];
 
 @NgModule({
@@ -61,6 +69,7 @@ const routes: Routes = [
     PosterComponent,
     PostedComponent,
     FooterComponent,
+    VerifysuccessComponent,
   ],
   imports: [
     BrowserModule,

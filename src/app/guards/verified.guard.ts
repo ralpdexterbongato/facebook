@@ -12,11 +12,11 @@ export class VerifiedGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):boolean {
-      if(!this.token.checkIfVerified())
-      {
-        this.route.navigate(['check-your-email']);
-        return false;
-      }
+        if(!this.token.checkIfVerified())
+        {
+          this.route.navigate(['check-your-email']);
+          return false;
+        }
       return true;
   }
 }

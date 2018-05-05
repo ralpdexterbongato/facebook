@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { TokenService } from './services/token.service';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -21,21 +21,32 @@ export class AppComponent {
   ngOnInit() {
     this.refreshNavState();
   }
+
   toggleMenu()
   {
     this.menuIsActive = !this.menuIsActive;
   }
   refreshNavState()
   {
-    this.isVerified = this.token.checkIfVerified();
-    this.userFname = this.token.getUserFName();
-    this.signin =  this.token.isLoggedIn();
+   this.isVerified = this.token.checkIfVerified();
+   this.userFname = this.token.getUserFName();
+   this.signin =  this.token.isLoggedIn();
   }
   logout()
   {
-    this.token.removeToken();
-    this.refreshNavState();
-    this.menuIsActive = false;
-    this.route.navigate(['']);
+    this.http.post(`//127.0.0.1:8000/api/logout`,{}).subscribe(
+      data=>{
+        this.token.removeToken();
+        this.refreshNavState();
+        this.menuIsActive = false;
+        this.route.navigate(['']);
+      },
+      error=>{
+        this.token.removeToken();
+        this.refreshNavState();
+        this.menuIsActive = false;
+        this.route.navigate(['']);
+      }
+    )
   }
 }

@@ -21,8 +21,8 @@
       </h4>
     </div>
     <div class="posting-mid" (click)="setActive()">
-      <img src="./assets/img/1.jpg" alt="">
-      <textarea name="name" placeholder="What's on your mind, Ralp Dexter?"></textarea>
+      <img src="./assets/img/profile.jpg" alt="">
+      <textarea name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>
     </div>
     <div class="post-backgrounds">
       <li class="background-grey"></li>
@@ -80,7 +80,7 @@
           <option value=""> Friends</option>
         </select>
       </div>
-      <button type="button" name="button">Post</button>
+      <button type="button" name="button" [disabled]="postext==''?true:false">Post</button>
     </div>
   </div>
 </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { TokenService } from '../services/token.service';
+import { AppComponent } from '../app.component';
 import * as $ from 'jquery';
 
 @Component({
@@ -9,12 +13,27 @@ import * as $ from 'jquery';
 
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private route:Router,
+    private token:TokenService,
+    private http:HttpClient,
+    private app:AppComponent,
+  ) { }
+  sk = '';
+  welcome =false;
   ngOnInit() {
     this.scrollTracker();
+    this.route.routerState.root
+      .queryParams
+      .subscribe(params => {
+        this.sk = params['sk'];
+        this.showWelcomeOrNot();
+      });
   }
-
+  showWelcomeOrNot()
+  {
+    this.sk == 'welcome'? this.welcome = true:this.welcome = false;
+  }
   scrollTracker()
   {
     $(window).scroll(function(e){

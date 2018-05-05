@@ -25,6 +25,13 @@ export class TimelineComponent implements OnInit {
       {
         $('.timeline-left-content-container').removeClass('active');
       }
-    })
+      if(scroll > 310)
+      {
+        $('.timelineoptions').addClass('active');
+      }else
+      {
+        $('.timelineoptions').removeClass('active');
+      }
+    });
   }
 }

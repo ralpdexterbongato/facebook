@@ -9,15 +9,13 @@ export class OtherComponent implements OnInit {
 
   constructor(private token:TokenService) { }
 
-  userfname = '';
-  userlname = '';
+  fullname='';
   ngOnInit() {
     this.getFullName();
   }
 
   getFullName()
   {
-    this.userfname = this.token.getUserFName();
-    this.userlname = this.token.getUserFName();
+    this.fullname = this.token.getUserFName()+' '+this.token.getUserLName();
   }
 }

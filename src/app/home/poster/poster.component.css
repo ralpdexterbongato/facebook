@@ -237,12 +237,20 @@
   border-left: none;
   outline: none;
 }
+.posting-submit button:disabled
+{
+  background: #9CB4D8!important;
+}
+.posting-submit button:hover
+{
+  background: #365899;
+}
 .posting-submit button
 {
-  padding:0px 20px;
+  padding:0px 17px;
   border-radius: 2px;
   color: #fff;
-  background: #4267B2;
+  background: #3D64AD;
   border-style: none;
   border:1px solid rgba(0, 0, 0, 0.2);
   font-weight: 600;

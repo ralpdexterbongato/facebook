@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 @Injectable()
 export class TokenService {
 
@@ -57,6 +56,7 @@ export class TokenService {
     if(token)
     {
       var decoded = this.getPayLoad(token);
+      console.log(decoded);
       return decoded.userfname;
     }
   }
