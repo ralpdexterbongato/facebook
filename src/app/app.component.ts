@@ -19,6 +19,7 @@ export class AppComponent {
   isVerified = false;
   userFname = '';
   userId = '';
+  usergender ='';
   ngOnInit() {
     this.refreshNavState();
   }
@@ -33,6 +34,7 @@ export class AppComponent {
    this.userFname = this.token.getUserFName();
    this.signin =  this.token.isLoggedIn();
    this.userId = this.token.getUserId();
+   this.usergender = this.token.getGender();
   }
   logout()
   {

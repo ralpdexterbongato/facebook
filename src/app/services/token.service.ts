@@ -96,4 +96,13 @@ export class TokenService {
       return decoded.useremail;
     }
   }
+  getGender()
+  {
+    var token = this.getToken();
+    if(token)
+    {
+      var decoded = this.getPayLoad(token);
+      return decoded.gender;
+    }
+  }
 }

@@ -85,7 +85,6 @@
 {
   padding:10px;
   background: #fff;
-  margin-top: 11px;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
@@ -135,7 +134,7 @@
 }
 .person-data-row
 {
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
 }
 .person-data-row p
@@ -152,6 +151,10 @@
 {
   color: #365899;
 }
+.skyblue-text
+{
+  color: #4080FF!important;
+}
 .profile-personal-data
 {
   padding-top: 10px;
@@ -166,6 +169,10 @@
 .feature-img-wrap
 {
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 110px;
+  width: 100%;
+  margin-top: 5px;
 }
 .feature-img-wrap img
 {
@@ -202,28 +209,9 @@
 }
 
 /*photos*/
-.photos-box
+.green-background
 {
-  background: #fff;
-  margin-top: 10px;
-  padding:5px;
-  border-radius: 2px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
-}
-.photos-box-top
-{
-  padding:15px 10px 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.photos-box-top i
-{
-  font-size: 13px;
-  padding:5px;
-  margin-right: 5px;
-  color: #fff;
   background:#A5D950;
-  border-radius: 50%;
 }
 .img-logo i,.img-logo p
 {
@@ -252,7 +240,7 @@
   background: rgba(0, 0, 0, 0.2);
 }
 /*friends*/
-.friends-box
+.prof-side-box
 {
   border-radius: 2px;
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
@@ -260,37 +248,44 @@
   padding:5px;
   margin-top: 10px;
 }
-.friends-box-top
+.prof-side-box-top
 {
-  padding: 15px 10px 10px;
+  padding: 7px 7px 7px;
   justify-content: space-between;
   display: flex;
 }
-.friends-box-top > p
+.prof-side-box-top > p
 {
   font-size: 12px;
 }
-.friends-top-right
+.prof-top-right
 {
-  margin-top: 5px;
+  margin-top: 7px;
 }
-.friends-top-left i
+.prof-top-left i
 {
-  font-size: 15px;
-  padding:5px;
+  font-size: 13px;
+  padding:8px 7px 7px 7px;
+  text-align: center;
+  height: 14px;
+  width: 15px;
   border-radius: 50%;
   color: #fff;
-  background: #F50E6B;
   display: inline-block;
   vertical-align: middle;
 }
-.friends-top-left h4
+.pink-background
+{
+  background: #F50E6B;
+}
+.prof-top-left h4
 {
   display: inline-block;
   vertical-align: middle;
   font-size: 15px;
+  margin-left: 5px;
 }
-.friends-top-left p
+.prof-top-left p
 {
   display: inline-block;
   vertical-align: middle;
@@ -409,4 +404,8 @@
 {
   margin-left: 8px;
   color: #445C8F;
+}
+.orange-background
+{
+  background: #FB724B;
 }

@@ -8,11 +8,11 @@
         <div class="input-wrapper">
           <div class="email-box">
             <label>Email or Phone</label>
-            <input type="email" [(ngModel)]="loginForm.email" value="">
+            <input type="email" (keyup.enter)="SubmitCredentials()" [(ngModel)]="loginForm.email" value="">
           </div>
           <div class="pass-box">
             <label>Password</label>
-            <input type="password" [(ngModel)]="loginForm.password" value="">
+            <input type="password" (keyup.enter)="SubmitCredentials()" [(ngModel)]="loginForm.password" value="">
             <a class="forgot" href="#">Forgot account?</a>
           </div>
           <div class="">

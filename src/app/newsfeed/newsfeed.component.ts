@@ -11,5 +11,18 @@ export class NewsfeedComponent implements OnInit {
   ngOnInit() {
   }
 
+  textareaIsActive= false;
+  postext ='';
+  postBackground=null;
+  postPrivacy='1';
+  tags = [];
 
+  setActive()
+  {
+    this.textareaIsActive = true;
+  }
+  setInActive()
+  {
+    this.textareaIsActive = false;
+  }
 }

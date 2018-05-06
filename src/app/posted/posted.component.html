@@ -21,8 +21,9 @@
       </h4>
     </div>
     <div class="posting-mid">
-      <img src="./assets/img/profile.jpg" alt="">
-      <textarea name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>
+      <img src="./assets/img/profile.jpg" alt="" *ngIf="usergender == '1'">
+      <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="usergender == '0'">
+      <textarea name="name" [(ngModel)]="postext" placeholder="What's on your mind, {{currentuserFname}}?"></textarea>
     </div>
     <div class="post-backgrounds">
       <li class="background-grey"></li>
@@ -90,10 +91,15 @@
 <div class="post-frame" *ngFor="let posting of Postings">
   <div class="post-top">
     <div class="post-top-left">
-      <img src="./assets/img/profile.jpg" alt="" class="acc-prof">
+      <img src="./assets/img/profile.jpg" alt="" class="acc-prof" *ngIf="posting.poster.gender == '1'">
+      <img src="./assets/img/profile-fe.jpg" alt="" class="acc-prof" *ngIf="posting.poster.gender == '0'">
       <div class="acc-name-wrap">
         <h5 class="acc-name">{{posting.poster.fname}} {{posting.poster.lname}}</h5>
-        <p>49 mins <i class="material-icons">public</i></p>
+        <p>{{posting.post[0].created_at}}
+          <i class="material-icons" *ngIf="posting.post[0].privacy == 0">public</i>
+          <i class="material-icons" *ngIf="posting.post[0].privacy == 1">people</i>
+          <i class="material-icons" *ngIf="posting.post[0].privacy == 2">lock</i>
+        </p>
       </div>
       <!-- <p> is with <span class="fb-blue-text"> Jiro Zargoza</span></p> -->
     </div>
@@ -117,15 +123,15 @@
       <p>Comment</p>
     </div>
   </div>
-  <div class="counter-box">
+  <!-- <div class="counter-box">
     <i class="fa fa-thumbs-up"></i> <p>300</p>
   </div>
   <div class="hor-div-container">
     <div class="horiz-divider">
     </div>
-  </div>
+  </div> -->
   <div class="comments-container">
-    <div class="comment-row">
+    <!-- <div class="comment-row">
       <div class="main-comment-box">
         <img src="./assets/img/1.jpg" alt="">
         <div class="comment-circle">
@@ -135,18 +141,7 @@
       <div class="comment-actions">
         <p>Like</p><p>Reply</p><h6>50m</h6>
       </div>
-    </div>
-    <div class="comment-row">
-      <div class="main-comment-box">
-        <img src="./assets/img/1.jpg" alt="">
-        <div class="comment-circle">
-          <p><span class="comment-name">Ralp Dexter Bongato</span> hello world hello hi hello usog na ako eh hahahaha isang beses lang ako nakain sa isang araw diet dowt oag may time.100kg na ata ako hahahah hey!!.</p>
-        </div>
-      </div>
-      <div class="comment-actions">
-        <p>Like</p><p>Reply</p><h6>50m</h6>
-      </div>
-    </div>
+    </div> -->
     <div class="comment-form-container">
       <img src="./assets/img/1.jpg" alt="">
       <div class="text-container-comment">

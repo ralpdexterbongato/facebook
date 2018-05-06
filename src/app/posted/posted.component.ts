@@ -16,7 +16,10 @@ export class PostedComponent implements OnInit {
   textareaIsActive= false;
   profileId = null;
   currentuserID = null;
+  currentuserFname='';
   Postings =[];
+
+  usergender ='';
   constructor(private http: HttpClient,
     private activated: ActivatedRoute,
     private token: TokenService
@@ -24,13 +27,26 @@ export class PostedComponent implements OnInit {
      this.activated.paramMap.subscribe(
       params=>{
           this.profileId = params.get('id');
+          this.getProfilePost();
+          this.getCurrentUsersID();
+          this.getCurrentUserGender();
+          this.getCurrentUserFname();
       }
     )
   }
 
   ngOnInit() {
-    this.getProfilePost();
-    this.getCurrentUsersID();
+    // this.getProfilePost();
+    // this.getCurrentUsersID();
+    // this.getCurrentUserGender();
+  }
+  getCurrentUserFname()
+  {
+    this.currentuserFname = this.token.getUserFName();
+  }
+  getCurrentUserGender()
+  {
+    this.usergender = this.token.getGender();
   }
   getCurrentUsersID()
   {

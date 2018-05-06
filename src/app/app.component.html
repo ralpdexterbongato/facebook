@@ -11,7 +11,8 @@
       <div class="header-content-right">
         <div class="nav-wrapper">
           <div class="profile-wrapper" routerLink="profile/{{userId}}">
-            <img src="./assets/img/profile.jpg" alt="">
+            <img src="./assets/img/profile.jpg" alt="" *ngIf="usergender == '1'">
+            <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="usergender == '0'">
             <div class="prof-nav">
               {{userFname}}
             </div>

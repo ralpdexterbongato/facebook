@@ -18,7 +18,7 @@ export class TimelineComponent implements OnInit {
     $(window).scroll(function(e)
     {
       var scroll = $(window).scrollTop();
-      if(scroll > 1420)
+      if(scroll > 620)
       {
         $('.timeline-left-content-container').addClass('active');
       }else

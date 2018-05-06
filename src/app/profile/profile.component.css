@@ -35,12 +35,90 @@
   background: #f6f7f9;
   font-size: 12px;
   font-weight: bold;
-  border:1px solid rgba(0, 0, 0, 0.2);
+  border-style: none;
   border-radius: 2px;
 }
 .cover-op-left
 {
   margin-right: 10px;
+}
+.cover-op-left button
+{
+  border:1px solid rgba(0, 0, 0, 0.5);
+}
+.cover-op-left button p
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.cover-op-left button i
+{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  margin-right: 5px;
+  color: #4A4E55;
+}
+.prof-btns-wrapper:hover .prof-btns-dropbox
+{
+  display: block;
+}
+.prof-btns-wrapper
+{
+  position: relative;
+}
+.prof-btns-dropbox ul:after,
+.prof-btns-dropbox ul:before {
+	bottom: 100%;
+	left: 15px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.prof-btns-dropbox ul:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #fff;
+	border-width: 8px;
+	margin-left: 0px;
+}
+.prof-btns-dropbox ul:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color:rgba(0, 0, 0, 0.1);
+	border-width: 10px;
+	margin-left: -2px;
+}
+.prof-btns-dropbox
+{
+  border-radius: 1px;
+  position: absolute;
+  bottom: -67px;
+  left: 0;
+  width: 150px;
+  padding-top: 20px;
+  font-size: 13px;
+  display: none;
+}
+.prof-btns-dropbox ul
+{
+  padding:5px 0px;
+  border-radius: 1px;
+  background: #fff!important;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+.prof-btns-dropbox ul li:hover
+{
+  background: #4266B3;
+  color: #fff;
+}
+.prof-btns-dropbox ul li
+{
+  padding:5px 5px 5px 20px;
+  color: #4A4E55;
+  cursor: pointer;
 }
 .activity-log-btn
 {
@@ -67,6 +145,11 @@
 .cover-op-right
 {
   display: flex;
+}
+.cover-op-right
+{
+  border:1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
 }
 .profile-navs-container
 {
@@ -129,6 +212,7 @@
   position: absolute;
   top: -72px;
   right: -255px;
+  left: 200px;
   color: #fff;
 }
 .profname h2
@@ -144,4 +228,15 @@
 .profile-data-container
 {
   margin-top: 13px;
+}
+.message-btn i,.message-btn p
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.message-btn i
+{
+  font-size: 16px;
+  margin-right:5px;
+  color: #4A4E55;
 }
