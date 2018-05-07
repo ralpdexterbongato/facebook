@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Router ,ActivatedRoute } from '@angular/router';
 import { TokenService } from '../services/token.service';
 @Component({
-  selector: 'app-posted',
-  templateUrl: './posted.component.html',
-  styleUrls: ['./posted.component.css']
+  selector: 'app-profilenewsfeed',
+  templateUrl: './profilenewsfeed.component.html',
+  styleUrls: ['./profilenewsfeed.component.css']
 })
-export class PostedComponent implements OnInit {
+export class ProfileNewsfeedComponent implements OnInit {
   postext ='';
   postBackground=null;
   postPrivacy='1';

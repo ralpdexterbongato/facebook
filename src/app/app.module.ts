@@ -21,9 +21,11 @@ import { VerifiedGuard } from './guards/verified.guard';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
-import { PostedComponent } from './posted/posted.component';
+import { ProfileNewsfeedComponent } from './profilenewsfeed/profilenewsfeed.component';
 import { FooterComponent } from './footer/footer.component';
 import { VerifysuccessComponent } from './verifysuccess/verifysuccess.component';
+import { PostboxComponent } from './postbox/postbox.component';
+import { NewsfeedboxComponent } from './newsfeed/newsfeedbox/newsfeedbox.component';
 
 const routes: Routes = [
   {
@@ -66,9 +68,11 @@ const routes: Routes = [
     ConfirmationComponent,
     ProfileComponent,
     TimelineComponent,
-    PostedComponent,
+    ProfileNewsfeedComponent,
     FooterComponent,
     VerifysuccessComponent,
+    PostboxComponent,
+    NewsfeedboxComponent,
   ],
   imports: [
     BrowserModule,

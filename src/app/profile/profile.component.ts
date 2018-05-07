@@ -107,4 +107,31 @@ export class ProfileComponent implements OnInit {
   {
     this.relation = '3';
   }
+  removeRequest(otherid)
+  {
+    this.http.delete(`//127.0.0.1:8000/api/remove-request/`+otherid).subscribe(
+      data=>{
+        console.log(data);
+        this.displayAddFriendButton();
+      },
+      error=>{
+        console.log(error);
+      }
+      );
+  }
+  displayAddFriendButton()
+  {
+    this.relation = '0';
+  }
+  unfriendUser(otherid)
+  {
+    this.http.delete(`//127.0.0.1:8000/api/unfriend/`+otherid).subscribe(
+      data=>{
+        console.log(data);
+        this.displayAddFriendButton();
+      },
+      error=>{
+        console.log(error);
+      })
+  }
 }

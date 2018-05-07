@@ -55,11 +55,11 @@
 {
   display: inline-block;
   vertical-align: middle;
-  font-size: 12px;
+  font-size: 10px;
   margin-right: 5px;
   color: #4A4E55;
 }
-.prof-btns-wrapper:hover .prof-btns-dropbox
+.prof-btns-wrapper:hover .prof-btns-dropboxb
 {
   display: block;
 }
@@ -67,8 +67,8 @@
 {
   position: relative;
 }
-.prof-btns-dropbox ul:after,
-.prof-btns-dropbox ul:before {
+.prof-btns-dropboxb ul:after,
+.prof-btns-dropboxb ul:before {
 	bottom: 100%;
 	left: 15px;
 	border: solid transparent;
@@ -78,19 +78,19 @@
 	position: absolute;
 	pointer-events: none;
 }
-.prof-btns-dropbox ul:after {
+.prof-btns-dropboxb ul:after {
 	border-color: rgba(136, 183, 213, 0);
 	border-bottom-color: #fff;
 	border-width: 8px;
 	margin-left: 0px;
 }
-.prof-btns-dropbox ul:before {
+.prof-btns-dropboxb ul:before {
 	border-color: rgba(194, 225, 245, 0);
 	border-bottom-color:rgba(0, 0, 0, 0.1);
 	border-width: 10px;
 	margin-left: -2px;
 }
-.prof-btns-dropbox
+.prof-btns-dropboxb
 {
   border-radius: 1px;
   position: absolute;
@@ -101,7 +101,7 @@
   font-size: 13px;
   display: none;
 }
-.prof-btns-dropbox ul
+.prof-btns-dropboxb ul
 {
   padding:5px 0px;
   border-radius: 1px;
@@ -109,12 +109,12 @@
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
   position: relative;
 }
-.prof-btns-dropbox ul li:hover
+.prof-btns-dropboxb ul li:hover
 {
   background: #4266B3;
   color: #fff;
 }
-.prof-btns-dropbox ul li
+.prof-btns-dropboxb ul li
 {
   padding:5px 5px 5px 20px;
   color: #4A4E55;
@@ -239,4 +239,67 @@
   font-size: 16px;
   margin-right:5px;
   color: #4A4E55;
+}
+.prof-btns-dropboxa ul li:hover
+{
+  background-color: #4267B2;
+  color: #fff;
+}
+.prof-btns-dropboxa ul li
+{
+  padding:5px 20px;
+  font-size: 12px;
+  color: #2A2725;
+  cursor: pointer;
+}
+.horizontal-divider
+{
+  width: 94%;
+  margin:5px auto;
+  border-bottom:1px solid rgba(0,0,0,0.1);
+}
+.prof-btns-wrapper:hover .prof-btns-dropboxa
+{
+  display: block;
+}
+.prof-btns-dropboxa
+{
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: -190px;
+  padding-top: 30px;
+}
+.prof-btns-dropboxa ul
+{
+  min-width: 190px;
+  position: relative;
+  padding:7px 0px;
+  background-color: #fff;
+  border-radius: 1px;
+  border:1px solid rgba(0,0,0,0.3);
+  /*box-shadow: 0px 0px 3px rgba(0,0,0,0.5);*/
+}
+.prof-btns-dropboxa ul:after,
+.prof-btns-dropboxa ul:before {
+  bottom: 100%;
+  left: 16px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.prof-btns-dropboxa ul:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #fff;
+  border-width: 7px;
+  margin-left: 0px;
+}
+.prof-btns-dropboxa ul:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color:rgba(0,0,0,0.1);
+  border-width: 9px;
+  margin-left: -2px;
 }

@@ -1,0 +1,62 @@
+<div class="post-frame" *ngFor="let data of dataresult">
+  <div class="post-top">
+    <div class="post-top-left">
+      <img src="./assets/img/profile.jpg" alt="" class="acc-prof" *ngIf="data.poster.gender == '1'">
+      <img src="./assets/img/profile-fe.jpg" alt="" class="acc-prof" *ngIf="data.poster.gender == '0'">
+      <div class="acc-name-wrap">
+        <h5 class="acc-name">{{data.poster.fname}} {{data.poster.lname}}</h5>
+        <p>{{data.created_at}}
+          <i class="material-icons" *ngIf="data.privacy == 0">public</i>
+          <i class="material-icons" *ngIf="data.privacy == 1">people</i>
+          <i class="material-icons" *ngIf="data.privacy == 2">lock</i>
+        </p>
+      </div>
+      <!-- <p> is with <span class="fb-blue-text"> Jiro Zargoza</span></p> -->
+    </div>
+    <i class="material-icons">more_horiz</i>
+  </div>
+  <div class="post-content">
+    <p>{{data.description}}</p>
+  </div>
+  <div class="file-container">
+    <!-- <img src="./assets/img/p1.jpg" alt=""> -->
+  </div>
+  <div class="horiz-divider">
+  </div>
+  <div class="interact-button-container">
+    <div class="int-btn-wrap">
+      <i class="far fa-thumbs-up"></i>
+      <p>Like</p>
+    </div>
+    <div class="int-btn-wrap">
+      <i class="far fa-comment-alt"></i>
+      <p>Comment</p>
+    </div>
+  </div>
+  <!-- <div class="counter-box">
+    <i class="fa fa-thumbs-up"></i> <p>300</p>
+  </div>
+  <div class="hor-div-container">
+    <div class="horiz-divider">
+    </div>
+  </div> -->
+  <div class="comments-container">
+    <!-- <div class="comment-row">
+      <div class="main-comment-box">
+        <img src="./assets/img/1.jpg" alt="">
+        <div class="comment-circle">
+          <p><span class="comment-name">Ralp Dexter Bongato</span> hello world hello hi hello usog na ako eh hahahaha isang beses lang ako nakain sa isang araw diet dowt oag may time.100kg na ata ako hahahah hey!!.</p>
+        </div>
+      </div>
+      <div class="comment-actions">
+        <p>Like</p><p>Reply</p><h6>50m</h6>
+      </div>
+    </div> -->
+    <div class="comment-form-container">
+      <img src="./assets/img/1.jpg" alt="">
+      <div class="text-container-comment">
+        <textarea placeholder="Write a comment... "></textarea>
+      </div>
+    </div>
+  </div>
+</div>
