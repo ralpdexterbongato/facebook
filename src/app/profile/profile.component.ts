@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
   profileid='';
   currentUserID='';
   relation='';
+  totalfriends='0';
   constructor(
     private token:TokenService,
     private activeroute:ActivatedRoute,
@@ -47,6 +48,8 @@ export class ProfileComponent implements OnInit {
   {
     this.userdata = data.userdata[0];
     this.handleWhatRelation(data.relation);
+    var res = data.totalfriends - 1;
+    this.totalfriends = res.toLocaleString(undefined,{ minimumFractionDigits: 0 });
   }
   handleWhatRelation(relation)
   {

@@ -20,28 +20,28 @@
         <p class="fb-blue-text">Live Video</p>
       </h4>
     </div>
-    <div class="posting-mid">
+    <div class="posting-mid" [ngClass]="postBackground!=null? classToAdd:'' ">
       <img src="./assets/img/profile.jpg" alt="" *ngIf="usergender == '1'">
       <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="usergender == '0'">
       <textarea name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>
     </div>
     <div class="post-backgrounds">
-      <li class="background-grey"></li>
-      <li class="background-light"></li>
-      <li class="background-purple"></li>
-      <li class="background-rose"></li>
-      <li class="background-black"></li>
-      <li class="background-blue-rose"></li>
-      <li class="background-purple-blue"></li>
-      <li class="background-rose-light"></li>
-      <li class="background-sunset"></li>
-      <li class="background-dark-purple"></li>
-      <li class="background-dark-grey"></li>
-      <li class="background-purple-star"></li>
-      <li class="background-sakura"></li>
-      <li class="background-night-blue"></li>
-      <li class="background-purplecom"></li>
-      <li class="background-lips"></li>
+      <li class="background-grey" (click)="KnowClassToAdd(null)"></li>
+      <li class="background-light" (click)="KnowClassToAdd(null)"></li>
+      <li class="background-purple" (click)="KnowClassToAdd(0)"></li>
+      <li class="background-rose" (click)="KnowClassToAdd(1)"></li>
+      <li class="background-black" (click)="KnowClassToAdd(2)"></li>
+      <li class="background-blue-rose" (click)="KnowClassToAdd(3)"></li>
+      <li class="background-purple-blue" (click)="KnowClassToAdd(4)"></li>
+      <li class="background-rose-light" (click)="KnowClassToAdd(5)"></li>
+      <li class="background-sunset" (click)="KnowClassToAdd(6)"></li>
+      <li class="background-dark-purple" (click)="KnowClassToAdd(7)"></li>
+      <li class="background-dark-grey" (click)="KnowClassToAdd(8)"></li>
+      <li class="background-purple-star" (click)="KnowClassToAdd(9)"></li>
+      <li class="background-sakura" (click)="KnowClassToAdd(10)"></li>
+      <li class="background-night-blue" (click)="KnowClassToAdd(11)"></li>
+      <li class="background-purplecom" (click)="KnowClassToAdd(12)"></li>
+      <li class="background-lips" (click)="KnowClassToAdd(13)"></li>
     </div>
     <div class="horiz-divider">
     </div>
@@ -83,8 +83,10 @@
           <option value="2"> Private</option>
         </select>
       </div>
-      <button type="button"  name="button" [disabled]="postext==''?true:false">Post</button>
+      <button type="button" (click)="post()" name="button" [disabled]="postext==''?true:false">Post</button>
     </div>
   </div>
 </div>
+<app-postbox [postID]="newpost" *ngFor="let newpost of inewlyposted"></app-postbox>
 <app-newsfeedbox [friendID]="poster.id" *ngFor="let poster of newestposters"></app-newsfeedbox>
+<app-newsfeed-loadingbox *ngIf="newestposters.length == 0"></app-newsfeed-loadingbox>

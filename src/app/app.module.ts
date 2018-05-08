@@ -26,6 +26,8 @@ import { FooterComponent } from './footer/footer.component';
 import { VerifysuccessComponent } from './verifysuccess/verifysuccess.component';
 import { PostboxComponent } from './postbox/postbox.component';
 import { NewsfeedboxComponent } from './newsfeed/newsfeedbox/newsfeedbox.component';
+import { FriendsPreviewComponent } from './profile/friends-preview/friends-preview.component';
+import { NewsfeedLoadingboxComponent } from './newsfeed-loadingbox/newsfeed-loadingbox.component';
 
 const routes: Routes = [
   {
@@ -73,6 +75,8 @@ const routes: Routes = [
     VerifysuccessComponent,
     PostboxComponent,
     NewsfeedboxComponent,
+    FriendsPreviewComponent,
+    NewsfeedLoadingboxComponent,
   ],
   imports: [
     BrowserModule,

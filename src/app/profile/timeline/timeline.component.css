@@ -240,6 +240,12 @@
   background: rgba(0, 0, 0, 0.2);
 }
 /*friends*/
+.friends-content-box
+{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .prof-side-box
 {
   border-radius: 2px;
@@ -292,19 +298,6 @@
   font-size: 13px;
   color: #A6A6A6;
 }
-.friends-content-box
-{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.friends-img-box
-{
-  height: 101px;
-  width: 101px;
-  background: rgba(0, 0, 0, 0.2);
-  margin:2px;
-}
 .show-common-box
 {
   display: flex;
@@ -350,7 +343,7 @@
 /*options*/
 .timelineoptions.active
 {
-  top: 45px;
+  top: 42px;
 }
 .timelineoptions
 {

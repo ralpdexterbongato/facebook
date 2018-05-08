@@ -1,0 +1,8 @@
+<div class="friends-img-box" routerLink="/profile/{{frienddata.id}}">
+  <img src="./assets/img/profile.jpg" *ngIf="frienddata.gender==1" alt="">
+  <img src="./assets/img/profile-fe.jpg" *ngIf="frienddata.gender==0" alt="">
+  <div class="friend-data-container">
+  	<p>{{frienddata.fname}} {{frienddata.lname}}</p>
+  	<h5 *ngIf="newpostcount!=0">{{newpostcount}} new posts <p class="dot"></p></h5>
+  </div>
+</div>

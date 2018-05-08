@@ -34,35 +34,35 @@
       <select [(ngModel)]="form.day">
         <option value="01" >01</option>
         <option value="02" >02</option>
-        <option value="03" >02</option>
-        <option value="04" >02</option>
-        <option value="05" >02</option>
-        <option value="06" >02</option>
-        <option value="07" >02</option>
-        <option value="08" >02</option>
-        <option value="09" >02</option>
-        <option value="10" >02</option>
-        <option value="11" >02</option>
-        <option value="12" >02</option>
-        <option value="21" >02</option>
-        <option value="14" >02</option>
-        <option value="15" >02</option>
-        <option value="16" >02</option>
-        <option value="17" >02</option>
-        <option value="18" >02</option>
-        <option value="19" >02</option>
-        <option value="20" >02</option>
-        <option value="21" >02</option>
-        <option value="22" >02</option>
-        <option value="23" >02</option>
-        <option value="24" >02</option>
-        <option value="25" >02</option>
-        <option value="26" >02</option>
-        <option value="27" >02</option>
-        <option value="28" >02</option>
-        <option value="29" >02</option>
-        <option value="30" >02</option>
-        <option value="31" >02</option>
+        <option value="03" >03</option>
+        <option value="04" >04</option>
+        <option value="05" >05</option>
+        <option value="06" >06</option>
+        <option value="07" >07</option>
+        <option value="08" >08</option>
+        <option value="09" >09</option>
+        <option value="10" >10</option>
+        <option value="11" >11</option>
+        <option value="12" >12</option>
+        <option value="21" >13</option>
+        <option value="14" >14</option>
+        <option value="15" >15</option>
+        <option value="16" >16</option>
+        <option value="17" >17</option>
+        <option value="18" >18</option>
+        <option value="19" >19</option>
+        <option value="20" >20</option>
+        <option value="21" >21</option>
+        <option value="22" >22</option>
+        <option value="23" >23</option>
+        <option value="24" >24</option>
+        <option value="25" >25</option>
+        <option value="26" >26</option>
+        <option value="27" >27</option>
+        <option value="28" >28</option>
+        <option value="29" >29</option>
+        <option value="30" >30</option>
+        <option value="31" >31</option>
       </select>
       <select [(ngModel)]="form.year">
         <option value="{{year}}" *ngFor="let year of years.reverse()">{{year}}</option>
@@ -76,7 +76,7 @@
       <label>Male</label>
     </div>
     <p class="reg-parag">By clicking Sign Up, you agree to our <span class="blue-text">Terms, Data Policy</span> and<br> <span class="blue-text">Cookies Policy</span>. You may receive SMS Notifications from us and<br> can opt out any time.</p>
-    <button type="button" (click)="SubmitRegister()" [ngClass]="{'disabled':submitting}" [(disabled)]="submitting"  name="button">Sign Up</button>
+    <button type="button" (click)="SubmitRegister()" [ngClass]="{'disabled':submitting}" [(disabled)]="submitting"  name="button">Sign Up <img src="./assets/img/load.gif" alt=""></button>
   </div>
   <div class="create-page-text">
     <p><span class="blue-text">Create a Page</span> for a celebrity, band or business.</p>

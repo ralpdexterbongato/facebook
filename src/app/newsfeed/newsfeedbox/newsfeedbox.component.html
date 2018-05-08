@@ -15,7 +15,7 @@
     </div>
     <i class="material-icons">more_horiz</i>
   </div>
-  <div class="post-content">
+  <div class="post-content" [ngClass]="data.background!=null ? 'active background'+data.background:''">
     <p>{{data.description}}</p>
   </div>
   <div class="file-container">
@@ -60,3 +60,4 @@
     </div>
   </div>
 </div>
+<app-newsfeed-loadingbox *ngIf="friendData.length == 0"></app-newsfeed-loadingbox>

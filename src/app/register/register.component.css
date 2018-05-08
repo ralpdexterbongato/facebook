@@ -86,8 +86,20 @@
   color: #aeaeae;
   border:1px solid rgba(0, 0, 0, 0.2);
 }
+.form-container button.disabled img
+{
+  display: block;
+}
+.form-container button img
+{
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  display: none;
+}
 .form-container button
 {
+  position: relative;
   padding:7px 10px;
   margin-top: 20px;
   font-size: 18px;

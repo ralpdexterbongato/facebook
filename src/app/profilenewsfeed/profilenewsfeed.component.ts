@@ -19,6 +19,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   currentuserFname='';
   Postings =[];
 
+  classToAdd = '';
   usergender ='';
   constructor(private http: HttpClient,
     private activated: ActivatedRoute,
@@ -116,5 +117,53 @@ export class ProfileNewsfeedComponent implements OnInit {
     this.postPrivacy ='1';
     this.textareaIsActive=false;
     this.getMyLatestSubmit();
+  }
+  KnowClassToAdd(choice)
+  {
+    this.postBackground = choice;
+    switch (this.postBackground) {
+       case 0:
+         this.classToAdd = 'active background0'
+         break;
+       case 1:
+         this.classToAdd = 'active background1'
+         break;       
+       case 2:
+         this.classToAdd = 'active background2'
+         break;
+       case 3:
+         this.classToAdd = 'active background3'
+         break;
+       case 4:
+         this.classToAdd = 'active background4'
+         break;
+       case 5:
+         this.classToAdd = 'active background5'
+         break;
+       case 6:
+         this.classToAdd = 'active background6'
+         break;
+       case 7:
+         this.classToAdd = 'active background7'
+         break;
+       case 8:
+         this.classToAdd = 'active background8'
+         break;
+       case 9:
+         this.classToAdd = 'active background9'
+         break;
+       case 10:
+         this.classToAdd = 'active background10'
+         break;
+       case 11:
+         this.classToAdd = 'active background11'
+         break;
+       case 12:
+         this.classToAdd = 'active background12'
+         break;
+       case 13:
+         this.classToAdd = 'active background13'
+         break;
+     } 
   }
 }

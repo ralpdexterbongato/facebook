@@ -36,16 +36,19 @@ export class HomeComponent implements OnInit {
   }
   scrollTracker()
   {
+    var screenHeight = $(window).height();
+    var leftcatsHeight = $('.side-cats').height();
+    var otherPostContainerHeight = $('.other-post-container').height();
     $(window).scroll(function(e){
       var scroll = $(window).scrollTop();
-      if(scroll > 540)
+      if(scroll + screenHeight  > otherPostContainerHeight+135)
       {
         $('.other-wrap').addClass('active');
       }else
       {
         $('.other-wrap').removeClass('active');
       }
-      if(scroll > 80)
+      if(scroll + screenHeight  > leftcatsHeight+110)
       {
         $('.left-categ-wrap').addClass('active');
       }else
