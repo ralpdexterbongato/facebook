@@ -36,5 +36,6 @@
 }
 .newsfeed-container
 {
+  width: 483px;
   flex:1;
 }

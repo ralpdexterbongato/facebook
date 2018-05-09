@@ -16,10 +16,13 @@ export class AppComponent {
   ){}
   signin = false;
   menuIsActive = false;
+  friendReqIsActive =false;
   isVerified = false;
   userFname = '';
   userId = '';
   usergender ='';
+
+  userFriendRequests = [];
   ngOnInit() {
     this.refreshNavState();
   }
@@ -27,6 +30,17 @@ export class AppComponent {
   toggleMenu()
   {
     this.menuIsActive = !this.menuIsActive;
+    this.friendReqIsActive = false;
+  }
+  toggleFriendRequest()
+  {
+    this.friendReqIsActive = !this.friendReqIsActive;
+    this.menuIsActive = false;
+    if((this.friendReqIsActive == true) && (this.userFriendRequests.length == 0))
+    {
+      this.getFriendRequests();
+    }
+
   }
   refreshNavState()
   {
@@ -52,5 +66,21 @@ export class AppComponent {
         this.route.navigate(['']);
       }
     )
+  }
+  getFriendRequests()
+  {
+    this.http.get(`//127.0.0.1:8000/api/my-requests`).subscribe(
+      data=>{
+        this.handleReceivedFriendReq(data);
+        console.log(data);
+      },
+      error=>{
+        console.log(data);
+      });
+
+  }
+  handleReceivedFriendReq(data)
+  {
+    this.userFriendRequests = data.data;
   }
 }

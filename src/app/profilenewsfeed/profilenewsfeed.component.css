@@ -11,7 +11,7 @@
 .posting-form-container.active textarea
 {
   height: 80px;
-  font-size: 20px;
+  font-size: 20px; 
 }
 .posting-form-container
 {
@@ -450,10 +450,20 @@
 {
   background: linear-gradient(182deg, #CD3E70 0, #DE2C48 56%);
 }
-.posting-mid.active textarea
+.posting-mid.active
 {
   min-height: 250px;
-  margin: auto 0;
+}
+.posting-mid.active textarea.active
+{
+  min-height: 250px;
+}
+.posting-mid.active textarea
+{
+  margin: auto 10px;
   font-size: 28px;
+  height: auto;
+  max-height: 500px;
   color: #fff;
+  text-align: center;
 }

@@ -1,0 +1,60 @@
+.friend-req-row.active
+{
+  background-color: #FFF9D7!important;
+}
+.friend-req-row
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 13px 5px 13px;
+  border-bottom:1px inset rgba(0,0,0,0.1);
+}
+
+.friend-req-right button
+{
+  margin-top: 7px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 12px;
+  border-style: none;
+  padding:5px 8px;
+  background-color: #F6F7F9;
+  color:#56585C;
+  border:1px solid rgba(0,0,0,0.1);
+}
+.confirm-req-btn
+{
+  background-color: #4267B2!important;
+  color:#fff!important;
+}
+.friend-img
+{
+  margin-right: 10px;
+}
+.friend-req-data
+{
+  vertical-align: middle;
+  margin: auto;
+}
+.friend-req-data h2
+{ 
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: #5E79AD;
+}
+.friend-req-data p
+{
+  font-size: 12px;
+  color: #999DA2;
+}
+.friend-img img
+{
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+.friend-req-left
+{
+  display: flex;
+}

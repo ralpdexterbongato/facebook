@@ -1,0 +1,24 @@
+<div class="friend-req-row" [ngClass]="RelationStatus ==1 ?'active':''">
+  <div class="friend-req-left">
+    <div class="friend-img">
+      <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="ReqUserData.gender == 0">
+      <img src="./assets/img/profile.jpg" alt="" *ngIf="ReqUserData.gender == 1">
+    </div>
+    <div class="friend-req-data">
+      <h2 routerLink="/profile/{{ReqUserData.id}}">{{ReqUserData.fname}} {{ReqUserData.lname}}</h2> 
+      <p *ngIf="RelationStatus==null">0 mutual friend</p>
+      <p *ngIf="RelationStatus==0">You are now connected.</p>
+      <p *ngIf="RelationStatus==1">Request removed.</p>
+    </div>
+  </div>
+  <div class="friend-req-right">
+    <span *ngIf="RelationStatus == null">
+      <button class="confirm-req-btn" (click)="accept()">Confirm</button>
+      <button (click)="decline()">Delete Request</button>
+    </span>
+    <span *ngIf="RelationStatus == 0">
+      <button>Friends <i class="fa fa-caret-down"></i></button>
+    </span>
+  </div>
+</div>
+<app-small-user-loader *ngIf="userRequesting!=null"></app-small-user-loader>

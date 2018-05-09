@@ -68,6 +68,7 @@ header.active
 .search-person-container button
 {
   border-style: none;
+  height: 23px;
   background: #f6f7f9;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -113,14 +114,13 @@ header.active
 {
   padding:4px 10px 3px 3px;
   display: inline-block;
-  border-right: 1px solid #3A5CA3;
   vertical-align: middle;
 }
 .profile-wrapper
 {
   padding:2px;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
   outline: none;
 }
 .profile-wrapper:hover
@@ -140,7 +140,7 @@ header.active
 }
 .home-nav
 {
-  border-radius: 2px;
+  border-radius: 3px;
   padding:8px 10px;
   cursor: pointer;
   outline: none;
@@ -186,6 +186,11 @@ header.active
   margin:auto 0;
   vertical-align: middle;
   color:#1A2947;
+}
+.vertical-divider
+{
+  border-right: 1px solid rgba(0,0,0,0.1);
+  height: 100%;
 }
 .question-icon
 {
@@ -423,4 +428,105 @@ header.active
     margin-left: auto;
     margin: 0 auto;
   }
+}
+
+/*friend req*/
+.friend-req-drop-container
+{
+  position: relative;
+
+}
+.friend-req-drop-container i.active svg
+{
+  fill:#fff;
+}
+.friend-req-dropbox:after,
+.friend-req-dropbox:before {
+  bottom: 100%;
+  right: 65px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.friend-req-dropbox:after {
+  border-bottom-color: #fff;
+  border-width: 9px;
+  margin-right: 0px;
+}
+.friend-req-dropbox:before {
+  border-width: 11px;
+  margin-right: -2px;
+}
+.friend-req-dropbox.active
+{
+  display: block;
+}
+.friend-req-dropbox
+{
+  position: absolute;
+  top:34px;
+  box-shadow: 0px 5px 4px rgba(0,0,0,0.2);
+  left: -330px;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 420px;
+  min-height: 300px;
+  display: none;
+  padding-left: 5px;
+}
+.req-drop-header
+{
+  display: flex;
+  justify-content: space-between;
+  padding:10px;
+  border-bottom:1px outset rgba(0,0,0,0.1);
+  font-size: 12px;
+}
+.drop-head-left p
+{
+  font-weight: 600;
+  color: #5A5B5C;
+}
+.drop-head-right p
+{
+  display: inline-block;
+  color: #375999;
+  padding-left: 5px;
+}
+.friend-drop-footer
+{
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #375999;
+  border-top: 1px outset rgba(0,0,0,0.1);
+  padding:9px 10px;
+  font-size: 12px;
+}
+.friend-drop-content:hover::-webkit-scrollbar
+{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.friend-drop-content::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: transparent;
+}
+.friend-drop-content
+{
+  height: 470px;
+  overflow-x: hidden;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+.friend-drop-content p
+{
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.3);
+  margin-top: 200px;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router ,ActivatedRoute } from '@angular/router';
 import { TokenService } from '../services/token.service';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-profilenewsfeed',
   templateUrl: './profilenewsfeed.component.html',
@@ -11,7 +12,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   postext ='';
   postBackground=null;
   postPrivacy='1';
-  newlysaved=null;
+  newlysaved=null; 
   tags = [];
   textareaIsActive= false;
   profileId = null;
@@ -19,6 +20,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   currentuserFname='';
   Postings =[];
 
+  HugeParag = false;
   classToAdd = '';
   usergender ='';
   constructor(private http: HttpClient,
@@ -40,6 +42,10 @@ export class ProfileNewsfeedComponent implements OnInit {
     // this.getProfilePost();
     // this.getCurrentUsersID();
     // this.getCurrentUserGender();
+    $.each($('textarea[data-autoresize]'), function() {
+    var offset = this.offsetHeight - this.clientHeight;
+ 
+});
   }
   getCurrentUserFname()
   {
@@ -165,5 +171,19 @@ export class ProfileNewsfeedComponent implements OnInit {
          this.classToAdd = 'active background13'
          break;
      } 
+  }
+  focusTheArea()
+  {
+    document.getElementById('postArea').focus();
+  }
+  checkLetterAmt()
+  {
+    if(this.postext.split('').length > 30)
+    {
+      this.HugeParag = true;
+    }else
+    {
+      this.HugeParag = false;
+    }
   }
 }

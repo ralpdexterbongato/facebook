@@ -96,7 +96,7 @@
 .side-cats ul li h6
 {
   vertical-align: middle;
-  padding-top: 7px;
+  padding-top: 4px;
   font-size: 11px;
   color: #a1a1a1;
 }
@@ -109,7 +109,7 @@
 {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 5px;
+  padding-bottom: 9px;
   max-width: 122px;
   text-overflow: ellipsis;
   overflow: hidden;

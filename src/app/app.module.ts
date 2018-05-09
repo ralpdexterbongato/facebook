@@ -28,6 +28,8 @@ import { PostboxComponent } from './postbox/postbox.component';
 import { NewsfeedboxComponent } from './newsfeed/newsfeedbox/newsfeedbox.component';
 import { FriendsPreviewComponent } from './profile/friends-preview/friends-preview.component';
 import { NewsfeedLoadingboxComponent } from './newsfeed-loadingbox/newsfeed-loadingbox.component';
+import { FriendRequestsComponent } from './friend-requests/friend-requests.component';
+import { SmallUserLoaderComponent } from './small-user-loader/small-user-loader.component';
 
 const routes: Routes = [
   {
@@ -77,6 +79,8 @@ const routes: Routes = [
     NewsfeedboxComponent,
     FriendsPreviewComponent,
     NewsfeedLoadingboxComponent,
+    FriendRequestsComponent,
+    SmallUserLoaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@
         <p>Make Post</p>
       </h4>
       <div class="vertical-div">
-      </div>
+      </div> 
       <h4>
         <i class="material-icons">image</i>
         <p class="fb-blue-text">Photo/Video Album</p>
@@ -20,10 +20,10 @@
         <p class="fb-blue-text">Live Video</p>
       </h4>
     </div>
-    <div class="posting-mid" [ngClass]="postBackground!=null? classToAdd:'' ">
+    <div class="posting-mid" (click)="focusTheArea()" [ngClass]="postBackground!=null? classToAdd:'' ">
       <img src="./assets/img/profile.jpg" alt="" *ngIf="usergender == '1'">
       <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="usergender == '0'">
-      <textarea name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>
+      <textarea id="postArea" [ngClass]="{'active':HugeParag}" (keyup)="checkLetterAmt()" name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>
     </div>
     <div class="post-backgrounds">
       <li class="background-grey" (click)="KnowClassToAdd(null)"></li>
@@ -83,7 +83,7 @@
           <option value="2"> Private</option>
         </select>
       </div>
-      <button type="button" (click)="post()" name="button" [disabled]="postext==''?true:false">Post</button>
+      <button type="button"  (click)="post()" name="button" [disabled]="postext==''?true:false">Post</button>
     </div>
   </div>
 </div>

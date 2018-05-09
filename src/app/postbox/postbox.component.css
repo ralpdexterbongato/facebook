@@ -73,6 +73,8 @@
 {
   font-size: 15px;
   line-height: 21px;
+  word-wrap:break-word;
+  width: 100%;
   color:#333;
 }
 .file-container
@@ -242,6 +244,7 @@
   line-height: 30px;
   color: #fff;
   margin:auto;
+  max-width: 488px;
 }
 .post-content.active
 {

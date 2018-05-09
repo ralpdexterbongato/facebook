@@ -25,6 +25,7 @@ export class NewsfeedComponent implements OnInit {
   usergender = '';
   classToAdd = '';
 
+  HugeParag = false;
   getGender()
   {
     this.usergender = this.token.getGender();
@@ -130,5 +131,19 @@ export class NewsfeedComponent implements OnInit {
          this.classToAdd = 'active background13'
          break;
      } 
+  }
+  focusTheArea()
+  {
+    document.getElementById('postArea').focus();
+  }
+  checkLetterAmt()
+  {
+    if(this.postext.split('').length > 30)
+    {
+      this.HugeParag = true;
+    }else
+    {
+      this.HugeParag = false;
+    }
   }
 }
