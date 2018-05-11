@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
   {
     this.userdata = data.userdata[0];
     this.handleWhatRelation(data.relation);
-    var res = data.totalfriends - 1;
+    var res = data.totalfriends -1;
     this.totalfriends = res.toLocaleString(undefined,{ minimumFractionDigits: 0 });
   }
   handleWhatRelation(relation)

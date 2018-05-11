@@ -2,6 +2,10 @@
 {
   background-color: #FFF9D7!important;
 }
+.friend-req-row.unseen
+{
+  background-color: #f6f7f9;
+}
 .friend-req-row
 {
   display: flex;
@@ -10,21 +14,40 @@
   border-bottom:1px inset rgba(0,0,0,0.1);
 }
 
+.friend-req-right button i
+{
+  font-size: 11px;
+  color: #646C7B;
+}
 .friend-req-right button
 {
-  margin-top: 7px;
+  margin-top: 12px;
   border-radius: 2px;
   font-weight: 600;
+  color: #646C7B;
+  background-color: #f4f5f7;
   font-size: 12px;
   border-style: none;
   padding:5px 8px;
+  border:1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.delete-req-btn:hover
+{
+  background-color: #E9EBEE;
+}
+.delete-req-btn
+{
   background-color: #F6F7F9;
   color:#56585C;
-  border:1px solid rgba(0,0,0,0.1);
+}
+.confirm-req-btn:hover
+{
+  background-color: #365899!important;
 }
 .confirm-req-btn
 {
-  background-color: #4267B2!important;
+  background-color: #3E65AE!important;
   color:#fff!important;
 }
 .friend-img

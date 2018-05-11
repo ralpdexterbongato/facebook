@@ -247,7 +247,8 @@
 {
   margin-top: 10px;
   display: flex;
-  min-height: 270px;
+  min-height: 300px;
+  font-weight: bold;
   text-align: center;
 }
 .post-content.active.background3

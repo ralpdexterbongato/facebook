@@ -138,6 +138,10 @@ export class NewsfeedComponent implements OnInit {
   }
   checkLetterAmt()
   {
+    if(this.postext.split('').length > 120)
+    {
+      this.postBackground = null;
+    }
     if(this.postext.split('').length > 30)
     {
       this.HugeParag = true;

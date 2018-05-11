@@ -20,7 +20,8 @@
         <p class="fb-blue-text">Live Video</p>
       </h4>
     </div>
-    <div class="posting-mid" (click)="focusTheArea()" [ngClass]="postBackground!=null? classToAdd:'' ">
+    <div [ngClass]="postBackground!=null? classToAdd :'' ">
+      <div class="posting-mid" (click)="focusTheArea()" [ngClass]="postBackground!=null? 'active':'' ">
       <img src="./assets/img/profile.jpg" alt="" *ngIf="usergender == '1'">
       <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="usergender == '0'">
       <textarea id="postArea" [ngClass]="{'active':HugeParag}" (keyup)="checkLetterAmt()" name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>
@@ -42,6 +43,7 @@
       <li class="background-night-blue" (click)="KnowClassToAdd(11)"></li>
       <li class="background-purplecom" (click)="KnowClassToAdd(12)"></li>
       <li class="background-lips" (click)="KnowClassToAdd(13)"></li>
+    </div>
     </div>
     <div class="horiz-divider">
     </div>

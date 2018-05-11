@@ -1,0 +1,152 @@
+.online-list::-webkit-scrollbar
+{
+  width: 0px;
+}
+.online-list
+{
+  height: 100vh;
+  position: fixed;
+  width: 206px;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  background: #E9EBEE;
+  border-left: 1px solid #ccc;
+  padding:10px;
+  padding-top: 40px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+@media (max-width:1300px) {
+  .online-list
+  {
+    display: none;
+  }
+
+}
+.online-list ul
+{
+  list-style: none;
+}
+.online-list h3
+{
+  font-size: 11px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.online-list ul li img
+{
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+}
+.online-list ul li
+{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.online-list ul li p,.online-list ul li img
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.online-list ul li p
+{
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.8);
+  max-width: 105px;
+  text-overflow: ellipsis!important;
+  overflow: hidden!important;
+  white-space: nowrap;
+}
+.dot
+{
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #42B72A;
+  margin-top: 15px;
+}
+.pages-notif
+{
+  background: #fff;
+  border-radius: 2px;
+  font-size: 11px;
+  margin-top: 11px;
+  color: rgba(0, 0, 0, 0.6);
+  padding:2px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.search-online-container i
+{
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 9px;
+  margin-left: 5px;
+}
+.search-online-container
+{
+  display: flex;
+  background: #F6F7F9;
+  position: fixed;
+  bottom: 0px;
+  width: 206px;
+  padding: 4px 0px;
+  right: 0;
+}
+.search-online-container input
+{
+  border-style: none;
+  outline: none;
+  padding:8px 5px;
+  background: #F6F7F9;
+}
+.on-list-left
+{
+  display: flex;
+}
+
+.online-list-trigger
+{
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  padding:6px 8px;
+  display: none;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  right: 1px;
+  width: 279px;
+  box-sizing: border-box;
+  background: #F8F9F9;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
+@media (max-width:1300px)
+{
+  .online-list-trigger
+  {
+    display: flex;
+  }
+}
+.trigdot
+{
+  height: 9px;
+  width: 9px;
+  margin-top: 4px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #42B72A;
+}
+.on-list-left p
+{
+  padding-top: 2px;
+}
+
+

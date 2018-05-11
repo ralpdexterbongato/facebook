@@ -122,59 +122,59 @@
 {
   color: #fff;
 }
-.posting-mid.active.background0
+.active.background0
 {
   background-color: #BD39EF!important;
 }
-.posting-mid.active.background1
+.active.background1
 {
   background-color: #E2013B!important;
 }
-.posting-mid.active.background2
+.active.background2
 {
   background-color: #111111!important;
 }
-.posting-mid.active.background3
+.active.background3
 {
   background: linear-gradient(209deg, #C82E61 35%, #3630FB 100%);
 }
-.posting-mid.active.background4
+.active.background4
 {
  background: linear-gradient(209deg, #8130C8 35%, #E94BFB 100%);
 }
-.posting-mid.active.background5
+.active.background5
 {
  background:linear-gradient(209deg, #C13546 0, #F4526A 50%);
 }
-.posting-mid.active.background6
+.active.background6
 {
   background: linear-gradient(255deg, #C23292 0, #F4526A 62%, #FBB73D 100%);
 }
-.posting-mid.active.background7
+.active.background7
 {
   background-color: #431E31!important;
 }
-.posting-mid.active.background8
+.active.background8
 {
   background-color: #3A3E4A;
 }
-.posting-mid.active.background9
+.active.background9
 {
   background-color: #3A1E51;
 }
-.posting-mid.active.background10
+.active.background10
 {
   background: linear-gradient(182deg, #FAFAFA 0, #F91D75 61%);
 }
-.posting-mid.active.background11
+.active.background11
 {
   background-color: #233860;
 }
-.posting-mid.active.background12
+.active.background12
 {
   background: linear-gradient(182deg, #FA26FA 0, #6C25F9 61%, #7DFFE5 100%);
 }
-.posting-mid.active.background13
+.active.background13
 {
   background: linear-gradient(182deg, #CD3E70 0, #DE2C48 56%);
 }
@@ -186,14 +186,16 @@
 }
 .posting-mid.active textarea.active
 {
-  min-height: 250px;
+  min-height: 340px;
 }
 .posting-mid.active textarea
 {
   margin: auto;
-  font-size: 28px;
+  font-size: 34px;
+  font-weight: bold;
   text-align:center;
   color: #fff;
+  height: 120px;
 }
 .posting-mid
 {

@@ -1,0 +1,137 @@
+/*friend req*/
+.friend-req-drop-container
+{
+  position: relative;
+
+}
+.redcount
+{
+  padding:3px 3px;
+  background-color: #FA3E3E;
+  color: #fff;
+  right: -1px;
+  top: -4px;
+  border-radius: 2px;
+  position: absolute;
+  font-size: 10px;
+}
+.friend-req-drop-container i.active svg,
+.friend-req-drop-container i.active svg:hover
+{
+  fill:#fff;
+}
+.friend-req-dropbox:after,
+.friend-req-dropbox:before {
+  bottom: 100%;
+  right: 65px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.friend-req-dropbox:after {
+  border-bottom-color: #fff;
+  border-width: 9px;
+  margin-right: 0px;
+}
+.friend-req-dropbox:before {
+  border-width: 11px;
+  margin-right: -2px;
+}
+.friend-req-dropbox.active
+{
+  display: block;
+}
+.friend-req-dropbox
+{
+  position: absolute;
+  top:34px;
+  box-shadow: 0px 5px 4px rgba(0,0,0,0.2);
+  left: -330px;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 420px;
+  min-height: 300px;
+  display: none;
+  padding-left: 5px;
+}
+.req-drop-header
+{
+  display: flex;
+  justify-content: space-between;
+  padding:10px;
+  border-bottom:1px outset rgba(0,0,0,0.1);
+  font-size: 12px;
+}
+.drop-head-left p
+{
+  font-weight: 600;
+  color: #5A5B5C;
+}
+.drop-head-right p
+{
+  display: inline-block;
+  color: #375999;
+  padding-left: 5px;
+}
+.friend-drop-footer
+{
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #375999;
+  border-top: 1px outset rgba(0,0,0,0.1);
+  padding:9px 10px;
+  font-size: 12px;
+}
+.friend-drop-content:hover::-webkit-scrollbar
+{
+  background-color: #fff;
+}
+
+.friend-drop-content::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: transparent;
+}
+
+.friend-drop-content::-webkit-scrollbar-thumb
+{
+  width: 5px;
+}
+.friend-drop-content
+{
+  height: 470px;
+  overflow-x: hidden;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+.friend-drop-content p
+{
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0,0,0,0.3);
+  margin-top: 200px;
+}
+.friend-req-drop-container i:hover
+{
+  color: #0F1728;
+}
+.friend-req-drop-container i svg:hover
+{
+  fill: #0F1728;
+}
+.friend-req-drop-container i svg
+{
+  width: 22px;
+  fill: #1A2947;
+}
+.friend-req-drop-container i
+{
+  color:#1A2947;
+  cursor: pointer;
+  font-size: 23px;
+  padding:0px 5px;
+}

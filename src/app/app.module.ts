@@ -30,6 +30,11 @@ import { FriendsPreviewComponent } from './profile/friends-preview/friends-previ
 import { NewsfeedLoadingboxComponent } from './newsfeed-loadingbox/newsfeed-loadingbox.component';
 import { FriendRequestsComponent } from './friend-requests/friend-requests.component';
 import { SmallUserLoaderComponent } from './small-user-loader/small-user-loader.component';
+import { FriendRequestIconComponent } from './friend-request-icon/friend-request-icon.component';
+import { GlobalSearchBoxComponent } from './global-search-box/global-search-box.component';
+import { SearchPeopleComponent } from './search-people/search-people.component';
+import { SearchAllComponent } from './search-all/search-all.component';
+import { OnlineListComponent } from './online-list/online-list.component';
 
 const routes: Routes = [
   {
@@ -50,6 +55,14 @@ const routes: Routes = [
   {
     path:'profile/:id',
     component:ProfileComponent,
+  },
+  {
+    path:'search/people',
+    component:SearchPeopleComponent,
+  },
+  {
+    path:'search/all',
+    component:SearchAllComponent,
   },
   {
     path:'verified',
@@ -81,6 +94,12 @@ const routes: Routes = [
     NewsfeedLoadingboxComponent,
     FriendRequestsComponent,
     SmallUserLoaderComponent,
+    FriendRequestIconComponent,
+    GlobalSearchBoxComponent,
+    SearchPeopleComponent,
+    SearchAllComponent,
+    OnlineListComponent,
+
   ],
   imports: [
     BrowserModule,

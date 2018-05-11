@@ -249,7 +249,8 @@
 .post-content.active
 {
   display: flex;
-  min-height: 270px;
+  min-height: 300px;
+  font-weight: bold;
   text-align: center;
   margin-top: 10px;
 }

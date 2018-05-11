@@ -1,4 +1,4 @@
-<div class="friend-req-row" [ngClass]="RelationStatus ==1 ?'active':''">
+<div class="friend-req-row" [ngClass]="RelationStatus ==1||RelationStatus==0 ?'active':ReqUserData.isSeen==null?'unseen':''">
   <div class="friend-req-left">
     <div class="friend-img">
       <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="ReqUserData.gender == 0">
@@ -14,10 +14,10 @@
   <div class="friend-req-right">
     <span *ngIf="RelationStatus == null">
       <button class="confirm-req-btn" (click)="accept()">Confirm</button>
-      <button (click)="decline()">Delete Request</button>
+      <button class="delete-req-btn" (click)="decline()">Delete Request</button>
     </span>
     <span *ngIf="RelationStatus == 0">
-      <button>Friends <i class="fa fa-caret-down"></i></button>
+      <button><i class="fa fa-check"></i> Friends</button>
     </span>
   </div>
 </div>

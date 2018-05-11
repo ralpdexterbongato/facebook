@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Component , OnInit } from '@angular/core';
+import { Router,ActivatedRoute,NavigationEnd } from '@angular/router';
 import { TokenService } from './services/token.service';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app';
   constructor(
     private route:Router,
@@ -16,7 +16,6 @@ export class AppComponent {
   ){}
   signin = false;
   menuIsActive = false;
-  friendReqIsActive =false;
   isVerified = false;
   userFname = '';
   userId = '';
@@ -24,23 +23,19 @@ export class AppComponent {
 
   userFriendRequests = [];
   ngOnInit() {
+    this.route.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0)
+        });
     this.refreshNavState();
+
   }
 
   toggleMenu()
   {
     this.menuIsActive = !this.menuIsActive;
-    this.friendReqIsActive = false;
-  }
-  toggleFriendRequest()
-  {
-    this.friendReqIsActive = !this.friendReqIsActive;
-    this.menuIsActive = false;
-    if((this.friendReqIsActive == true) && (this.userFriendRequests.length == 0))
-    {
-      this.getFriendRequests();
-    }
-
   }
   refreshNavState()
   {
@@ -67,20 +62,5 @@ export class AppComponent {
       }
     )
   }
-  getFriendRequests()
-  {
-    this.http.get(`//127.0.0.1:8000/api/my-requests`).subscribe(
-      data=>{
-        this.handleReceivedFriendReq(data);
-        console.log(data);
-      },
-      error=>{
-        console.log(data);
-      });
-
-  }
-  handleReceivedFriendReq(data)
-  {
-    this.userFriendRequests = data.data;
-  }
+ 
 }

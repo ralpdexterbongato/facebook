@@ -1,0 +1,28 @@
+<div class="fixed-top-routerlinks" [ngClass]="regex.test(location)?'active':''" p>
+  <ul>
+      <li routerLink="/search/all" routerLinkActive="active" [queryParams]="{q:usertyped}">All</li>
+      <li>Posts</li>
+      <li routerLink="/search/people" routerLinkActive="active" [queryParams]="{q:usertyped}" >People</li>
+      <li>Photos</li>
+      <li>Videos</li>
+      <li>Pages</li>
+      <li>Places</li>
+      <li>Groups</li>
+      <li>Apps</li>
+      <li>Events</li>
+      <li>Links</li>
+  </ul>
+</div>
+<div class="search-person-container">
+  <input type="text"(keyup.enter)="navigateToResults()" (keyup)="onType()" [(ngModel)]="usertyped" placeholder="Search">
+  <button type="button" name="button" ><i class="fas fa-search" (click)="navigateToResults()"></i></button>
+  <div class="suggestions" [ngClass]="{'active':suggestisActive}">
+  	<ul>
+  	    <li (click)="suggestionClick(user.fname+' '+user.lname)" *ngFor="let user of suggestions">{{user.fname}} {{user.lname}}</li>
+  	</ul>
+  	<div class="suggestions-loader" *ngIf="stillsearching && usertyped!=''">
+  		FINDING RESULTS 
+  		<img src="./assets/img/load.gif" alt="">
+  	</div>
+  </div>
+</div>
