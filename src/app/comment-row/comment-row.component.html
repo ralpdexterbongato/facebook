@@ -1,0 +1,17 @@
+<div class="comment-row" *ngFor="let data of mainCommentData">
+  <div class="main-comment-box">
+    <img src="./assets/img/profile.jpg" alt="" *ngIf="data.comment_owner.gender == '1' ">
+    <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="data.comment_owner.gender == '0' ">
+    <div class="comment-circle">
+      <div class="content-wrap">
+      	<span class="comment-name">{{data.comment_owner.fname}} {{data.comment_owner.lname}}</span>
+      	<span class="content">{{data.content}}</span>
+      </div>
+    </div>
+  </div> 
+  <div class="comment-actions">
+    <p>Like</p><p (click)="loadReply=true">Reply</p><h6>{{data.updated_at}}</h6>
+  </div>
+  <app-comment-reply-container *ngIf="loadReply"></app-comment-reply-container>
+</div>
+<app-comment-loader *ngIf="loading==true"></app-comment-loader>

@@ -35,6 +35,12 @@ import { GlobalSearchBoxComponent } from './global-search-box/global-search-box.
 import { SearchPeopleComponent } from './search-people/search-people.component';
 import { SearchAllComponent } from './search-all/search-all.component';
 import { OnlineListComponent } from './online-list/online-list.component';
+import { PersonResultRowComponent } from './person-result-row/person-result-row.component';
+import { CommentsContainerComponent } from './comments-container/comments-container.component';
+import { CommentRowComponent } from './comment-row/comment-row.component';
+import { CommentLoaderComponent } from './comment-loader/comment-loader.component';
+import { CommentReplyRowComponent } from './comment-reply-row/comment-reply-row.component';
+import { CommentReplyContainerComponent } from './comment-reply-container/comment-reply-container.component';
 
 const routes: Routes = [
   {
@@ -99,6 +105,12 @@ const routes: Routes = [
     SearchPeopleComponent,
     SearchAllComponent,
     OnlineListComponent,
+    PersonResultRowComponent,
+    CommentsContainerComponent,
+    CommentRowComponent,
+    CommentLoaderComponent,
+    CommentReplyRowComponent,
+    CommentReplyContainerComponent,
 
   ],
   imports: [

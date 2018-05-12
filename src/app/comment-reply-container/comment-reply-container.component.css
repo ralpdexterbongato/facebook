@@ -1,0 +1,45 @@
+.replies-container.active
+{
+	border-color: #4080FF;
+}
+.replies-container
+{
+	margin-left: 40px;
+	margin-top: 10px;
+	border-left: 2px solid transparent;
+	padding-left: 7px;
+}
+.comment-postbox
+{
+	display: flex;
+}
+.img-container img
+{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin-top: 5px;
+}
+.img-container
+{
+	margin-right: 5px;
+}
+.input-container textarea
+{
+	max-height: 18px;
+    width: 357px;
+    font-size: 13px;
+    padding: 7px 13px 4px 13px;
+    background-color: transparent;
+    border-style: none;
+    resize: none;
+    outline: none;
+}
+.inputwrap
+{
+	background: #fff;
+    border-radius: 20px;
+    width: 100%;
+    margin: auto 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}

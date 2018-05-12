@@ -20,8 +20,8 @@
         <p class="fb-blue-text">Live Video</p>
       </h4>
     </div>
-    <div [ngClass]="postBackground!=null? classToAdd :'' ">
-      <div class="posting-mid" (click)="focusTheArea()" [ngClass]="postBackground!=null? 'active':'' ">
+    <div [ngClass]="postBackground!=null && textareaIsActive==true? classToAdd :'' ">
+      <div class="posting-mid" (click)="focusTheArea()" [ngClass]="postBackground!=null && textareaIsActive==true ? 'active':'' ">
       <img src="./assets/img/profile.jpg" alt="" *ngIf="usergender == '1'">
       <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="usergender == '0'">
       <textarea id="postArea" [ngClass]="{'active':HugeParag}" (keyup)="checkLetterAmt()" name="name" [(ngModel)]="postext" placeholder="What's on your mind, Ralp Dexter?"></textarea>

@@ -1,0 +1,23 @@
+<div class="person-row" >
+				<div class="data-image">
+					<div class="person-profile" routerLink="/profile/{{foundperson.id}}">
+						<img src="./assets/img/profile.jpg" alt="" *ngIf="foundperson.gender==1">
+						<img src="./assets/img/profile-fe.jpg" alt="" *ngIf="foundperson.gender==0">
+					</div>
+					<div class="persondata">
+						<ul>
+						    <li class="personname" routerLink="/profile/{{foundperson.id}}">{{foundperson.fname}} {{foundperson.lname}}</li>
+						    <li>Clarin Bohol Philippines</li>
+						</ul>
+					</div>
+				</div>
+				<div class="person-btn-main">
+					<div class="person-btn-wrap">
+						<button><i class="fa fa-check"></i> Friends</button>
+						<button>
+							<i class="fas fa-ellipsis-h margin-right"></i>
+							<i class="fa fa-caret-down"></i>
+						</button>
+					</div>
+				</div>
+			</div>

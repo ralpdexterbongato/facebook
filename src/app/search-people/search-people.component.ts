@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute,Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-search-people',
   templateUrl: './search-people.component.html',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPeopleComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private activeRoute:ActivatedRoute,private http:HttpClient) {
+  	this.activeRoute.queryParams.subscribe(
+  		param=>{
+        this.searchThisName(param.q);
+  		})
+   }
+   found=[];
   ngOnInit() {
   }
 
+  searchThisName(data)
+  {
+  	this.http.get(`//127.0.0.1:8000/api/find-people?q=`+data+`&page=1`).subscribe(
+  		data=>{
+  			console.log(data);
+  			this.handleFound(data);
+  		},
+  		error=>{
+  			console.log(error);
+  		})
+  }
+  handleFound(data)
+  {
+  	this.found = data.data;
+  }
 }

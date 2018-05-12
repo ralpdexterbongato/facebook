@@ -43,7 +43,11 @@
   font-size: 14px;
   outline: none;
 }
-.suggestions.active
+.suggestions ul
+{
+  display: none;
+}
+.suggestions ul.active
 {
   display: block;
 }
@@ -56,7 +60,6 @@
   top: 25px;
   left: 0;
   right: 0;
-  display: none;
   z-index: 20;
 }
 .suggestions ul li:hover
@@ -65,9 +68,10 @@
 }
 .suggestions ul li
 {
-  padding: 25px 9px 17px 9px;
+  padding: 10px 6px;
   font-size: 13.7px;
   font-weight:600;
+  cursor: pointer;
   color: #1D2129;
 }
 .suggestions-loader

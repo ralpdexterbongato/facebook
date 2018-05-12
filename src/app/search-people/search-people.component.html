@@ -1,3 +1,16 @@
 <div class="search-people-container">
-	works
+	<div class="people-filters">
+	<app-side-categories></app-side-categories>
+	</div>
+	<div class="main-results">
+		<div class="peoplebox">
+			<app-person-result-row [persondata]="person" *ngFor="let person of found"></app-person-result-row>
+		</div>
+		<div class="end-of-res">
+			<h2>End of Results</h2>
+		</div>
+	</div>
+	<div class="other-content">
+		<app-footer></app-footer>
+	</div>
 </div>

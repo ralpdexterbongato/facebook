@@ -40,24 +40,6 @@
     <div class="horiz-divider">
     </div>
   </div> -->
-  <div class="comments-container">
-    <!-- <div class="comment-row">
-      <div class="main-comment-box">
-        <img src="./assets/img/1.jpg" alt="">
-        <div class="comment-circle">
-          <p><span class="comment-name">Ralp Dexter Bongato</span> hello world hello hi hello usog na ako eh hahahaha isang beses lang ako nakain sa isang araw diet dowt oag may time.100kg na ata ako hahahah hey!!.</p>
-        </div>
-      </div>
-      <div class="comment-actions">
-        <p>Like</p><p>Reply</p><h6>50m</h6>
-      </div>
-    </div> -->
-    <div class="comment-form-container">
-      <img src="./assets/img/1.jpg" alt="">
-      <div class="text-container-comment">
-        <textarea placeholder="Write a comment... "></textarea>
-      </div>
-    </div>
-  </div>
+  <app-comments-container [postid]="data.id"></app-comments-container>
 </div>
 <app-newsfeed-loadingbox *ngIf="friendData.length == 0"></app-newsfeed-loadingbox>

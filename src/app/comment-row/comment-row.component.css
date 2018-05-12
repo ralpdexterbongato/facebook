@@ -1,0 +1,53 @@
+.main-comment-box
+{
+  margin-top: 5px;
+  display: flex;
+}
+.main-comment-box > img
+{
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.comment-circle
+{
+  padding:5px 10px;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 13px;
+}
+.comment-name
+{
+  color: #365899;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.comment-circle .content-wrap
+{
+  color: #1D2129;
+  line-height: 18px;
+  margin-top: 3px;
+}
+.comment-actions
+{
+  margin-left: 45px;
+  display: flex;
+  font-size: 13px;
+}
+.comment-actions p
+{
+  cursor: pointer;
+  color: #365899;
+  padding:2px 5px;
+}
+.comment-actions h6
+{
+  padding:2px 5px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 13px;
+}
+.comment-row
+{
+  margin-bottom: 10px;
+}
