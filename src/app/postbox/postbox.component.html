@@ -23,23 +23,7 @@
   </div>
   <div class="horiz-divider">
   </div>
-  <div class="interact-button-container">
-    <div class="int-btn-wrap">
-      <i class="far fa-thumbs-up"></i>
-      <p>Like</p>
-    </div>
-    <div class="int-btn-wrap">
-      <i class="far fa-comment-alt"></i>
-      <p>Comment</p>
-    </div>
-  </div>
-  <!-- <div class="counter-box">
-    <i class="fa fa-thumbs-up"></i> <p>300</p>
-  </div>
-  <div class="hor-div-container">
-    <div class="horiz-divider">
-    </div>
-  </div> -->
+  <app-post-reactions [postid]="data.id"></app-post-reactions>
   <app-comments-container [postid]="data.id" ></app-comments-container>
 </div>
 <app-newsfeed-loadingbox *ngIf="dataresult.length == 0"></app-newsfeed-loadingbox>

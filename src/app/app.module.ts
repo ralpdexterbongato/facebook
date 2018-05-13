@@ -41,6 +41,7 @@ import { CommentRowComponent } from './comment-row/comment-row.component';
 import { CommentLoaderComponent } from './comment-loader/comment-loader.component';
 import { CommentReplyRowComponent } from './comment-reply-row/comment-reply-row.component';
 import { CommentReplyContainerComponent } from './comment-reply-container/comment-reply-container.component';
+import { PostReactionsComponent } from './post-reactions/post-reactions.component';
 
 const routes: Routes = [
   {
@@ -111,6 +112,7 @@ const routes: Routes = [
     CommentLoaderComponent,
     CommentReplyRowComponent,
     CommentReplyContainerComponent,
+    PostReactionsComponent,
 
   ],
   imports: [

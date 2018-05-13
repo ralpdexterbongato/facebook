@@ -1,0 +1,230 @@
+.interact-button-container
+{
+  display: flex;
+  justify-content: space-between;
+  padding:4px 10px;
+  position: relative;
+}
+.react-icons
+{
+  position: absolute;
+  top: -48px;
+  left: -10px;
+  display: flex;
+  padding:5px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 3px 2px rgba(0,0,0,0.2);
+}
+.react-icons img:hover
+{
+  transform:scale(1.2);
+}
+.react-icons img
+{
+  transition: transform .3s;
+  cursor: pointer;
+  max-width: 35px;
+  max-height: 35px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.no-margin-right
+{
+  margin-right: 0px!important;
+}
+.int-btn-wrap:hover
+{
+  background:#F6F6F7;
+}
+.int-btn-wrap
+{
+  flex:1;
+  text-align: center;
+  color: #737880;
+  padding:6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.int-btn-wrap h2
+{
+  font-size: 18px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.int-btn-wrap p
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.counter-box
+{
+  padding:10px;
+  border-left: 2px solid #4080FF;
+  display: flex;
+  background:#fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.counter-box i
+{
+  background:#4080FF;
+  color: #fff!important;
+  border-radius: 50%;
+  font-size: 9px;
+  padding:4px;
+}
+.counter-box p
+{
+  font-size: 14px;
+  margin-left: 4px;
+  color: #3C5CA2;
+}
+.fb-icons-sad
+{
+    background-image: url(/assets/img/icons.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: -17px -699px;
+}
+.fb-icons-laugh
+{
+    background-image: url(/assets/img/icons.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: -17px -665px;
+}
+.fb-icons-angry
+{
+    background-image: url(/assets/img/icons.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: -17px -631px;
+}
+.fb-icons-heart
+{
+    background-image: url(/assets/img/icons.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: -17px -682px;
+}
+.fb-icons-wow
+{
+    background-image: url(/assets/img/icons.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -733px;
+}
+.fb-icons-like
+{
+    background-image: url(/assets/img/icons.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -716px;
+}
+.fb-small
+{
+  border:1px solid #F2F3F5;
+  height: 17px;
+  width: 17px;
+  margin-left: -4px;
+  border-radius: 50%;
+  position: relative;
+}
+.fb-mid
+{
+  height: 18px;
+  min-width: 18px;
+}
+.like-inactive
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -193px;
+}
+.like-active
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -174px;
+}
+.heart-active
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -19px -326px;
+}
+.laugh-active
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -19px -307px;
+}
+.wow-active
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -19px -364px;
+}
+.sad-active
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -345px;
+}
+.angry-active
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -19px -288px;
+}
+.animate-me
+{
+   animation: leaves .5s ease-in-out 1 alternate;
+   -webkit-animation: leaves .5s ease-in-out 1 alternate;
+}
+@keyframes leaves{
+  0%{
+    transform:rotate(0deg) scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+  50%{
+    transform:rotate(-30deg) scale(1.2);
+    -webkit-transform:rotate(-30deg) scale(1.2);
+  }
+  100%{
+    transform:rotate(0deg) scale(1.0);
+    -webkit-transform:rotate(0deg) scale(1.0);
+  }
+}
+.linear-color-text
+{
+  color: #F78363;
+}
+.yellow-text
+{
+  color: #F1C337;
+}
+.red-text
+{
+  color: #F35369;
+}
+.skyblue-text
+{
+  color: #4080FF;
+}
+.comment-inactive
+{
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -155px;
+}

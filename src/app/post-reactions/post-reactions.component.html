@@ -1,0 +1,57 @@
+ 
+ <div class="interact-button-container" >
+    <div class="react-icons" *ngIf="showChoices == true" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+      <img src="./assets/img/0.gif" alt="" (click)="savereact(0)">
+      <img src="./assets/img/1.gif" alt="" (click)="savereact(1)">
+      <img src="./assets/img/2.gif" alt="" (click)="savereact(2)">
+      <img src="./assets/img/3.gif" alt="" (click)="savereact(3)">
+      <img src="./assets/img/4.gif" alt="" (click)="savereact(4)">
+      <img class="no-margin-right" src="./assets/img/5.gif" alt="" (click)="savereact(5)">
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==null" (click)="savereact(0)" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid like-inactive "></h2>
+        <p>Like</p>
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==0" (click)="removeReaction()" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid like-active " [ngClass]="{'animate-me':animateActive}"></h2>
+        <p class="skyblue-text">Like</p>
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==1" (click)="removeReaction()" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid heart-active " [ngClass]="{'animate-me':animateActive}"></h2>
+        <p class="red-text">Love</p>
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==2" (click)="removeReaction()" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid laugh-active " [ngClass]="{'animate-me':animateActive}"></h2>
+        <p class="yellow-text">Haha</p>
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==3" (click)="removeReaction()" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid wow-active " [ngClass]="{'animate-me':animateActive}"></h2>
+        <p class="yellow-text">Wow</p>
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==4" (click)="removeReaction()" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid sad-active " [ngClass]="{'animate-me':animateActive}"></h2>
+        <p class="yellow-text">Sad</p>
+    </div>
+    <div class="int-btn-wrap" *ngIf="myreact==5" (click)="removeReaction()" (click)="removeReaction()" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+        <h2 class="fb-mid angry-active " [ngClass]="{'animate-me':animateActive}"></h2>
+        <p class="linear-color-text">Angry</p>
+    </div>
+  
+    
+
+    <div class="int-btn-wrap">
+      <h2 class="fb-mid comment-inactive"></h2>
+      <p>Comment</p>
+    </div>
+  </div>
+  <div class="counter-box" *ngIf="totalReact!=0">
+    <span *ngFor="let react of topReacts">
+      <h2 class="fb-small fb-icons-like" *ngIf="react.type=='0'"></h2>
+      <h2 class="fb-small fb-icons-heart" *ngIf="react.type=='1'"></h2>
+      <h2 class="fb-small fb-icons-laugh" *ngIf="react.type=='2'"></h2>
+      <h2 class="fb-small fb-icons-wow" *ngIf="react.type=='3'"></h2>
+      <h2 class="fb-small fb-icons-sad" *ngIf="react.type=='4'"></h2>
+      <h2 class="fb-small fb-icons-angry" *ngIf="react.type=='5'"></h2>
+    </span>
+    <p>{{totalReact}}</p>
+  </div> 

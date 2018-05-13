@@ -12,6 +12,6 @@
   <div class="comment-actions">
     <p>Like</p><p (click)="loadReply=true">Reply</p><h6>{{data.updated_at}}</h6>
   </div>
-  <app-comment-reply-container *ngIf="loadReply"></app-comment-reply-container>
+  <app-comment-reply-container *ngIf="loadReply" [mainCommentid]="data.id" ></app-comment-reply-container>
 </div>
 <app-comment-loader *ngIf="loading==true"></app-comment-loader>

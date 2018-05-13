@@ -1,12 +1,8 @@
-.replies-container.active
-{
-	border-color: #4080FF;
-}
+
 .replies-container
 {
-	margin-left: 40px;
+	margin-left: 35px;
 	margin-top: 10px;
-	border-left: 2px solid transparent;
 	padding-left: 7px;
 }
 .comment-postbox

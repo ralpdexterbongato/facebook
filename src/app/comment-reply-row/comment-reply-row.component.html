@@ -1,14 +1,16 @@
-<div class="reply-row" >
+<div class="reply-row active" *ngFor="let data of replydata">
   <div class="reply-comment-box">
-    <img src="./assets/img/profile-fe.jpg" alt="">
+    <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="data.comment_owner.gender == '0'">
+    <img src="./assets/img/profile.jpg" alt="" *ngIf="data.comment_owner.gender == '1'">
     <div class="comment-circle">
       <div class="content-wrap">
-      	<span class="comment-name">Joviline Camus</span>
-      	<span class="content">hello world!</span>
+      	<span class="comment-name">{{data.comment_owner.fname}} {{data.comment_owner.lname}}</span>
+      	<span class="content">{{data.content}}</span>
       </div>
     </div>
   </div> 
   <div class="comment-actions">
-    <p>Like</p><p>Reply</p><h6>4m</h6>
+    <p>Like</p><p>Reply</p><h6>{{data.updated_at}}</h6>
   </div>
 </div>
+<app-comment-loader *ngIf="replydata.length < 1"></app-comment-loader>

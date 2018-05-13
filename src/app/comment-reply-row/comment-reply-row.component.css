@@ -1,6 +1,16 @@
+.reply-row.active
+{
+  border-color: #4080FF;
+}
+.reply-row
+{
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-left: 2px solid transparent;
+}
 .reply-comment-box
 {
-  margin-top: 5px;
+  padding-top: 5px;
   display: flex;
 }
 .reply-comment-box > img
@@ -31,13 +41,14 @@
 }
 .comment-actions
 {
-  margin-left: 45px;
+  margin-left: 35px;
   display: flex;
   font-size: 13px;
 }
 .comment-actions p
 {
   color: #365899;
+  cursor: pointer;
   padding:2px 5px;
 }
 .comment-actions h6
@@ -45,8 +56,4 @@
   padding:2px 5px;
   color: rgba(0, 0, 0, 0.7);
   font-size: 13px;
-}
-.reply-row
-{
-  margin-bottom: 10px;
 }
