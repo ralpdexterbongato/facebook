@@ -1,0 +1,19 @@
+<div class="likebtn-container">
+	<div class="like-container" (mouseover)="OnHover()" (mouseleave)="OnLeave()" (click)="saveReaction(0)" *ngIf="MyReact==null">Like</div>
+	<div class="like-container skyblue-text bold" (mouseover)="OnHover()" (mouseleave)="OnLeave()" *ngIf="MyReact==0" (click)="removeReaction()">Like</div>
+	<div class="like-container red-text bold" (mouseover)="OnHover()" (mouseleave)="OnLeave()" *ngIf="MyReact==1" (click)="removeReaction()">Love</div>
+	<div class="like-container yellow-text bold" (mouseover)="OnHover()" (mouseleave)="OnLeave()" *ngIf="MyReact==2" (click)="removeReaction()">Haha</div>
+	<div class="like-container yellow-text bold" (mouseover)="OnHover()" (mouseleave)="OnLeave()" *ngIf="MyReact==3" (click)="removeReaction()">Wow</div>
+	<div class="like-container yellow-text bold" (mouseover)="OnHover()" (mouseleave)="OnLeave()" *ngIf="MyReact==4" (click)="removeReaction()">Sad</div>
+	<div class="like-container linear-color-text bold" (mouseover)="OnHover()" (mouseleave)="OnLeave()" *ngIf="MyReact==5" (click)="removeReaction()">Angry</div>
+	<div class="react-i-container" [@enterAnimation] *ngIf="showChoices"  (mouseover)="iconsHover()" (mouseleave)="OnLeave()">
+	      <div class="react-icons">
+	      <img src="./assets/img/0.gif" (click)="saveReaction(0)">
+	      <img src="./assets/img/1.gif" (click)="saveReaction(1)">
+	      <img src="./assets/img/2.gif" (click)="saveReaction(2)">
+	      <img src="./assets/img/3.gif" (click)="saveReaction(3)">
+	      <img src="./assets/img/4.gif" (click)="saveReaction(4)">
+	      <img class="no-margin-right" src="./assets/img/5.gif" (click)="saveReaction(5)">
+	    </div>
+	</div>
+</div>

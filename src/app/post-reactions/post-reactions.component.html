@@ -1,12 +1,14 @@
  
  <div class="interact-button-container" >
-    <div class="react-icons" *ngIf="showChoices == true" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
+    <div class="react-i-container" [@enterAnimation] *ngIf="showChoices"  (mouseover)="iconsHover()" (mouseleave)="OnLeave()">
+      <div class="react-icons">
       <img src="./assets/img/0.gif" alt="" (click)="savereact(0)">
       <img src="./assets/img/1.gif" alt="" (click)="savereact(1)">
       <img src="./assets/img/2.gif" alt="" (click)="savereact(2)">
       <img src="./assets/img/3.gif" alt="" (click)="savereact(3)">
       <img src="./assets/img/4.gif" alt="" (click)="savereact(4)">
       <img class="no-margin-right" src="./assets/img/5.gif" alt="" (click)="savereact(5)">
+    </div>
     </div>
     <div class="int-btn-wrap" *ngIf="myreact==null" (click)="savereact(0)" (mouseover)="OnHover()" (mouseleave)="OnLeave()">
         <h2 class="fb-mid like-inactive "></h2>

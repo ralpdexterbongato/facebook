@@ -42,6 +42,8 @@ import { CommentLoaderComponent } from './comment-loader/comment-loader.componen
 import { CommentReplyRowComponent } from './comment-reply-row/comment-reply-row.component';
 import { CommentReplyContainerComponent } from './comment-reply-container/comment-reply-container.component';
 import { PostReactionsComponent } from './post-reactions/post-reactions.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommentReactionsComponent } from './comment-reactions/comment-reactions.component';
 
 const routes: Routes = [
   {
@@ -113,6 +115,7 @@ const routes: Routes = [
     CommentReplyRowComponent,
     CommentReplyContainerComponent,
     PostReactionsComponent,
+    CommentReactionsComponent,
 
   ],
   imports: [
@@ -120,6 +123,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes,{onSameUrlNavigation:'reload'}),
     HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     TokenService,

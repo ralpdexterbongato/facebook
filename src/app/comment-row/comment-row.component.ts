@@ -11,8 +11,11 @@ export class CommentRowComponent implements OnInit {
   mainCommentData = [];
   loading = true;
   loadReply = false;
+  commentreactionArray=[];
+  reactionTotal =0;
   ngOnInit() {
   	this.ViewCommentData();
+    this.getCommentReacts();
   }
 
   ViewCommentData()
@@ -31,4 +34,23 @@ export class CommentRowComponent implements OnInit {
   	this.mainCommentData = data;
   }
 
+  getCommentReacts()
+  {
+    this.http.get(`//127.0.0.1:8000/api/comment-reactions/`+this.commentparentId).subscribe(
+      data=>{
+        console.log(data);
+        this.handleReacts(data);
+      },
+      error=>{
+        console.log(error);
+      });
+  }
+  handleReacts(data)
+  {
+    this.reactionTotal = 0;
+    for (var i = data.length - 1; i >= 0; i--) {
+      this.reactionTotal = this.reactionTotal + data[i].total;
+    }
+    this.commentreactionArray = data.slice(0,3);
+  }
 }

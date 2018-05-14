@@ -2,15 +2,30 @@
   <div class="reply-comment-box">
     <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="data.comment_owner.gender == '0'">
     <img src="./assets/img/profile.jpg" alt="" *ngIf="data.comment_owner.gender == '1'">
-    <div class="comment-circle">
-      <div class="content-wrap">
+    <div class="content-wrap">
+      <div class="comment-circle">
       	<span class="comment-name">{{data.comment_owner.fname}} {{data.comment_owner.lname}}</span>
       	<span class="content">{{data.content}}</span>
+      </div>
+      <div class="com-react-wrap" >
+        <div class="react-counter" *ngIf="reactionTotal > 0">
+          <div class="reaction-icons"  *ngFor="let react of commentreactionArray">
+            <h2 class="sadreact" *ngIf="react.type == '4'"></h2>
+            <h2 class="likereact" *ngIf="react.type == '0'"></h2>
+            <h2 class="heartreact" *ngIf="react.type == '1'"></h2>
+            <h2 class="laughreact" *ngIf="react.type == '2'"></h2>
+            <h2 class="wowreact" *ngIf="react.type == '3'"></h2>
+            <h2 class="angryreact" *ngIf="react.type == '5'"></h2>
+          </div >
+          <p>{{reactionTotal}}</p>
+        </div>
       </div>
     </div>
   </div> 
   <div class="comment-actions">
-    <p>Like</p><p>Reply</p><h6>{{data.updated_at}}</h6>
+    <app-comment-reactions (reacted)="getCommentReacts()" [commentID]="data.id"></app-comment-reactions>
+    <p>Reply</p>
+    <h6>{{data.updated_at}}</h6>
   </div>
 </div>
 <app-comment-loader *ngIf="replydata.length < 1"></app-comment-loader>

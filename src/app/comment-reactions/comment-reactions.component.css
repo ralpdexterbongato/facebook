@@ -1,20 +1,23 @@
-
-.like-btn-container
+.like-container
+{
+  cursor: pointer;
+  color: #365899;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+.likebtn-container
 {
   position: relative;
 }
-.interact-button-container
+.bold
 {
-  display: flex;
-  justify-content: space-between;
-  padding:4px 10px;
-  position: relative;
+  font-weight: bold;
 }
 .react-i-container
 {
   position: absolute;
-  top: -48px;
-  left: -10px;
+  top: -52px;
+  left: -5px;
   padding-bottom: 5px;
 }
 .react-icons
@@ -66,29 +69,6 @@
 {
   display: inline-block;
   vertical-align: middle;
-}
-.counter-box
-{
-  padding:10px;
-  border-left: 2px solid #4080FF;
-  display: flex;
-  background:#fff;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.counter-box i
-{
-  background:#4080FF;
-  color: #fff!important;
-  border-radius: 50%;
-  font-size: 9px;
-  padding:4px;
-}
-.counter-box p
-{
-  font-size: 14px;
-  margin-left: 4px;
-  color: #3C5CA2;
 }
 .fb-icons-sad
 {

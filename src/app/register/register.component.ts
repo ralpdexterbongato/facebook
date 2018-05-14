@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
     private app :AppComponent,
     private http:HttpClient
   ) { }
+
   years = [];
   contact = '';
   validemail = false;
@@ -30,16 +31,16 @@ export class RegisterComponent implements OnInit {
     email:null,
     email_confirmation:null,
     password:null,
-    month:null,
-    day:null,
-    year:null,
+    month: ("0" + (new Date().getMonth() + 1)).slice(-2),
+    day:("0" + (new Date().getDate())).slice(-2),
+    year:new Date().getFullYear()-18,
     gender:null,
   }
 
   initYear()
   {
     var currentYear =  (new Date()).getFullYear();
-    var limit = currentYear - 17;
+    var limit = currentYear;
     var start = currentYear - 100;
     for(var i=start; i < limit; i++)
     {

@@ -1,9 +1,24 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { transition,style,animate, trigger} from '@angular/animations';
 @Component({
   selector: 'app-post-reactions',
   templateUrl: './post-reactions.component.html',
-  styleUrls: ['./post-reactions.component.css']
+  styleUrls: ['./post-reactions.component.css'],
+  animations: [
+    trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({transform: 'translateY(100%)', opacity: 0}),
+          animate('200ms', style({transform: 'translateY(0)', opacity: 1}))
+        ]),
+        transition(':leave', [
+          style({transform: 'translateY(0)', opacity: 1}),
+          animate('80ms', style({transform: 'translateY(100%)', opacity: 0}))
+        ])
+      ]
+    )
+  ],
 })
 export class PostReactionsComponent implements OnInit {
 @Input('postid') postID;
@@ -19,19 +34,23 @@ export class PostReactionsComponent implements OnInit {
     this.getMyReaction();
     this.countReacts();
   }
-
+  iconsHover()
+  {
+    clearTimeout(this.outTimer);
+    this.showChoices = true;
+  }
   OnHover()
   {
   	  this.inTimer = setTimeout(()=>{
   		this.showChoices = true;
-  	},1000);
+  	},500);
   	 clearTimeout(this.outTimer);
   }
   OnLeave()
   {
   	this.outTimer= setTimeout(()=>{
   		this.showChoices=false;
-  	},500);
+  	},200);
   	clearTimeout(this.inTimer);
   }
 
