@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-comment-reply-row',
@@ -7,7 +7,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommentReplyRowComponent implements OnInit {
 @Input('replyid') replyID;
+@Output('clickreply') replybtnClick =new EventEmitter();
   constructor(private http:HttpClient) { }
+
+  optionShow = false;
+  updateText = '';
+  updateIsVisible = false;
+  loading = true;
 
   replydata = [];
   reactionTotal=0;
@@ -16,21 +22,42 @@ export class CommentReplyRowComponent implements OnInit {
   	this.ShowReply();
     this.getCommentReacts();
   }
-
   ShowReply()
   {
-  	this.http.get(`//127.0.0.1:8000/api/reply/`+this.replyID).subscribe(
-  		data=>{
-  			console.log(data);
-  			this.handleReplyData(data);
-  		},
-  		error=>{
-  			console.log(error);
-  		});
+    this.loading = true;
+    this.http.get(`//127.0.0.1:8000/api/reply/`+this.replyID).subscribe(
+      data=>{
+        console.log(data);
+        this.closeUpdate();
+        this.handleReplyData(data);
+      },
+      error=>{
+        console.log(error);
+      });
+  }
+  updateReply()
+  {
+    this.http.put(`//127.0.0.1:8000/api/reply/`+this.replyID,{
+      content : this.updateText,
+    }).subscribe(data=>{
+      this.ShowReply();
+    },error=>{
+      console.log(error);
+    })
+  }
+  showupdate()
+  {
+    this.updateText = this.replydata[0].content;
+    this.updateIsVisible = true;
+  }
+  closeUpdate()
+  {
+    this.updateIsVisible = false;
   }
   handleReplyData(data)
   {
   	this.replydata = data;
+    this.loading=false;
   }
   getCommentReacts()
   {
@@ -50,5 +77,16 @@ export class CommentReplyRowComponent implements OnInit {
       this.reactionTotal = this.reactionTotal + data[i].total;
     }
     this.commentreactionArray = data.slice(0,3);
+  }
+  deleteComment()
+  {
+    this.http.delete(`//127.0.0.1:8000/api/post-comments/`+this.replyID).subscribe(
+      data=>{
+        console.log(data)
+        this.replydata =[];
+      },
+      error=>{
+        console.log(error)
+      })
   }
 }

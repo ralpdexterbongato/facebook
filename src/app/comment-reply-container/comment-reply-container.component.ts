@@ -11,9 +11,15 @@ export class CommentReplyContainerComponent implements OnInit {
   @Input('mainCommentid') mainCommentID;
   ngOnInit() {
   	this.getReplies();
+    this.focusInput();
   }
+  pagination=[];
   commentContent = '';
   replyIds=[];
+  focusInput()
+  {
+    document.getElementById('replyinput').focus();
+  }
   postReply()
   {
   	this.http.post(`//127.0.0.1:8000/api/reply`,{
@@ -38,14 +44,29 @@ export class CommentReplyContainerComponent implements OnInit {
   	this.http.get(`//127.0.0.1:8000/api/replies-of-comment/`+this.mainCommentID).subscribe(
   		data=>{
   			console.log(data);
-  			this.handleReplies(data);
+  			if(this.pagination==null)
+        {
+          this.handleReplies(data);
+        }else
+        {
+          this.handleNextPages(data);
+        }
   		},
   		error=>{
   			console.log(error);
   		})
   }
+  handleNextPages(data)
+  {
+    this.pagination = data;
+    var newPageData = data.data.reverse();
+    for (var i = newPageData.length - 1; i >= 0; i--) {
+      this.replyIds.unshift(newPageData[i]);
+    }
+  }
   handleReplies(data)
   {
+    this.pagination=data;
   	this.replyIds = data.data.reverse();
   }
 }

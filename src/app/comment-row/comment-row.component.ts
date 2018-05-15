@@ -9,17 +9,45 @@ export class CommentRowComponent implements OnInit {
 @Input('commentparentID') commentparentId;
   constructor(private http:HttpClient) { }
   mainCommentData = [];
+  optionShow = false;
   loading = true;
   loadReply = false;
   commentreactionArray=[];
   reactionTotal =0;
+  updateText ='';
+  updateIsVisible =false;
+  latestreply =[];
   ngOnInit() {
   	this.ViewCommentData();
     this.getCommentReacts();
+    this.latestReply();
   }
-
+  updateComment()
+  {
+    this.http.put(`//127.0.0.1:8000/api/post-comments/`+this.commentparentId,{
+      content :this.updateText,
+    }).subscribe(
+    data=>{
+      console.log(data);
+      this.closeUpdate();
+      this.ViewCommentData();
+    },
+    error=>{
+      console.log(error);
+    })
+  }
+  showupdate()
+  {
+    this.updateText = this.mainCommentData[0].content;
+    this.updateIsVisible = true;
+  }
+  closeUpdate()
+  {
+    this.updateIsVisible = false;
+  }
   ViewCommentData()
   {
+    this.loading = true;
   	this.http.get(`//127.0.0.1:8000/api/post-comments/`+this.commentparentId).subscribe(
   		data=>{
   			this.handleResults(data);
@@ -52,5 +80,33 @@ export class CommentRowComponent implements OnInit {
       this.reactionTotal = this.reactionTotal + data[i].total;
     }
     this.commentreactionArray = data.slice(0,3);
+  }
+  deleteComment()
+  {
+    this.http.delete(`//127.0.0.1:8000/api/post-comments/`+this.commentparentId).subscribe(
+      data=>{
+        console.log(data)
+        this.mainCommentData =[];
+      },
+      error=>{
+        console.log(error)
+      })
+  }
+  latestReply()
+  {
+    this.http.get(`//127.0.0.1:8000/api/replies-of-comment-latest/`+this.commentparentId).subscribe(
+      data=>{
+        console.log(data);
+        console.log('eyes here!!!!');
+        this.handleLatestReply(data);
+      },
+      error=>{
+        console.log(error);
+      })
+  }
+  handleLatestReply(data)
+  {
+    this.latestreply = data;
+    console.log(data);
   }
 }

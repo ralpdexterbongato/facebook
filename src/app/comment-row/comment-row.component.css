@@ -49,6 +49,12 @@
   display: flex;
   font-size: 13px;
 }
+.comment-actions h4
+{
+  padding:2px 5px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+}
 .comment-actions p
 {
   cursor: pointer;
@@ -142,4 +148,67 @@
 .com-react-wrap
 {
   position: relative;
+  margin-right: 17px;
+}
+.comment-update-input
+{
+  background-color:#fff;
+  border-radius: 20px;
+  width: 94%;
+  padding: 5px 13px 2px 13px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.comment-update-input textarea
+{
+  max-height: 18px;
+  outline: none;
+  border-style: none;
+  resize: none;
+  width: 100%;
+  background-color: transparent;
+  margin:auto 0;
+}
+.cancel-esc
+{
+  font-size: 9px;
+  color: rgba(0,0,0,0.4);
+  margin-left: 40px;
+  margin-top: 5px;
+}
+.blue-text
+{
+  color: #4267B2
+}
+.replies-opener
+{
+  cursor: pointer;
+  padding-left: 47px;
+  color: #4266B3;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.replies-opener p
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.replies-opener img
+{
+  border-radius: 50%;
+  height: 17px;
+  width: 17px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.replies-opener > h2
+{
+  margin-right: 5px;
+  background-position: 0 -383px;
+  height: 13px;
+  width: 15px;
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: inline-block;
+  vertical-align: middle;
 }

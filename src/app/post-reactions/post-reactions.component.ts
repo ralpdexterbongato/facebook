@@ -33,6 +33,11 @@ export class PostReactionsComponent implements OnInit {
   ngOnInit() {
     this.getMyReaction();
     this.countReacts();
+    this.focusInput();
+  }
+  focusInput()
+  {
+    document.getElementById('MainCommentInput').focus();
   }
   iconsHover()
   {
@@ -56,6 +61,7 @@ export class PostReactionsComponent implements OnInit {
 
   savereact(reaction)
   {
+    this.showChoices = false;
     this.activateAnimation();
     this.myreact = reaction;
   	this.http.post(`//127.0.0.1:8000/api/post-reactions`,{

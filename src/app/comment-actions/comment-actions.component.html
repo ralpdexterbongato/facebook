@@ -1,0 +1,9 @@
+<div class="more-option-container">
+   <i class="material-icons" (click)="optionIsOpen=!optionIsOpen" >more_horiz</i>
+   <div class="drop-option" *ngIf="optionIsOpen">
+   	<ul>
+   	    <li (click)="openUpdate()"><i class="fas fa-pencil-alt"></i>Edit...</li>
+   	    <li (click)="clickDelete()"><i class="fa fa-trash"></i>Delete...</li>
+   	</ul>
+   </div>
+</div>

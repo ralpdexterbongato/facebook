@@ -69,6 +69,7 @@ export class CommentReactionsComponent implements OnInit {
   }
   saveReaction(type)
   {
+    this.showChoices = false;
   	this.http.post(`//127.0.0.1:8000/api/comment-reactions`,{
   		commentID:this.commentID,
   		type:type

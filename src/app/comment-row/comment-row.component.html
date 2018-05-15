@@ -1,8 +1,8 @@
-<div class="comment-row" *ngFor="let data of mainCommentData">
+<div class="comment-row" *ngFor="let data of mainCommentData" (mouseleave)="optionShow =false" (mouseover)="optionShow=true">
   <div class="main-comment-box">
     <img src="./assets/img/profile.jpg" alt="" *ngIf="data.comment_owner.gender == '1' ">
     <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="data.comment_owner.gender == '0' ">
-    <div class="content-wrap">
+    <div class="content-wrap" *ngIf="updateIsVisible==false">
       <div class="comment-circle">
       	<span class="comment-name">{{data.comment_owner.fname}} {{data.comment_owner.lname}}</span>
       	<span class="content">{{data.content}}</span>
@@ -16,16 +16,29 @@
             <h2 class="laughreact" *ngIf="react.type == '2'"></h2>
             <h2 class="wowreact" *ngIf="react.type == '3'"></h2>
             <h2 class="angryreact" *ngIf="react.type == '5'"></h2>
-          </div >
+          </div>
           <p>{{reactionTotal}}</p>
         </div>
       </div>
+      <app-comment-actions *ngIf="optionShow" (deleteclick)="deleteComment()" (showupdate)="showupdate()" ></app-comment-actions>
+    </div>
+    <div class="comment-update-input" *ngIf="updateIsVisible">
+      <textarea placeholder="Write a comment..." (keyup.enter)="updateComment()" autofocus (keyup.esc)="closeUpdate()" [(ngModel)]="updateText" ></textarea>
     </div>
   </div> 
-  <div class="comment-actions">
+  <p class="cancel-esc" *ngIf="updateIsVisible">Press Esc to <span class="blue-text">cancel</span>.</p>
+  <div class="comment-actions" *ngIf="updateIsVisible ==false">
     <app-comment-reactions (reacted)="getCommentReacts()" [commentID]="data.id"></app-comment-reactions>
-    <p (click)="loadReply=true">Reply</p><h6>{{data.updated_at}}</h6>
+    <p (click)="loadReply=true">Reply</p><h6>{{data.updated_at}}</h6><h4 *ngIf="data.isUpdated!=null ">Edited</h4>
   </div>
+  <span *ngIf="loadReply==false ">
+  <div class="replies-opener" (click)="loadReply=true" *ngFor="let reply of latestreply">
+    <h2></h2> 
+    <img src="./assets/img/profile.jpg" alt="" *ngIf=" reply.comment_owner.gender == 1"> 
+    <img src="./assets/img/profile-fe.jpg" alt="" *ngIf=" reply.comment_owner.gender == 0"> 
+    <p>{{reply.comment_owner.fname}} {{reply.comment_owner.lname}} replied</p>
+  </div>
+  </span>
   <app-comment-reply-container *ngIf="loadReply" [mainCommentid]="data.id" ></app-comment-reply-container>
 </div>
 <app-comment-loader *ngIf="loading==true"></app-comment-loader>

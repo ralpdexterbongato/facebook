@@ -39,3 +39,23 @@
     margin: auto 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
+.pagination-container
+{
+	font-size: 12px;
+	padding-left: 8px;
+	margin:15px 0px;
+	color: #4266B3;
+	cursor: pointer;
+}
+.pagination-container h2
+{
+  margin-right: 5px;
+  background-position: 0 -383px;
+  height: 13px;
+  width: 15px;
+  background-image: url(/assets/img/icons.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: inline-block;
+  vertical-align: middle;
+}

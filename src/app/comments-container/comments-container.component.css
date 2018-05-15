@@ -35,3 +35,14 @@
   border-radius: 50%;
   margin-right: 10px;
 }
+.pagination-btn:hover
+{
+  text-decoration: underline;
+}
+.pagination-btn
+{
+  cursor: pointer;
+  margin:10px 0px;
+  font-size: 13px;
+  color: #365899;
+}
