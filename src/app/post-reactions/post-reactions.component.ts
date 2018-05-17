@@ -64,7 +64,7 @@ export class PostReactionsComponent implements OnInit {
     this.showChoices = false;
     this.activateAnimation();
     this.myreact = reaction;
-  	this.http.post(`//127.0.0.1:8000/api/post-reactions`,{
+  	this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/post-reactions`,{
   			type: reaction,
   			postID:this.postID
   		}).subscribe(
@@ -82,7 +82,7 @@ export class PostReactionsComponent implements OnInit {
   }
   countReacts()
   {
-    this.http.get(`//127.0.0.1:8000/api/post-count-reacts/`+this.postID).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/post-count-reacts/`+this.postID).subscribe(
       data=>{
         console.log(data);
         this.handleCountResult(data);
@@ -104,7 +104,7 @@ export class PostReactionsComponent implements OnInit {
   }
   getMyReaction()
   {
-    this.http.get(`//127.0.0.1:8000/api/my-react-to-post/`+this.postID).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/my-react-to-post/`+this.postID).subscribe(
       data=>{
         console.log(data);
         this.myreact = data;
@@ -115,7 +115,7 @@ export class PostReactionsComponent implements OnInit {
   }
   removeReaction()
   {
-    this.http.delete(`//127.0.0.1:8000/api/post-reactions/`+this.postID).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/post-reactions/`+this.postID).subscribe(
       data=>{
         console.log(data);
         this.myreact=null;

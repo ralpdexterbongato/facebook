@@ -29,7 +29,7 @@ export class CommentReactionsComponent implements OnInit {
   inTimer;
   showChoices = false;
   MyReact = null;
-  ngOnInit() { 
+  ngOnInit() {
     this.getMyReaction();
   }
 
@@ -54,7 +54,7 @@ export class CommentReactionsComponent implements OnInit {
   }
   getMyReaction()
   {
-    this.http.get(`//127.0.0.1:8000/api/my-comment-reaction/`+this.commentID).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/my-comment-reaction/`+this.commentID).subscribe(
       data=>{
         console.log(data);
         this.handleMyreact(data);
@@ -70,7 +70,7 @@ export class CommentReactionsComponent implements OnInit {
   saveReaction(type)
   {
     this.showChoices = false;
-  	this.http.post(`//127.0.0.1:8000/api/comment-reactions`,{
+  	this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/comment-reactions`,{
   		commentID:this.commentID,
   		type:type
   	}).subscribe(
@@ -85,7 +85,7 @@ export class CommentReactionsComponent implements OnInit {
   }
   removeReaction()
   {
-    this.http.delete(`//127.0.0.1:8000/api/comment-reactions/`+this.commentID).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/comment-reactions/`+this.commentID).subscribe(
       data=>{
         //do something
         this.MyReact = null;

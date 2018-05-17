@@ -20,7 +20,7 @@ export class SearchPeopleComponent implements OnInit {
 
   searchThisName(data)
   {
-  	this.http.get(`//127.0.0.1:8000/api/find-people?q=`+data+`&page=1`).subscribe(
+  	this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/find-people?q=`+data+`&page=1`).subscribe(
   		data=>{
   			console.log(data);
   			this.handleFound(data);

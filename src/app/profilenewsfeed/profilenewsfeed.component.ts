@@ -80,7 +80,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   getProfilePost(page)
   {
     this.loading = true;
-    this.http.get(`//127.0.0.1:8000/api/profile/`+this.profileId+`?page=`+page).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/profile/`+this.profileId+`?page=`+page).subscribe(
       data=>{
         console.log(data);
         if(this.paginate.current_page==0)
@@ -112,7 +112,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   }
   getMyLatestSubmit()
   {
-    this.http.get(`//127.0.0.1:8000/api/profile-new/`+this.profileId).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/profile-new/`+this.profileId).subscribe(
       data=>{
         this.PushNewData(data);
       },
@@ -135,7 +135,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   }
   post()
   {
-    this.http.post(`//127.0.0.1:8000/api/post`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/post`,{
       description:this.postext,
       background:this.postBackground,
       userfile:'',

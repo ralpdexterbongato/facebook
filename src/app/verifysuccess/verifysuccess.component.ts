@@ -27,7 +27,7 @@ export class VerifysuccessComponent implements OnInit {
   }
   refreshtoken()
   {
-    this.http.post(`//127.0.0.1:8000/api/refresh`,{}).subscribe(
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/refresh`,{}).subscribe(
       data=>{
         this.handleData(data);
       },

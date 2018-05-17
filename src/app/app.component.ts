@@ -47,7 +47,7 @@ export class AppComponent implements OnInit{
   }
   logout()
   {
-    this.http.post(`//127.0.0.1:8000/api/logout`,{}).subscribe(
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/logout`,{}).subscribe(
       data=>{
         this.token.removeToken();
         this.refreshNavState();
@@ -62,5 +62,5 @@ export class AppComponent implements OnInit{
       }
     )
   }
- 
+
 }

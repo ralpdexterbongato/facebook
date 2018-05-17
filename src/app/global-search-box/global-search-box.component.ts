@@ -43,7 +43,7 @@ export class GlobalSearchBoxComponent implements OnInit {
   searchForSuggestions()
   {
   	this.stillsearching = true;
-  	this.http.get(`//127.0.0.1:8000/api/search-suggest?q=`+this.usertyped).subscribe(
+  	this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/search-suggest?q=`+this.usertyped).subscribe(
   		data=>{
   			this.handleSuggestionData(data);
         this.suggestisActive = true;
@@ -72,4 +72,3 @@ export class GlobalSearchBoxComponent implements OnInit {
    this.route.navigate(['/search/people'],{queryParams:{ q:this.usertyped} });
   }
 }
-

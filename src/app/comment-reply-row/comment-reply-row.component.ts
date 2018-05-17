@@ -25,7 +25,7 @@ export class CommentReplyRowComponent implements OnInit {
   ShowReply()
   {
     this.loading = true;
-    this.http.get(`//127.0.0.1:8000/api/reply/`+this.replyID).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/reply/`+this.replyID).subscribe(
       data=>{
         console.log(data);
         this.closeUpdate();
@@ -37,7 +37,7 @@ export class CommentReplyRowComponent implements OnInit {
   }
   updateReply()
   {
-    this.http.put(`//127.0.0.1:8000/api/reply/`+this.replyID,{
+    this.http.put(`https://ralpdexterfacebookapp.herokuapp.com/api/reply/`+this.replyID,{
       content : this.updateText,
     }).subscribe(data=>{
       this.ShowReply();
@@ -61,7 +61,7 @@ export class CommentReplyRowComponent implements OnInit {
   }
   getCommentReacts()
   {
-    this.http.get(`//127.0.0.1:8000/api/comment-reactions/`+this.replyID).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/comment-reactions/`+this.replyID).subscribe(
       data=>{
         console.log(data);
         this.handleReacts(data);
@@ -80,7 +80,7 @@ export class CommentReplyRowComponent implements OnInit {
   }
   deleteComment()
   {
-    this.http.delete(`//127.0.0.1:8000/api/post-comments/`+this.replyID).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/post-comments/`+this.replyID).subscribe(
       data=>{
         console.log(data)
         this.replydata =[];

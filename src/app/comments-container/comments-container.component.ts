@@ -20,7 +20,7 @@ export class CommentsContainerComponent implements OnInit {
   getCommentsOfPost(page)
   {
     this.showpagination = false;
-  	this.http.get(`//127.0.0.1:8000/api/commentsofpost/`+this.postID+`?page=`+page).subscribe(
+  	this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/commentsofpost/`+this.postID+`?page=`+page).subscribe(
   		data=>{
         this.showpagination = true;
   			if(this.pagination.length < 1)
@@ -50,7 +50,7 @@ export class CommentsContainerComponent implements OnInit {
   }
   postComment()
   {
-  	this.http.post(`//127.0.0.1:8000/api/post-comments`,{
+  	this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/post-comments`,{
   		'content':this.commentcontent,
   		'postid':this.postID,
   	}).subscribe(

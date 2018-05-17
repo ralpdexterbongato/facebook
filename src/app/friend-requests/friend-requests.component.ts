@@ -18,7 +18,7 @@ export class FriendRequestsComponent implements OnInit {
   }
   accept()
   {
-    this.http.post(`//127.0.0.1:8000/api/acceptfriend`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/acceptfriend`,{
       userid:this.ReqUserData.id,
     }).subscribe(
       data=>{
@@ -31,7 +31,7 @@ export class FriendRequestsComponent implements OnInit {
   }
   decline()
   {
-    this.http.delete(`//127.0.0.1:8000/api/remove-request/`+this.ReqUserData.id,{}).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/remove-request/`+this.ReqUserData.id,{}).subscribe(
       data=>{
         this.RelationStatus = 1;
         console.log(data);

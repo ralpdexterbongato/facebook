@@ -24,7 +24,7 @@ export class TokenService {
        var decodedPayload = this.getPayLoad(token);
       if(decodedPayload)
       {
-        return (decodedPayload.iss == 'http://127.0.0.1:8000/api/register'||'http://127.0.0.1:8000/api/login'||'http://127.0.0.1:8000/api/refresh' ? true : false);
+        return (decodedPayload.iss == 'https://ralpdexterfacebookapp.herokuapp.com/api/register'||'https://ralpdexterfacebookapp.herokuapp.com/api/login'||'https://ralpdexterfacebookapp.herokuapp.com/api/refresh' ? true : false);
       }
     }else
     {

@@ -69,7 +69,7 @@ export class RegisterComponent implements OnInit {
   SubmitRegister()
   {
     this.submitting =true;
-    this.http.post(`//127.0.0.1:8000/api/register`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/register`,{
       fname : this.form.fname,
       lname : this.form.lname,
       email : this.form.email,

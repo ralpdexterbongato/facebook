@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
   SubmitCredentials()
   {
-    this.http.post(`//127.0.0.1:8000/api/login`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/login`,{
       email: this.loginForm.email,
       password: this.loginForm.password
     }).subscribe(

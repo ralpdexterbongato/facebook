@@ -18,7 +18,7 @@ export class FriendRequestIconComponent implements OnInit {
   }
    getFriendRequests()
   {
-    this.http.get(`//127.0.0.1:8000/api/my-requests`).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/my-requests`).subscribe(
       data=>{
         this.handleReceivedFriendReq(data);
         console.log(data);
@@ -36,7 +36,7 @@ export class FriendRequestIconComponent implements OnInit {
   }
   countFriendRequest()
   {
-    this.http.get(`//127.0.0.1:8000/api/count-requests`).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/count-requests`).subscribe(
     	data=>{
     		this.handletotalData(data);
     	},
@@ -59,7 +59,7 @@ export class FriendRequestIconComponent implements OnInit {
   }
   updateAllAsSeen()
   {
-    this.http.put(`//127.0.0.1:8000/api/update-req-as-seen`,{}).subscribe(
+    this.http.put(`https://ralpdexterfacebookapp.herokuapp.com/api/update-req-as-seen`,{}).subscribe(
       data=>{
         console.log(data);
       },

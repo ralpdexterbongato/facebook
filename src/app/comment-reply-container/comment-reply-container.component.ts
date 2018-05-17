@@ -22,7 +22,7 @@ export class CommentReplyContainerComponent implements OnInit {
   }
   postReply()
   {
-  	this.http.post(`//127.0.0.1:8000/api/reply`,{
+  	this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/reply`,{
   		content:this.commentContent,
   		mainCommentID:this.mainCommentID,
   	}).subscribe(
@@ -41,7 +41,7 @@ export class CommentReplyContainerComponent implements OnInit {
   }
   getReplies()
   {
-  	this.http.get(`//127.0.0.1:8000/api/replies-of-comment/`+this.mainCommentID).subscribe(
+  	this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/replies-of-comment/`+this.mainCommentID).subscribe(
   		data=>{
   			console.log(data);
   			if(this.pagination==null)

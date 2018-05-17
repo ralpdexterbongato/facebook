@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
   }
   getUserData()
   {
-    this.http.get(`//127.0.0.1:8000/api/user/`+this.profileid).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/user/`+this.profileid).subscribe(
       data=>{
         this.handleUserData(data);
         console.log(data);
@@ -76,7 +76,7 @@ export class ProfileComponent implements OnInit {
   }
   sendRequest()
   {
-    this.http.post(`//127.0.0.1:8000/api/addfriend`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/addfriend`,{
       userid: this.profileid
     }).subscribe(
       data=>{
@@ -94,7 +94,7 @@ export class ProfileComponent implements OnInit {
   }
   acceptRequest()
   {
-    this.http.post(`//127.0.0.1:8000/api/acceptfriend`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/acceptfriend`,{
       userid:this.profileid
     }).subscribe(
       data=>{
@@ -112,7 +112,7 @@ export class ProfileComponent implements OnInit {
   }
   removeRequest(otherid)
   {
-    this.http.delete(`//127.0.0.1:8000/api/remove-request/`+otherid).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/remove-request/`+otherid).subscribe(
       data=>{
         console.log(data);
         this.displayAddFriendButton();
@@ -128,7 +128,7 @@ export class ProfileComponent implements OnInit {
   }
   unfriendUser(otherid)
   {
-    this.http.delete(`//127.0.0.1:8000/api/unfriend/`+otherid).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/unfriend/`+otherid).subscribe(
       data=>{
         console.log(data);
         this.displayAddFriendButton();

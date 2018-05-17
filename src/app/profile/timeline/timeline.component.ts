@@ -12,8 +12,8 @@ export class TimelineComponent implements OnInit {
   @Input('totalFriends') usertotalfriends;
   profid = '';
   friendsData = [];
-  constructor(private activeroute: ActivatedRoute,private http:HttpClient) 
-  { 
+  constructor(private activeroute: ActivatedRoute,private http:HttpClient)
+  {
     this.activeroute.paramMap.subscribe(
       param=>{
         this.profid = param.get('id');
@@ -51,7 +51,7 @@ export class TimelineComponent implements OnInit {
    // for profile preview
   getUserNewFrieds()
   {
-     this.http.get(`//127.0.0.1:8000/api/profile-preview-friends/`+this.profid).subscribe(
+     this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/profile-preview-friends/`+this.profid).subscribe(
          data=>{
            this.handleFriendsPrevResult(data);
            console.log(data);

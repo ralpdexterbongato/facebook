@@ -13,12 +13,12 @@ export class NewsfeedboxComponent implements OnInit {
   	this.getPostedData();
   }
   newpostings = [];
- 
+
   getPostedData()
   {
   	if(this.FriendId)
   	{
-  		this.http.get('//127.0.0.1:8000/api/newsfeedpostings/'+this.FriendId).subscribe(
+  		this.http.get('https://ralpdexterfacebookapp.herokuapp.com/api/newsfeedpostings/'+this.FriendId).subscribe(
   		data=>{
   			console.log(data);
   			this.handleDataResult(data);
@@ -37,4 +37,3 @@ export class NewsfeedboxComponent implements OnInit {
   	}
   }
 }
-

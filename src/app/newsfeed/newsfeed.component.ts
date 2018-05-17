@@ -67,7 +67,7 @@ export class NewsfeedComponent implements OnInit {
   getnewPosters(page)
   {
     this.loading = true;
-    this.http.get(`//127.0.0.1:8000/api/getnewposters?page=`+page).subscribe(
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/getnewposters?page=`+page).subscribe(
       data=>{
         if(this.paginate.current_page === 0)
         {
@@ -97,7 +97,7 @@ export class NewsfeedComponent implements OnInit {
   }
   post()
   {
-    this.http.post(`//127.0.0.1:8000/api/post`,{
+    this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/post`,{
       description:this.postext,
       background:this.postBackground,
       userfile:'',

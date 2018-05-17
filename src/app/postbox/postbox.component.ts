@@ -21,7 +21,7 @@ export class PostboxComponent implements OnInit {
   deletePost()
   {
     this.loading=true;
-    this.http.delete(`//127.0.0.1:8000/api/post/`+this.pId).subscribe(
+    this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/post/`+this.pId).subscribe(
       data=>{
         console.log(data);
         this.handleAfterDelete();
@@ -37,7 +37,7 @@ export class PostboxComponent implements OnInit {
   }
   updatePost()
   {
-    this.http.put(`//127.0.0.1:8000/api/post/`+this.pId,{
+    this.http.put(`https://ralpdexterfacebookapp.herokuapp.com/api/post/`+this.pId,{
       description:this.postUpdateText,
     }).subscribe(
     data=>{
@@ -65,7 +65,7 @@ export class PostboxComponent implements OnInit {
   {
   	if(this.pId)
   	{
-  		this.http.get('//127.0.0.1:8000/api/post/'+this.pId).subscribe(
+  		this.http.get('https://ralpdexterfacebookapp.herokuapp.com/api/post/'+this.pId).subscribe(
   		data=>{
   			console.log(data);
   			this.handleDataResult(data);
