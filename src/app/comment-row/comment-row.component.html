@@ -20,7 +20,7 @@
           <p>{{reactionTotal}}</p>
         </div>
       </div>
-      <app-comment-actions *ngIf="optionShow" (deleteclick)="deleteComment()" (showupdate)="showupdate()" ></app-comment-actions>
+      <app-comment-actions *ngIf="optionShow && currentUserID == data.comment_owner.id " (deleteclick)="deleteComment()" (showupdate)="showupdate()" ></app-comment-actions>
     </div>
     <div class="comment-update-input" *ngIf="updateIsVisible">
       <textarea placeholder="Write a comment..." (keyup.enter)="updateComment()" autofocus (keyup.esc)="closeUpdate()" [(ngModel)]="updateText" ></textarea>

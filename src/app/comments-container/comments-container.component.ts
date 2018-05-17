@@ -1,5 +1,6 @@
 import { Component, OnInit, Input,Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-comments-container',
   templateUrl: './comments-container.component.html',
@@ -65,5 +66,5 @@ export class CommentsContainerComponent implements OnInit {
   {
     this.parentCommentIds.push(data);
   }
-  
+
 }

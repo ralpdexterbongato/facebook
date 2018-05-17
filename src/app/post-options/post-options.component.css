@@ -1,0 +1,51 @@
+.post-options i:hover
+{
+	color: #4A4E57;
+}
+.post-options i
+{
+	color: #90949C;
+}
+.post-options
+{
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+}
+.horiz-divider
+{
+	border-top: 1px solid rgba(0,0,0,0.1);
+	width: 90%;
+	margin:5px auto;
+}
+.post-options ul li:hover
+{
+	border-color: #2E4878;
+	color: #fff;
+	background-color: #4267B2
+}
+.post-options ul li
+{
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	font-size: 12.5px;
+	padding:5px 14px;
+	color: #303030;
+}
+.post-options ul.active
+{
+	display: block;
+}
+.post-options ul
+{
+	z-index: 1;
+	display: none;
+	padding: 5px 0px;
+	border-top: 1px solid #DADBDD;
+	position: absolute;
+	background-color: #fff;
+	width: 200px;
+	border-radius: 2px;
+	right: 0px;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+}

@@ -167,3 +167,64 @@
 {
   background: linear-gradient(182deg, #CD3E70 0, #DE2C48 56%);
 }
+
+.editing-box textarea 
+{
+  width: 450px;
+  height: 100px;
+  outline: none;
+  border-style: none;
+  resize: none;
+  padding:5px;
+}
+.editing-box
+{
+  border:1px solid #9CB4D8;
+  border-radius: 3px;
+  margin:0px 10px;
+}
+.editing-btn button 
+{
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.cancelBtn button:hover 
+{
+  background-color: #E9EBEE;
+}
+.cancelBtn button
+{
+  color: #4B4F56;
+  border:1px solid #e2e3e4;
+  background-color: #f6f7f9;
+  padding:5px 10px;
+}
+.doneBtn button[disabled]
+{
+  background-color: #9CB4D8!important;
+  border-color: #9CB4D8!important;
+}
+.doneBtn button:hover
+{
+  background-color: #365899;
+}
+.doneBtn button 
+{
+  border:1px solid #4B75C0;
+  background-color: #4B75C0;
+  color: #fff;
+  padding:5px 10px;
+}
+.editing-btn
+{
+  background-color: #F6F7F9;
+  border-top: 1px solid #DBDCDF;
+  display: flex;
+  justify-content: flex-end;
+  padding:5px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}

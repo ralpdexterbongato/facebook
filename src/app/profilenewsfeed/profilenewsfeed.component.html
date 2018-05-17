@@ -90,8 +90,11 @@
   </div>
 </div>
 <app-postbox *ngFor="let posting of Postings" [postID]="posting.id"></app-postbox>
-<div class="post-birthyear-container">
+<!-- <div class="post-birthyear-container">
   <i class="far fa-clock"></i>
   <h2>Post from 1993</h2>
+</div> -->
+<div class="post-loader-container" *ngIf="loading && paginate.next_page_url!=null && Postings.length > 0">
+  <img src="./assets/img/load.gif" alt="Slow network detected">
 </div>
-<div class="bottom-dot"></div>
+<div class="bottom-dot" *ngIf="LastPage == true"></div>

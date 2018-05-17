@@ -16,11 +16,15 @@ export class VerifysuccessComponent implements OnInit {
     private route:Router,
     private app:AppComponent,
   ) { }
-
+  myemail ='';
   ngOnInit() {
     this.refreshtoken();
+    this.getEmail();
   }
-
+  getEmail()
+  {
+    this.myemail = this.token.getEmail();
+  }
   refreshtoken()
   {
     this.http.post(`//127.0.0.1:8000/api/refresh`,{}).subscribe(

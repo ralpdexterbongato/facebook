@@ -12,7 +12,8 @@ export class NewsfeedboxComponent implements OnInit {
   ngOnInit() {
   	this.getPostedData();
   }
-  friendData = [];
+  newpostings = [];
+ 
   getPostedData()
   {
   	if(this.FriendId)
@@ -30,9 +31,9 @@ export class NewsfeedboxComponent implements OnInit {
   }
   handleDataResult(data)
   {
-  	if(data.length > 0)
+  	if(data.data.length > 0)
   	{
-  		this.friendData = data[0];
+  		this.newpostings = data.data;
   	}
   }
 }

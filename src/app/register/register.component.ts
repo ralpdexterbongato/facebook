@@ -36,7 +36,14 @@ export class RegisterComponent implements OnInit {
     year:new Date().getFullYear()-18,
     gender:null,
   }
-
+  setMaleActive()
+  {
+    this.form.gender = '1';
+  }
+  setFeMaleActive()
+  {
+    this.form.gender = '0';
+  }
   initYear()
   {
     var currentYear =  (new Date()).getFullYear();
@@ -58,6 +65,7 @@ export class RegisterComponent implements OnInit {
       this.validemail =false;
     }
   }
+
   SubmitRegister()
   {
     this.submitting =true;
@@ -78,7 +86,7 @@ export class RegisterComponent implements OnInit {
       error=>{
         console.log(error);
         this.submitting =false;
-        this.handleRegisterError();
+        this.handleRegisterError(error);
       }
     );
   }
@@ -88,8 +96,9 @@ export class RegisterComponent implements OnInit {
     this.app.refreshNavState();
     this.route.navigate(['check-your-email']);
   }
-  handleRegisterError()
+  handleRegisterError(error)
   {
-
+    this.submitting =false;
+    console.log(error);
   }
 }

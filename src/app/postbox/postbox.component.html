@@ -13,17 +13,31 @@
       </div>
       <!-- <p> is with <span class="fb-blue-text"> Jiro Zargoza</span></p> -->
     </div>
-    <i class="material-icons">more_horiz</i>
+    <app-post-options (clickDelete)="deletePost()" (clickedit)="openEdit()" *ngIf="currentUserId == data.poster.id"></app-post-options>
   </div>
-  <div class="post-content" [ngClass]="data.background!=null ? 'active background'+data.background:''">
+  <span *ngIf="updateShow == false ">
+    <div class="post-content" [ngClass]="data.background!=null ? 'active background'+data.background:''">
     <p>{{data.description}}</p>
-  </div>
-  <div class="file-container">
-    <!-- <img src="./assets/img/p1.jpg" alt=""> -->
-  </div>
-  <div class="horiz-divider">
-  </div>
+    </div>
+    <div class="file-container">
+      <!-- <img src="./assets/img/p1.jpg" alt=""> -->
+    </div>
+    <div class="horiz-divider"></div>
+  </span>
+  <span *ngIf="updateShow == true ">
+    <div class="editing-box">
+      <textarea id="postupdatedInput" autofocus [(ngModel)]="postUpdateText"></textarea>
+      <div class="editing-btn">
+        <div class="btnwrap cancelBtn">
+          <button (click)="closeEdit()">Cancel</button>
+        </div>
+        <div class="btnwrap doneBtn">
+          <button [disabled]="postUpdateText.length==0" (click)="updatePost()" >Done Editing</button>
+        </div>
+      </div>
+    </div>
+  </span>
   <app-post-reactions [postid]="data.id"></app-post-reactions>
   <app-comments-container [postid]="data.id" ></app-comments-container>
 </div>
-<app-newsfeed-loadingbox *ngIf="dataresult.length == 0"></app-newsfeed-loadingbox>
+<app-newsfeed-loadingbox *ngIf="loading"></app-newsfeed-loadingbox>

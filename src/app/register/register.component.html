@@ -3,17 +3,17 @@
   <p class="signup-des">It's free and always will be.</p>
   <div  class="form-container" FormsModule="regForm">
     <div class="input-row">
-      <input type="text" [(ngModel)]="form.fname"  class="space-right" placeholder="First name" value="">
-      <input type="text" [(ngModel)]="form.lname"  placeholder="Last name" value="">
+      <input type="text" maxlength="20" required [(ngModel)]="form.fname"  class="space-right" placeholder="First name" value="">
+      <input type="text" maxlength="20" required  [(ngModel)]="form.lname"  placeholder="Last name" value="">
     </div>
     <div class="input-row">
-      <input type="text" (keyup)="checkIfEmail()" [(ngModel)]="form.email"  placeholder="Mobile number or email" value="">
+      <input type="email" required (keyup)="checkIfEmail()" [(ngModel)]="form.email"  placeholder="Email address" value="">
     </div>
     <div class="input-row" *ngIf="validemail">
-      <input type="text" [(ngModel)]="form.email_confirmation" placeholder="Re-enter email" value="">
+      <input type="email" required [(ngModel)]="form.email_confirmation" placeholder="Re-enter email" value="">
     </div>
     <div class="input-row">
-      <input type="password" [(ngModel)]="form.password" placeholder="New Password" value="">
+      <input type="password" maxlength="50" minlength="8" required [(ngModel)]="form.password" placeholder="New Password" value="">
     </div>
     <p class="birthday">Birthday</p>
     <div class="input-row birthday-options">
@@ -70,10 +70,10 @@
       <p>Why do i need to provide my <br>birthday?</p>
     </div>
     <div class="input-row input-radio">
-      <input type="radio" value="0" [(ngModel)]="form.gender">
-      <label>Female</label>
-      <input type="radio" value="1" [(ngModel)]="form.gender">
-      <label>Male</label>
+      <input required type="radio" id="genderfe" value="0" [(ngModel)]="form.gender">
+      <label (click)="setFeMaleActive()">Female</label>
+      <input required type="radio" id="genderma" value="1" [(ngModel)]="form.gender">
+      <label (click)="setMaleActive()">Male</label>
     </div>
     <p class="reg-parag">By clicking Sign Up, you agree to our <span class="blue-text">Terms, Data Policy</span> and<br> <span class="blue-text">Cookies Policy</span>. You may receive SMS Notifications from us and<br> can opt out any time.</p>
     <button type="button" (click)="SubmitRegister()" [ngClass]="{'disabled':submitting}" [(disabled)]="submitting"  name="button">Sign Up <img src="./assets/img/load.gif" alt=""></button>

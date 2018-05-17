@@ -45,6 +45,7 @@ import { PostReactionsComponent } from './post-reactions/post-reactions.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommentReactionsComponent } from './comment-reactions/comment-reactions.component';
 import { CommentActionsComponent } from './comment-actions/comment-actions.component';
+import { PostOptionsComponent } from './post-options/post-options.component';
 
 const routes: Routes = [
   {
@@ -118,6 +119,7 @@ const routes: Routes = [
     PostReactionsComponent,
     CommentReactionsComponent,
     CommentActionsComponent,
+    PostOptionsComponent,
 
   ],
   imports: [

@@ -8,7 +8,7 @@
         <p>Make Post</p>
       </h4>
       <div class="vertical-div">
-      </div> 
+      </div>
       <h4>
         <i class="material-icons">image</i>
         <p class="fb-blue-text">Photo/Video Album</p>
@@ -92,3 +92,8 @@
 <app-postbox [postID]="newpost" *ngFor="let newpost of inewlyposted"></app-postbox>
 <app-newsfeedbox [friendID]="poster.id" *ngFor="let poster of newestposters"></app-newsfeedbox>
 <app-newsfeed-loadingbox *ngIf="newestposters.length == 0"></app-newsfeed-loadingbox>
+<div class="loading-icon-cointainer" *ngIf="LastPage == false && newestposters.length > 0">
+  <img src="./assets/img/load.gif" alt="" class="loading-icon">
+</div>
+<div class="lastpage-dot" *ngIf="LastPage">
+</div>

@@ -1,31 +1,51 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from "@angular/platform-browser";
+import { Component, OnInit,HostListener,Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TokenService } from '../services/token.service';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-newsfeed',
   templateUrl: './newsfeed.component.html',
   styleUrls: ['./newsfeed.component.css']
 })
 export class NewsfeedComponent implements OnInit {
-
-  constructor(private http:HttpClient,private token:TokenService) { }
-  ngOnInit() {
-    this.getnewPosters();
-    this.getGender();
+  constructor(private http:HttpClient,
+    private token:TokenService,
+    @Inject(DOCUMENT) private document: Document,
+  ) { }
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+   if(this.document.documentElement.scrollTop + $(window).height() > $(document).height() - $(window).height() && this.paginate.next_page_url!=null && this.loading==false)
+   {
+     this.getnewPosters(this.paginate.current_page+1);
+   }else if(this.paginate.next_page_url==null)
+   {
+     this.LastPage = true;
+   }
   }
-
+  ngOnInit() {
+    this.getnewPosters(1);
+    this.getGender();
+    this.scrollTracker();
+  }
+  loading = false;
+  LastPage =false;
   textareaIsActive= false;
-  postext =''; 
+  postext ='';
   postBackground=null;
   postPrivacy='1';
   tags = [];
   newestposters=[];
   inewlyposted=[];
-
+  paginate={
+    current_page:0,
+    next_page_url:null,
+  }
   usergender = '';
   classToAdd = '';
 
   HugeParag = false;
+
   getGender()
   {
     this.usergender = this.token.getGender();
@@ -38,19 +58,41 @@ export class NewsfeedComponent implements OnInit {
   {
     this.textareaIsActive = false;
   }
-  getnewPosters()
+  scrollTracker()
   {
-    this.http.get(`//127.0.0.1:8000/api/getnewposters`).subscribe(
+    window.addEventListener('scroll', function(e) {
+        // this.getnewposters(1);
+    });
+  }
+  getnewPosters(page)
+  {
+    this.loading = true;
+    this.http.get(`//127.0.0.1:8000/api/getnewposters?page=`+page).subscribe(
       data=>{
-        console.log(data);
-        this.handleNewPosters(data);
+        if(this.paginate.current_page === 0)
+        {
+          this.handleNewPosters(data);
+        }else
+        {
+          this.handleSecondPagePosters(data);
+        }
       },
       error=>{
         console.log(error);
       });
   }
+  handleSecondPagePosters(data)
+  {
+    this.loading=false;
+    this.paginate = data;
+    for (let i = 0; i < data.data.length; i++) {
+        this.newestposters.push(data.data[i]);
+    }
+  }
   handleNewPosters(data)
   {
+    this.loading=false;
+    this.paginate = data;
     this.newestposters = data.data;
   }
   post()
@@ -93,7 +135,7 @@ export class NewsfeedComponent implements OnInit {
          break;
        case 1:
          this.classToAdd = 'active background1'
-         break;       
+         break;
        case 2:
          this.classToAdd = 'active background2'
          break;
@@ -130,7 +172,7 @@ export class NewsfeedComponent implements OnInit {
        case 13:
          this.classToAdd = 'active background13'
          break;
-     } 
+     }
   }
   focusTheArea()
   {

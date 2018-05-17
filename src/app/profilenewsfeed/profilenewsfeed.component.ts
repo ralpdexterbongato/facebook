@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from "@angular/platform-browser";
+import { Component, OnInit,HostListener,Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router ,ActivatedRoute } from '@angular/router';
 import { TokenService } from '../services/token.service';
@@ -12,7 +13,7 @@ export class ProfileNewsfeedComponent implements OnInit {
   postext ='';
   postBackground=null;
   postPrivacy='1';
-  newlysaved=null; 
+  newlysaved=null;
   tags = [];
   textareaIsActive= false;
   profileId = null;
@@ -23,28 +24,45 @@ export class ProfileNewsfeedComponent implements OnInit {
   HugeParag = false;
   classToAdd = '';
   usergender ='';
+  paginate={
+    current_page:0,
+    next_page_url:null,
+  }
+  loading = false;
+  LastPage = false;
   constructor(private http: HttpClient,
     private activated: ActivatedRoute,
-    private token: TokenService
+    private token: TokenService,
+    @Inject(DOCUMENT) private document: Document,
   ) {
      this.activated.paramMap.subscribe(
       params=>{
           this.profileId = params.get('id');
-          this.getProfilePost();
+          this.getProfilePost(1);
           this.getCurrentUsersID();
           this.getCurrentUserGender();
           this.getCurrentUserFname();
       }
     )
   }
-
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+   if(this.document.documentElement.scrollTop + $(window).height() > $(document).height() - $(window).height() && this.paginate.next_page_url!=null && this.loading==false)
+   {
+     this.LastPage = false;
+     this.getProfilePost(this.paginate.current_page+1);
+   }else if(this.paginate.next_page_url==null)
+   {
+     this.LastPage = true;
+   }
+  }
   ngOnInit() {
     // this.getProfilePost();
     // this.getCurrentUsersID();
     // this.getCurrentUserGender();
     $.each($('textarea[data-autoresize]'), function() {
     var offset = this.offsetHeight - this.clientHeight;
- 
+
 });
   }
   getCurrentUserFname()
@@ -59,21 +77,38 @@ export class ProfileNewsfeedComponent implements OnInit {
   {
     this.currentuserID = this.token.getUserId();
   }
-  getProfilePost()
+  getProfilePost(page)
   {
-    this.http.get(`//127.0.0.1:8000/api/profile/`+this.profileId).subscribe(
+    this.loading = true;
+    this.http.get(`//127.0.0.1:8000/api/profile/`+this.profileId+`?page=`+page).subscribe(
       data=>{
         console.log(data);
-        this.handlePostData(data);
+        if(this.paginate.current_page==0)
+        {
+          this.handlePostData(data);
+        }else
+        {
+          this.handleNextPagePost(data);
+        }
       },
       error=>{
         console.log(error);
       }
     )
   }
+  handleNextPagePost(data)
+  {
+    this.loading = false;
+    this.paginate = data;
+    for (let i = 0; i < data.data.length; i++) {
+        this.Postings.push(data.data[i]);
+    }
+  }
   handlePostData(data)
   {
+    this.loading =false;
     this.Postings = data.data;
+    this.paginate = data;
   }
   getMyLatestSubmit()
   {
@@ -133,7 +168,7 @@ export class ProfileNewsfeedComponent implements OnInit {
          break;
        case 1:
          this.classToAdd = 'active background1'
-         break;       
+         break;
        case 2:
          this.classToAdd = 'active background2'
          break;
@@ -170,7 +205,7 @@ export class ProfileNewsfeedComponent implements OnInit {
        case 13:
          this.classToAdd = 'active background13'
          break;
-     } 
+     }
   }
   focusTheArea()
   {

@@ -16,6 +16,15 @@
   height: 80px;
   font-size: 20px;
 }
+.loading-icon-cointainer
+{
+  display: flex;
+  justify-content: center;
+}
+.loading-icon
+{
+  margin:0 auto;
+}
 .posting-form-container
 {
   min-height: 120px;
@@ -179,7 +188,7 @@
   background: linear-gradient(182deg, #CD3E70 0, #DE2C48 56%);
 }
 
-.posting-mid.active 
+.posting-mid.active
 {
   display: flex;
   min-height: 250px;
@@ -446,4 +455,12 @@
 .purple-text
 {
   color: #8C72CB!important;
+}
+.lastpage-dot
+{
+  height: 10px;
+  margin:0 auto;
+  width: 10px;
+  border-radius: 50%;
+  background: #9FB3CD;
 }

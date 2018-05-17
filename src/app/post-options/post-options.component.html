@@ -1,0 +1,12 @@
+<div class="post-options">
+  <i class="material-icons" (click)="showOptions = !showOptions">more_horiz</i>
+  <ul [ngClass]="showOptions?'active':''">
+      <li>Save post</li>
+      <div class="horiz-divider"></div>
+      <li (click)="onClickEdit()">Edit post</li>
+      <li>Add location</li>
+      <div class="horiz-divider"></div>
+      <li>Hide from timeline</li>
+      <li (click)="onClickDelete()">Delete</li>
+  </ul>
+</div>
