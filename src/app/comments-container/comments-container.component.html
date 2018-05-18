@@ -1,5 +1,5 @@
  <div class="comments-container">
- 	<p (click)="getCommentsOfPost(pagination.current_page+1)" *ngIf=" pagination.length != 0 && pagination.next_page_url!=null && showpagination==true"  class="pagination-btn">View more comments</p>
+ 	<p (click)="getCommentsOfPost(pagination.current_page+1)" *ngIf=" pagination.next_page_url!=null && showpagination==true"  class="pagination-btn">View more comments</p>
     <app-comment-row [commentparentID]="commentId.id" *ngFor="let commentId of parentCommentIds "></app-comment-row>
     <div class="comment-form-container">
       <img src="./assets/img/1.jpg" alt="">

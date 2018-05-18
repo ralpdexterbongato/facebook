@@ -15,8 +15,11 @@
             <input type="password" (keyup.enter)="SubmitCredentials()" [(ngModel)]="loginForm.password" value="">
             <a class="forgot" href="#">Forgot account?</a>
           </div>
-          <div class="">
-            <button type="button" (click)="SubmitCredentials()" name="button">Log In</button>
+          <div class="submit-login-btn">
+            <button type="button" (click)="SubmitCredentials()" name="button">
+              <span *ngIf="loading == false">Log In</span>
+              <img *ngIf="loading == true" src="./assets/img/load.gif" alt="">
+            </button>
           </div>
         </div>
       </div>

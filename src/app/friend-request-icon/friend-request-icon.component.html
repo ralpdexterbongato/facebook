@@ -23,7 +23,7 @@
               </div>
               <div class="friend-drop-content">
                 <app-friend-requests [userRequesting]="user" *ngFor="let user of userFriendRequests"></app-friend-requests>
-                <p *ngIf="userFriendRequests.length == 0 && searching == true "><img src="./assets/img/load.gif" alt=""></p>
+                <app-small-user-loader *ngIf="searching"></app-small-user-loader>
                 <p *ngIf="userFriendRequests.length == 0 && searching == false ">No results found</p>
               </div>
               <div class="friend-drop-footer">

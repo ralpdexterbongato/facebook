@@ -20,8 +20,6 @@ export class AppComponent implements OnInit{
   userFname = '';
   userId = '';
   usergender ='';
-
-  userFriendRequests = [];
   ngOnInit() {
     this.route.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {

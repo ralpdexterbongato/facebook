@@ -11,7 +11,10 @@ export class CommentsContainerComponent implements OnInit {
   constructor(private http:HttpClient) { }
   commentcontent='';
   showpagination = true;
-  pagination=[];
+  pagination={
+    next_page_url:null,
+    current_page:0,
+  };
   ngOnInit() {
     this.getCommentsOfPost(1);
   }
@@ -23,7 +26,7 @@ export class CommentsContainerComponent implements OnInit {
   	this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/commentsofpost/`+this.postID+`?page=`+page).subscribe(
   		data=>{
         this.showpagination = true;
-  			if(this.pagination.length < 1)
+  			if(this.pagination.current_page == 0)
         {
           this.handleCommentIDs(data);
         }else

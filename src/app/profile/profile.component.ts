@@ -9,7 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileComponent implements OnInit {
 
-  userdata=[];
+  userdata={
+    fname:'',
+    lname:'',
+    gender:null,
+  };
   profileid='';
   currentUserID='';
   relation='';

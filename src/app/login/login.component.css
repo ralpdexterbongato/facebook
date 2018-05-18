@@ -102,3 +102,13 @@ header
   max-width: 1000px!important;
   margin:0 auto;
 }
+.submit-login-btn button
+{
+  width: 53px;
+  height: 25px;
+  outline:none;
+}
+.submit-login-btn button img
+{
+  width: 10px;
+}

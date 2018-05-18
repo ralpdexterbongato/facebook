@@ -19,12 +19,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  loading =false;
   public loginForm = {
     email : null,
     password : null,
   }
   SubmitCredentials()
   {
+    this.loading = true;
     this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/login`,{
       email: this.loginForm.email,
       password: this.loginForm.password
@@ -32,10 +34,12 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data);
         this.handleSuccessLogin(data);
+        this.loading = false;
       },
       error=> {
         console.log(error);
         this.handleLoginError(error);
+        this.loading=false;
       }
     );
   }

@@ -60,7 +60,7 @@
   margin: auto;
 }
 .friend-req-data h2
-{ 
+{
   font-size: 13px;
   margin-bottom: 3px;
   font-weight: 600;
@@ -80,4 +80,14 @@
 .friend-req-left
 {
   display: flex;
+}
+.confirm-req-btn:disabled
+{
+  background: #6B8AC9!important;
+  cursor:not-allowed!important
+}
+.delete-req-btn:disabled
+{
+  color: #9297A3!important;
+  cursor: not-allowed!important;
 }

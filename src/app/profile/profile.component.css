@@ -271,6 +271,7 @@
   left: 0;
   bottom: -190px;
   padding-top: 30px;
+  z-index: 2;
 }
 .prof-btns-dropboxa ul
 {

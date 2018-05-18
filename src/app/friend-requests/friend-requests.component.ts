@@ -11,6 +11,7 @@ export class FriendRequestsComponent implements OnInit {
 
   ngOnInit() {
   }
+  loading = false;
   RelationStatus  = null;
   getMutual()
   {
@@ -18,26 +19,32 @@ export class FriendRequestsComponent implements OnInit {
   }
   accept()
   {
+    this.loading = true;
     this.http.post(`https://ralpdexterfacebookapp.herokuapp.com/api/acceptfriend`,{
       userid:this.ReqUserData.id,
     }).subscribe(
       data=>{
         this.RelationStatus = 0;
         console.log(data);
+        this.loading = false;
       },
       error=>{
         console.log(error);
+        this.loading = false;
       })
   }
   decline()
   {
+    this.loading = true;
     this.http.delete(`https://ralpdexterfacebookapp.herokuapp.com/api/remove-request/`+this.ReqUserData.id,{}).subscribe(
       data=>{
         this.RelationStatus = 1;
         console.log(data);
+        this.loading = false;
       },
       error=>{
         console.log(error);
+        this.loading = false;
       })
   }
 

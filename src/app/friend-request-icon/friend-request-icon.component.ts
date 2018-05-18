@@ -12,27 +12,46 @@ export class FriendRequestIconComponent implements OnInit {
   userFriendRequests = [];
   totalRequest=0;
   friendReqIsActive = false;
-  searching = true;
+  searching =false;
+  pagination ={
+    current_page:0,
+    next_page_url:null,
+  }
   ngOnInit() {
   	this.countFriendRequest();
   }
-   getFriendRequests()
+   getFriendRequests(page)
   {
-    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/my-requests`).subscribe(
+    this.searching=true;
+    this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/my-requests?page`+page).subscribe(
       data=>{
-        this.handleReceivedFriendReq(data);
+        if(this.pagination.current_page == 0)
+        {
+          this.handleReceivedFriendReq(data)
+        }else
+        {
+          this.handleNextPages(data);
+        }
         console.log(data);
-        this.searching=false;
         this.totalRequest=0;
       },
       error=>{
         console.log(error);
-        this.searching=false;
       });
+  }
+  handleNextPages(data)
+  {
+    for (let i = 0; i < data.data.length; i++) {
+        this.userFriendRequests.push(data.data[i]);
+    }
+    this.pagination = data;
+    this.searching=false;
   }
   handleReceivedFriendReq(data)
   {
     this.userFriendRequests = data.data;
+    this.pagination = data;
+    this.searching=false;
   }
   countFriendRequest()
   {
@@ -53,7 +72,7 @@ export class FriendRequestIconComponent implements OnInit {
     this.friendReqIsActive = !this.friendReqIsActive;
     if((this.friendReqIsActive == true) && (this.userFriendRequests.length == 0))
     {
-      this.getFriendRequests();
+      this.getFriendRequests(1);
       this.updateAllAsSeen();
     }
   }

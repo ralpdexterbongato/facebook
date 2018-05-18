@@ -13,7 +13,10 @@ export class CommentReplyContainerComponent implements OnInit {
   	this.getReplies();
     this.focusInput();
   }
-  pagination=[];
+  pagination={
+    next_page_url:null,
+    current_page:0,
+  };
   commentContent = '';
   replyIds=[];
   focusInput()
@@ -44,7 +47,7 @@ export class CommentReplyContainerComponent implements OnInit {
   	this.http.get(`https://ralpdexterfacebookapp.herokuapp.com/api/replies-of-comment/`+this.mainCommentID).subscribe(
   		data=>{
   			console.log(data);
-  			if(this.pagination==null)
+  			if(this.pagination.current_page==0)
         {
           this.handleReplies(data);
         }else
