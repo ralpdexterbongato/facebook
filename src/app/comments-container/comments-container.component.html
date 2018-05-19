@@ -4,7 +4,7 @@
     <div class="comment-form-container">
       <img src="./assets/img/1.jpg" alt="">
       <div class="text-container-comment">
-        <textarea id="MainCommentInput" placeholder="Write a comment... " autofocus (keyup.enter)="postComment()" [(ngModel)]="commentcontent" ></textarea>
+        <textarea id="MainCommentInput" placeholder="Write a comment... " (keyup.enter)="postComment()" [(ngModel)]="commentcontent" ></textarea>
       </div>
     </div>
   </div>
