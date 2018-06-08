@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
+import { TokenService } from '../services/token.service';
 @Component({
   selector: 'app-comments-container',
   templateUrl: './comments-container.component.html',
@@ -8,7 +9,11 @@ import * as $ from 'jquery';
 })
 export class CommentsContainerComponent implements OnInit {
 	@Input('postid') postID;
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    private tokenservice:TokenService
+    ) { }
+  userGender = null;
   commentcontent='';
   showpagination = true;
   pagination={
@@ -17,9 +22,13 @@ export class CommentsContainerComponent implements OnInit {
   };
   ngOnInit() {
     this.getCommentsOfPost(1);
+    this.getUserGender();
   }
   parentCommentIds=[];
-
+  getUserGender()
+  {
+    this.userGender = this.tokenservice.getGender();
+  }
   getCommentsOfPost(page)
   {
     this.showpagination = false;

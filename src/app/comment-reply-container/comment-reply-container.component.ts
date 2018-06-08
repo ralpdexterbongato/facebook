@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'; 
+import { TokenService } from '../services/token.service';
 @Component({
   selector: 'app-comment-reply-container',
   templateUrl: './comment-reply-container.component.html',
@@ -7,11 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommentReplyContainerComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    private tokenservice:TokenService,
+    ) { }
   @Input('mainCommentid') mainCommentID;
   ngOnInit() {
   	this.getReplies();
     this.focusInput();
+    this.getUserGender();
   }
   pagination={
     next_page_url:null,
@@ -19,6 +24,12 @@ export class CommentReplyContainerComponent implements OnInit {
   };
   commentContent = '';
   replyIds=[];
+  userGender=null;
+
+  getUserGender()
+  {
+    this.userGender = this.tokenservice.getGender();
+  }
   focusInput()
   {
     document.getElementById('replyinput').focus();

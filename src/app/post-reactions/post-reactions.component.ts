@@ -33,11 +33,10 @@ export class PostReactionsComponent implements OnInit {
   ngOnInit() {
     this.getMyReaction();
     this.countReacts();
-    this.focusInput();
   }
-  focusInput()
+  focusInput(id)
   {
-    document.getElementById('MainCommentInput').focus();
+    document.getElementById('MainCommentInput'+id).focus();
   }
   iconsHover()
   {

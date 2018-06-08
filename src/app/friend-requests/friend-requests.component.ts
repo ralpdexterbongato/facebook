@@ -1,5 +1,6 @@
 import { Component, OnInit ,Input,Output,EventEmitter } from '@angular/core';
 import { HttpClient  } from '@angular/common/http';
+
 @Component({
   selector: 'app-friend-requests',
   templateUrl: './friend-requests.component.html',
@@ -7,7 +8,9 @@ import { HttpClient  } from '@angular/common/http';
 })
 export class FriendRequestsComponent implements OnInit {
   @Input('userRequesting') ReqUserData;
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    ) { }
 
   ngOnInit() {
   }
@@ -44,7 +47,7 @@ export class FriendRequestsComponent implements OnInit {
       },
       error=>{
         console.log(error);
-        this.loading = false;
+        this.loading = false;  
       })
   }
 

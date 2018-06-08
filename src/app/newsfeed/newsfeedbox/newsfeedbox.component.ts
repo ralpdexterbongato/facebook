@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-newsfeedbox',
   templateUrl: './newsfeedbox.component.html',
@@ -8,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class NewsfeedboxComponent implements OnInit {
 @Input('friendID') FriendId;
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    ) { }
   ngOnInit() {
   	this.getPostedData();
   }

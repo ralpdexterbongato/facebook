@@ -1,3 +1,38 @@
+
+<div class="recent-login-userbox-container" *ngIf="showShortCutLogin">
+  <div class="blackscreen" (click)="toggleShortCutLogin()"></div>
+  <div class="center-userbox">
+    <div class="img-wrap">
+      <img src="./assets/img/profile.jpg" alt="">
+    </div>
+    <h3 class="user-box-name">Ralp Dexter Bongato</h3>
+    <input [(ngModel)]="passwordShortcut" [disabled]="submitLoading?true:false" (keyup.enter)="LogInAttemptShortcut()" class="user-box-pass" placeholder="Password" type="password" name="">
+    <div class="checkbox-container">
+      <input type="checkbox" name="">
+      <p>Remember password</p>
+    </div>
+    <button class="login-btn"  [disabled]="submitLoading?true:false" (click)="LogInAttemptShortcut()">Log In</button>
+  </div>
+</div>
+
+<div class="add-log-box-container" *ngIf="showAddLogin">
+  <div class="center-add-log-box">
+    <h3>Log into facebook</h3>
+    <div class="form-container">
+      <input (keyup.enter)="LogInAttempt()" [disabled]="submitLoading?true:false" type="email" [(ngModel)]="emailInput" placeholder="Email or Phone Number">
+      <input (keyup.enter)="LogInAttempt()" [disabled]="submitLoading?true:false" type="password" [(ngModel)]="passwordInput" placeholder="Password">
+      <div class="checkbox-container">
+        <input type="checkbox" name="">
+        <p>Remember password</p>
+      </div>
+    </div>
+      <button class="login-btn" [disabled]="submitLoading?true:false" (click)="LogInAttempt()">Log In</button>
+      <div class="horiz-divider"></div>
+      <p class="forgot-pass-btn">Forgot password?</p>
+  </div>
+  <div class="blackscreen" *ngIf="showAddLogin" (click)="toggleModalAddLogin()"></div>
+</div>
+
 <div class="recent-logs-container">
   <h3>Recent Logins</h3>
   <p>Click your picture or add an account.</p>
@@ -6,13 +41,13 @@
       <div class="box-top">
         <i class="material-icons close-btn">close</i>
         <i class="material-icons white-close-btn">close</i>
-        <img src="./assets/img/1.jpg" alt="">
+        <img src="./assets/img/profile.jpg" alt="" (click)="toggleShortCutLogin()">
       </div>
       <div class="box-bottom">
         <h4>Ralp Dexter</h4>
       </div>
     </div>
-    <div class="account-box">
+    <div class="account-box" (click)="toggleModalAddLogin()">
       <div class="box-top">
         <i class="material-icons add-btn">add_circle</i>
       </div>

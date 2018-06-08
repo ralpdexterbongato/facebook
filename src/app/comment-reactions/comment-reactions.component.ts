@@ -24,7 +24,10 @@ export class CommentReactionsComponent implements OnInit {
   @Input('commentID') commentID;
   @Output() reacted = new EventEmitter();
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+ 
+    ) { }
   outTimer;
   inTimer;
   showChoices = false;
@@ -61,6 +64,7 @@ export class CommentReactionsComponent implements OnInit {
       },
       error=>{
         console.log(error);
+        
       })
   }
   handleMyreact(data)
@@ -81,6 +85,7 @@ export class CommentReactionsComponent implements OnInit {
   		},
   		error=>{
   			console.log(error);
+        
   		})
   }
   removeReaction()
@@ -93,6 +98,7 @@ export class CommentReactionsComponent implements OnInit {
       },
       error=>{
         console.log(error);
+        
       })
   }
 }

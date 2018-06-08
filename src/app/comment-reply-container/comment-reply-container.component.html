@@ -3,11 +3,12 @@
 	<app-comment-reply-row (clickreply)="focusInput()" [replyid]="reply.id" *ngFor="let reply of replyIds"></app-comment-reply-row>
 	<div class="comment-postbox">
 		<div class="img-container">
-			<img src="./assets/img/1.jpg" alt="">
+			<img src="./assets/img/profile-fe.jpg" alt="" *ngIf="userGender==0">
+			<img src="./assets/img/profile.jpg" alt="" *ngIf="userGender==1">
 		</div>
 		<div class="input-container">
 			<div class="inputwrap">
-				<textarea id="replyinput" placeholder="Write a reply..." autofocus [(ngModel)]="commentContent" (keyup.enter)="postReply()"></textarea>
+				<textarea id="replyinput" placeholder="Write a reply..." [(ngModel)]="commentContent" (keyup.enter)="postReply()"></textarea>
 			</div>
 		</div>
 	</div>

@@ -3,6 +3,7 @@ import { Component, OnInit,HostListener,Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TokenService } from '../services/token.service';
 import * as $ from 'jquery';
+
 @Component({
   selector: 'app-newsfeed',
   templateUrl: './newsfeed.component.html',
@@ -78,7 +79,7 @@ export class NewsfeedComponent implements OnInit {
         }
       },
       error=>{
-        console.log(error);
+        
       });
   }
   handleSecondPagePosters(data)
@@ -109,7 +110,7 @@ export class NewsfeedComponent implements OnInit {
         this.handleSuccessPost(data);
       },
       error=>{
-        console.log(error);
+        console.log(error); 
       }
     );
   }

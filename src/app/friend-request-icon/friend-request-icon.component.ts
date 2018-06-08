@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-friend-request-icon',
   templateUrl: './friend-request-icon.component.html',
@@ -7,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FriendRequestIconComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    ) { }
 
   userFriendRequests = [];
   totalRequest=0;

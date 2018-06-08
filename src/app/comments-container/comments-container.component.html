@@ -2,9 +2,10 @@
  	<p (click)="getCommentsOfPost(pagination.current_page+1)" *ngIf=" pagination.next_page_url!=null && showpagination==true"  class="pagination-btn">View more comments</p>
     <app-comment-row [commentparentID]="commentId.id" *ngFor="let commentId of parentCommentIds "></app-comment-row>
     <div class="comment-form-container">
-      <img src="./assets/img/1.jpg" alt="">
+      <img src="./assets/img/profile-fe.jpg" alt="" *ngIf="userGender==0" >
+      <img src="./assets/img/profile.jpg" alt="" *ngIf="userGender==1" >
       <div class="text-container-comment">
-        <textarea id="MainCommentInput" placeholder="Write a comment... " (keyup.enter)="postComment()" [(ngModel)]="commentcontent" ></textarea>
+        <textarea id="MainCommentInput{{postID}}" placeholder="Write a comment... " (keyup.enter)="postComment()" [(ngModel)]="commentcontent" ></textarea>
       </div>
     </div>
   </div>

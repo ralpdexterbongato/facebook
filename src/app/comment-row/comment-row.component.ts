@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {TokenService }from '../services/token.service';
+import {TokenService }from '../services/token.service'; 
 @Component({
   selector: 'app-comment-row',
   templateUrl: './comment-row.component.html',
@@ -8,7 +8,10 @@ import {TokenService }from '../services/token.service';
 })
 export class CommentRowComponent implements OnInit {
 @Input('commentparentID') commentparentId;
-  constructor(private http:HttpClient,private token:TokenService) { }
+  constructor(
+    private http:HttpClient,
+    private token:TokenService,
+    ) { }
   currentUserID = this.token.getUserId();
   mainCommentData = [];
   optionShow = false;
@@ -91,7 +94,7 @@ export class CommentRowComponent implements OnInit {
         this.mainCommentData =[];
       },
       error=>{
-        console.log(error)
+        console.log(error);
       })
   }
   latestReply()
