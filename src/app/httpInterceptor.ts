@@ -35,7 +35,7 @@ constructor(private token:TokenService) { }
 		if(error.error.message=='Unauthenticated.')
 		{
 			this.token.removeToken();
-			window.location.href = '/';
+			window.location.href = '/facebook/';
 		}
 	}
 
