@@ -10,23 +10,33 @@ import { TokenService } from './services/token.service';
 export class MyHttpInterceptor implements HttpInterceptor {
 constructor(private token:TokenService) { }
 
-intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-console.log("intercepted request ... ");
+	console.log("intercepted request ... ");
 
-// Clone the request to add the new header.
-const authReq = req.clone({ headers: req.headers.set("Authorization", "Bearer "+this.token.getToken())});
+	// Clone the request to add the new header.
+	const authReq = req.clone({ headers: req.headers.set("Authorization", "Bearer "+this.token.getToken())});
 
-console.log("Sending request with new header now ...");
+	console.log("Sending request with new header now ...");
 
-//send the newly created request
-return next.handle(authReq)
-.catch((error, caught) => {
-//intercept the respons error and displace it to the console
-console.log("Error Occurred");
-console.log(error);
-//return the error to the method that called it
-return Observable.throw(error);
-}) as any;
-}
+	//send the newly created request
+	return next.handle(authReq)
+		.catch((error, caught) => {
+		//intercept the respons error and displace it to the console
+		console.log("Error Occurred");
+		console.log(error);
+		this.handleError(error);
+		//return the error to the method that called it
+		return Observable.throw(error);
+		}) as any;
+	}
+	handleError(error)
+	{
+		if(error.error.message=='Unauthenticated.')
+		{
+			this.token.removeToken();
+			window.location.href = '/';
+		}
+	}
+
 }

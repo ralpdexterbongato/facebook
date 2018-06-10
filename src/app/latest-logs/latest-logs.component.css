@@ -152,6 +152,14 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.form-container input[type="password"]::placeholder
+{
+  letter-spacing: 0px;
+}
+.form-container input[type="password"]
+{
+  letter-spacing: 4px;
+}
 .form-container
 {
   margin-top: 10px;
@@ -264,15 +272,20 @@
 {
   background-color: transparent;
 }
+.user-box-pass::placeholder
+{
+  letter-spacing: 0px;
+}
 .user-box-pass
 {
-   width: 90%;
+  width: 90%;
   margin:auto;
   margin-bottom: 10px;
   padding:7px 10px;
   font-size: 12px;
   border: 1px solid #e0e0e0;
   box-shadow: inset 0px 1px 1px rgba(0,0,0,0.1);
+  letter-spacing: 4px;
 }
 .login-btn[disabled]
 {
